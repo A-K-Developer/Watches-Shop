@@ -1,11 +1,15 @@
 :root{
-    --Primary : #3A3aaa;
-    --Secondary: #f3f3f3;
-    --text: #5d5aaa;
+    --Primary : #3A3A3A;
+    --Secondary: #FFFFEC;
+    --text: #5F5C57;
+    --Absent: #FF3900;
+    --Extra: #3CAF7F;
+    --Font-Family:'Quicksand', sans-serif;
 }
 *{
     padding: 0;
     margin: 0;
+    font-family: var(--Font-Family);
 }
 nav{
     width: 100%;
@@ -20,6 +24,15 @@ nav{
     position: relative;
     width: 30px;
     height: 20px;
+}
+#navContainer{
+    position: absolute;
+    top: 9%;
+    right: 0%;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--Primary);
+    z-index: 99;
 }
 
 .line {
@@ -37,10 +50,7 @@ nav{
     position: absolute;
     bottom: 10%;
 }
-.hide {
-    display: none;
-    z-index: -2;
-}
+
 .change .line1 {
     -webkit-transform: rotate(45deg) translate(0px, 0px);
     transform: rotate(45deg) translate(2px, 2px);
@@ -57,6 +67,7 @@ nav{
 #navIcons{
     display: flex;
     gap: 12px;
+    color: var(--Secondary);
 }
 #navIcons img{ 
     width: 22px;
@@ -80,6 +91,7 @@ nav{
     right: 5%;
 }
 #sponsors{
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,25 +99,84 @@ nav{
     justify-content: center;
     gap: 10px;
     padding: 10px;
+    margin: auto;
+    position: relative;
+    bottom: 40px;
 }
 #sponsors img{
-    width: 70px;
+    width: 40px;
+}
+#market h1{
+    width: 100%;
+    text-align: center;
 }
 #market{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
+    margin: 10% 0% 10%;
+    gap: 10px;
 }
 .articleContainer{
-    width: 90%;
-    margin: 5%;
+    width: 40%;
+    margin: 0%;
     text-align: center;
+    border-style: groove;
+    line-height: 1.8em;
+    position: relative;
 }
 .articleImg{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.detailsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.articleName{
+
+}
+.textContent{
+    margin: auto;
+}
+.markAsSold{
+    background-color: gray;
+    border:none;
+    padding: 2px 5px;
+}
+.readMore{
+    color: #3A3aaa;
+    text-decoration: underline;
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+}
+.articlePage{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 22;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.namecontainer{
+    display: flex;
+    justify-content: space-between;
+
+}
+.modelContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.unitContainer{
+    display: flex;
+    justify-content: space-between;
+
 }
 #subscribeSection{
     display: flex;
@@ -125,12 +196,13 @@ nav{
     display: flex;
     justify-content: center;
     gap: 7%;
+    margin: 10%;
 }
 footer{
-    margin-top: 10%;
+    padding:5%;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     margin: auto;
     justify-content: center;
     text-align: center;
@@ -144,4 +216,8 @@ footer div span p{
 }
 footer div span{
     text-transform: uppercase;
+}
+.hide {
+    display: none;
+    z-index: -2;
 }

@@ -1,58 +1,78 @@
 let watchess = {
     1 : {
-        month: 'January',
-        name: "Onola",
-        model: "steelWatch",
-        price: "1000 kr",
         img: "./img/rolex2.jpg",
+        donated: 'Red Cross DK',
+        sales: '1000pc',
+        project: 'ASD-Project.dk',
+
     },
     2: {
-        month: 'February',
-        name: "Onolaasdasd2",
-        model: 'PlasticVersion',
-        price: '1000 kr',
         img: "./img/rolex.jpg",
+        donated: "EU for Turkey",
+        sales: "250pc",
+        project: 'ASD-Project.dk',
+
+    },3: {
+        img: "./img/rolex.jpg",
+        donated: "EU for Turkey",
+        sales: "350pc",
+        project: 'ASD-Project.dk',
+
+    },4: {
+        img: "./img/rolex.jpg",
+        donated: "EU for Turkey",
+        sales: "5pc",
+        project: 'ASD-Project.dk',
 
     },
-    3: {
-        month: 'March',
-        name: "Onola3",
-        model: 'PlastasdsdicVersion2',
-        price: '12200 kr',
-        img: "./img/rolex.jpg",
-
-    },
-    4: {
-        month: 'April',
-        name: "Onola4",
-        model: 'PlasticVersion3',
-        price: '1000 kr',
-        img: "./img/rolex.jpg",
-
-    }
-
 }
 function createMarketPlace(){
     let marketPlace = document.getElementById('market');
     Object.keys(watchess).forEach(function(key){
-        let watchContainer = createElement('div',marketPlace,'','',['click',showInfo],['articleContainer'],'',watchess[key].month)
-        let hideInfo = createElement('div',watchContainer,'','','',['hide'],'','')
-        createElement('img',hideInfo,'',['src','./img/rolex2.jpg'],'',['articleImg'],'','')
-        createElement('h3',hideInfo,'','','',['articleName'],'',watchess[key].name);
-        createElement('h5',hideInfo,'','','',['articleModel'],'',watchess[key].model)
-        createElement('p',hideInfo,'','','',['articlePrice'],'',watchess[key].price);
-        createElement('button',hideInfo,'','','',['articleButton'],'','Add to Basket');
+        let watchContainer = createElement('div',marketPlace,'','','',['articleContainer'],'','')
+        createElement('img',watchContainer,'',['src','./img/rolex2.jpg'],'',['articleImg'],'','')
+        let rightSideEle = createElement('div',watchContainer,'','','',['textContent'],'','')
+        let donateContainer = createElement('div',rightSideEle,'','','',['namecontainer'],'','');
+        createElement('p',donateContainer,'','','','','','Donated: ')
+        createElement('p',donateContainer,'','','',['articleName'],'',watchess[key].donated);
 
-        console.log(key);
-        console.log(watchess[key].name);
+        let modelContainer = createElement('div',rightSideEle,'','','',['modelContainer'],'','');
+        createElement('p',modelContainer,'','','',['articleModel'],'','Sales: ')
+        createElement('p',modelContainer,'','','',['articleModel'],'',watchess[key].sales)
+
+        let unitContainer = createElement('div',rightSideEle,'','','',['unitContainer'],'','');
+        createElement('p',unitContainer,'','','',['articlePrice'],'','Project: ');
+        createElement('p',unitContainer,'','','',['articlePrice'],'',watchess[key].project);
+
+        let option = createElement('button',rightSideEle,'','',['click',buyNow],['articleButton'],'',watchess[key].option);
+
+        if(option.textContent == 'Sold'){
+            option.classList.add('markAsSold')
+        }
+        createElement('p',rightSideEle,'','',['click',openArticle],['readMore'],'','read more');
+        
     })
 }
+let child ;
+function openArticle(){
+    let body = document.getElementsByTagName('body')[0];
+    if(!body.contains(child)){    
+        child = createElement('div',body,'','','',['articlePage'],'');
+    }
+}
+function buyNow(e){
+    if(e.target.textContent !== 'Sold'){    
+        let navBarSales = document.getElementById('navIcons');
+        let lastChild = navBarSales.lastElementChild;
+        lastChild.textContent++
+    }
+}
 function showInfo(e){
-    let content = e.target.querySelector('div')
+    let content = e.target.nextElementSibling
     content.classList.toggle('hide')
 }
 createMarketPlace()
-
+let navContainer = document.getElementById('navContainer')
 function openBurgerMenu() {
     burgerBtn.classList.toggle('change');
     if (navContainer.classList.contains('hide')) {
