@@ -26,6 +26,7 @@ let watchess = {
 
     },
 }
+
 function createMarketPlace(){
     let marketPlace = document.getElementById('market');
     Object.keys(watchess).forEach(function(key){
