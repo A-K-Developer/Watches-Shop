@@ -1,80 +1,90 @@
+
+let video = document.querySelector('.videoHeader');
+
+video.loop = true
+//
+// window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
+
+let buyBtn = document.querySelector('.buyNow');
+buyBtn.addEventListener('click', () => {
+    window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
+})
 let watchess = {
-    1 : {
-        img: "./img/rolex2.jpg",
+    1: {
+        img: "./img/watch2.png",
         donated: 'Red Cross DK',
-        sales: '1000pc',
-        project: 'ASD-Project.dk',
+        sales: '1.000 kr.',
+        project: ['./img/copdk.png',"./img/kclogo1.png"]
 
     },
     2: {
-        img: "./img/rolex.jpg",
+        img: "./img/watch2.png",
         donated: "EU for Turkey",
-        sales: "250pc",
-        project: 'ASD-Project.dk',
+        sales: "250 kr.",
+        project: ['./img/copdk.png',"./img/kclogo1.png"]
 
-    },3: {
-        img: "./img/rolex.jpg",
+    },
+    3: {
+        img: "./img/watch2.png",
         donated: "EU for Turkey",
-        sales: "350pc",
-        project: 'ASD-Project.dk',
+        sales: "350 kr.",
+        project: ['./img/copdk.png',"./img/kclogo1.png"]
 
-    },4: {
-        img: "./img/rolex.jpg",
+    },
+    4: {
+        img: "./img/watch2.png",
         donated: "EU for Turkey",
-        sales: "5pc",
-        project: 'ASD-Project.dk',
+        sales: "5 kr.",
+        project: ['./img/copdk.png',"./img/kclogo1.png"]
 
     },
 }
 
-function createMarketPlace(){
+function createMarketPlace() {
     let marketPlace = document.getElementById('market');
-    Object.keys(watchess).forEach(function(key){
-        let watchContainer = createElement('div',marketPlace,'','','',['articleContainer'],'','')
-        createElement('img',watchContainer,'',['src','./img/rolex2.jpg'],'',['articleImg'],'','')
-        let rightSideEle = createElement('div',watchContainer,'','','',['textContent'],'','')
-        let donateContainer = createElement('div',rightSideEle,'','','',['namecontainer'],'','');
-        createElement('p',donateContainer,'','','','','','Donated: ')
-        createElement('p',donateContainer,'','','',['articleName'],'',watchess[key].donated);
-
-        let modelContainer = createElement('div',rightSideEle,'','','',['modelContainer'],'','');
-        createElement('p',modelContainer,'','','',['articleModel'],'','Sales: ')
-        createElement('p',modelContainer,'','','',['articleModel'],'',watchess[key].sales)
-
-        let unitContainer = createElement('div',rightSideEle,'','','',['unitContainer'],'','');
-        createElement('p',unitContainer,'','','',['articlePrice'],'','Project: ');
-        createElement('p',unitContainer,'','','',['articlePrice'],'',watchess[key].project);
-
-        let option = createElement('button',rightSideEle,'','',['click',buyNow],['articleButton'],'',watchess[key].option);
-
-        if(option.textContent == 'Sold'){
-            option.classList.add('markAsSold')
-        }
-        createElement('p',rightSideEle,'','',['click',openArticle],['readMore'],'','read more');
+    Object.keys(watchess).forEach(function (key) {
         
+        let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticle], ['articleContainer'], '', '')
+        let imgContainer = createElement('div',watchContainer,'','','',['articleIMGContainer'],'','')
+        createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
+        let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
+        let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
+        createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
+        createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
+        
+
+        let unitContainer = createElement('div', contentContainer, '', '', '', ['unitContainer'], '', '');
+        createElement('p', unitContainer, '', '', '', ['articleDonation'], '', '- Doneret til -');
+        createElement('img', contentContainer, '', ['src', watchess[key].project[0]], '', ['priviusDonationIMg'], '', '')
+        createElement('img', contentContainer, '', ['src', watchess[key].project[1]], '', ['priviusDonationIMg'], '', '')
     })
 }
-let child ;
-function openArticle(){
+let child;
+
+function openArticle() {
     let body = document.getElementsByTagName('body')[0];
-    if(!body.contains(child)){    
-        child = createElement('div',body,'','','',['articlePage'],'');
+    if (!body.contains(child)) {
+        child = createElement('div', body, '', '', '', ['articlePage'], '');
     }
 }
-function buyNow(e){
-    if(e.target.textContent !== 'Sold'){    
+
+function buyNow(e) {
+    if (e.target.textContent !== 'Sold') {
         let navBarSales = document.getElementById('navIcons');
         let lastChild = navBarSales.lastElementChild;
         lastChild.textContent++
     }
 }
-function showInfo(e){
+
+function showInfo(e) {
     let content = e.target.nextElementSibling
     content.classList.toggle('hide')
 }
 createMarketPlace()
 let navContainer = document.getElementById('navContainer')
+
 function openBurgerMenu() {
+    
     burgerBtn.classList.toggle('change');
     if (navContainer.classList.contains('hide')) {
         navContainer.classList.remove('hide');
@@ -85,24 +95,25 @@ function openBurgerMenu() {
         navContainer.classList.remove('show')
     }
 }
-let imgArr = ['./img/rolex.jpg','./img/rolex2.jpg']
-setInterval(slideShow,2000)
+/* 
+let imgArr = ['./img/Conscience0.jpg', './img/Conscience1.jpg','./img/Conscience2.jpg']
+setInterval(slideShow, 2000)
 
-function slideShow(){
+function slideShow() {
     let img = document.getElementById('welcomeImg');
 
     let usedImg = img.src.slice(-10)
     let newImg = imgArr[0].slice(-10)
 
-    if(usedImg == newImg){
+    if (usedImg == newImg) {
         img.src = imgArr[1];
-    }else{
-        img.src= imgArr[0];
+    } else {
+        img.src = imgArr[0];
     }
 }
-
+*/
 function createElement(type, parent, id, attributeArr,
-    eventListenerArr, classArr, action, context,) {
+    eventListenerArr, classArr, action, context, ) {
 
     let container = document.createElement(type);
     let [href, path] = attributeArr;

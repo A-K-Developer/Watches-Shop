@@ -10,15 +10,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Quicksand&family=Racing+Sans+One&display=swap" rel="stylesheet">
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Replace with your own publishable API key
+        const stripe = Stripe('pk_live_51MZtwLHxd0pQtOvWrEo9GrXsH9fZlLJ4D5xXg0rE97ITzfzLYRsK9yXhxINVIcdMdkzYisIcvqqkMLjgglHghgIA00vJNlPqPP');
+      </script>
+      
 </head>
 
 <body>
+      
     <nav>
-        
-        <div id="logo">
-            <img src="https://static.dialando.com/image/logo-dialando-r-light.svg" alt="">
-        </div>
-        <div id="companyName">Dialando</div>
+        <div id="companyName">Conscience</div>
         <div id="burgerBtn" onclick="openBurgerMenu()">
             <div class="line line1"></div>
             <div class="line line2"></div>
@@ -27,14 +32,36 @@
             asdoasdpoaks[d]
         </div>
     </nav>
+    
+      
     <section id="slideshow">
-        <img id="welcomeImg" src="./img/rolex.jpg" alt="rolex missing">
+        <div class="slogan"><h1>Save The Kids <br> 1 Minute at  the time</h1></div>
+        
+        <div>
+            <video  class="videoHeader" src="./img/HungryKids.mp4" loop="true" play></video>
+        </div>
+        <img id="welcomeImg" src="./img/watch2.png" alt="rolex missing">
+       
+        <div class="opacityVideo"></div>
+        <div class="hideMe"></div>
     </section>
     <section id="sponsors">
-        <img src="./img/sponsors.jfif" alt="sponsors">
-        <img src="./img/sponsors.jfif" alt="sponsors">
-        <img src="./img/sponsors.jfif" alt="sponsors">
-        <img src="./img/sponsors.jfif" alt="sponsors">
+        <img src="./img/sponsor2.png" alt="sponsors">
+        <img src="./img/sponsor.png" alt="sponsors">
+        <img src="./img/sponsor1.png" alt="sponsors">
+        <img src="./img/sponsor3.png" alt="sponsors">
+        
+    </section>
+    <section id="sellingWatch">
+        <h1 class="donationName">Support Red Cross</h1>
+        <p class="solded">Sold <span>1000</span> STK</p>
+        <div class="watch">
+            <img src="./img/MontlyWatch.png" alt="watchImg">
+            <p>See Details</p>
+        </div>
+        <p class="purposeForWatch">Purpose: Clotches for homeless</p>
+        <p class="priceForWatch">999 kr</p>
+        <div class="btn buyNow">Buy Now</div>
     </section>
     <section id="market">
         <h1>Previous Watches</h1>
@@ -78,19 +105,3 @@
 </html>
 
 
-<!-- 
-
-    <section id="subscribeSection">
-        <p>Love our Watches?</p>
-        <p>Sign up to receive email updates when new styles of Watch are added to Shop!</p>
-        <input type="text" placeholder="Your email here">
-        <button type="button">SIGN-UP</button>
-        <div class="socialNetwork">
-            <img src="./img/facebook.png" alt="fb missing">
-            <img src="./img/facebook.png" alt="fb missing">
-            <img src="./img/facebook.png" alt="fb missing">
-            <img src="./img/facebook.png" alt="fb missing">
-
-        </div>
-    </section>
--->
