@@ -1,54 +1,58 @@
-
-let video = document.querySelector('.videoHeader');
-video.loop = true;
-
-let buyBtn = document.querySelector('.buyNow');
-buyBtn.addEventListener('click', () => {
-    window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
-})
 let watchess = {
     1: {
         img: "./img/watch2.png",
         donated: 'Red Cross DK',
         sales: '1.000 kr.',
-        project: ['./img/copdk.png',"./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"]
 
     },
     2: {
         img: "./img/watch33.png",
         donated: "EU for Turkey",
         sales: "250 kr.",
-        project: ['./img/copdk.png',"./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"]
 
     },
     3: {
         img: "./img/watch2.png",
         donated: "EU for Turkey",
         sales: "350 kr.",
-        project: ['./img/copdk.png',"./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"]
 
     },
     4: {
         img: "./img/MontlyWatch.png",
         donated: "EU for Turkey",
         sales: "5 kr.",
-        project: ['./img/copdk.png',"./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"]
 
     },
 }
 
+playVideo()
+createMarketPlace()
+buyBtnAction();
+function buyBtnAction(){
+let buyBtn = document.querySelector('.buyNow');
+buyBtn.addEventListener('click', () => {
+    window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
+})
+}
+
+
+
 function createMarketPlace() {
     let marketPlace = document.getElementById('market');
     Object.keys(watchess).forEach(function (key) {
-        
+
         let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticle], ['articleContainer'], '', '')
-        let imgContainer = createElement('div',watchContainer,'','','',['articleIMGContainer'],'','')
+        let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
         createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
         let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
         let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
         createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
         createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
-        
+
 
         let unitContainer = createElement('div', contentContainer, '', '', '', ['unitContainer'], '', '');
         createElement('p', unitContainer, '', '', '', ['articleDonation'], '', '- Doneret til -');
@@ -57,7 +61,6 @@ function createMarketPlace() {
     })
 }
 let child;
-
 function openArticle() {
     let body = document.getElementsByTagName('body')[0];
     if (!body.contains(child)) {
@@ -77,16 +80,15 @@ function showInfo(e) {
     let content = e.target.nextElementSibling
     content.classList.toggle('hide')
 }
-createMarketPlace()
-let navContainer = document.getElementById('navContainer')
 
 function openBurgerMenu() {
+    let navContainer = document.getElementById('navContainer')
     // Get Nav Linkss and close them after Click
-let navlinks = document.querySelectorAll('.navLinks');
-navlinks.forEach(x => {
-    x.addEventListener('click',openBurgerMenu);
-})
-    
+    let navlinks = document.querySelectorAll('.navLinks');
+    navlinks.forEach(x => {
+        x.addEventListener('click', openBurgerMenu);
+    })
+
     burgerBtn.classList.toggle('change');
     if (navContainer.classList.contains('hide')) {
         navContainer.classList.remove('hide');
@@ -97,6 +99,7 @@ navlinks.forEach(x => {
         navContainer.classList.remove('show')
     }
 }
+
 function createElement(type, parent, id, attributeArr,
     eventListenerArr, classArr, action, context, ) {
 
@@ -132,4 +135,12 @@ function createElement(type, parent, id, attributeArr,
     }
 
     return container
+}
+
+function playVideo() {
+    let video = document.getElementById('videoHeader');
+    video.autoplay = true;
+    setInterval(() => {
+        video.currentTime = 0
+    }, 8000)
 }
