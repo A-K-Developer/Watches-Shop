@@ -1,9 +1,6 @@
 
 let video = document.querySelector('.videoHeader');
-
-video.loop = true
-//
-// window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
+video.loop = true;
 
 let buyBtn = document.querySelector('.buyNow');
 buyBtn.addEventListener('click', () => {
@@ -18,7 +15,7 @@ let watchess = {
 
     },
     2: {
-        img: "./img/watch2.png",
+        img: "./img/watch33.png",
         donated: "EU for Turkey",
         sales: "250 kr.",
         project: ['./img/copdk.png',"./img/kclogo1.png"]
@@ -32,7 +29,7 @@ let watchess = {
 
     },
     4: {
-        img: "./img/watch2.png",
+        img: "./img/MontlyWatch.png",
         donated: "EU for Turkey",
         sales: "5 kr.",
         project: ['./img/copdk.png',"./img/kclogo1.png"]
@@ -84,6 +81,11 @@ createMarketPlace()
 let navContainer = document.getElementById('navContainer')
 
 function openBurgerMenu() {
+    // Get Nav Linkss and close them after Click
+let navlinks = document.querySelectorAll('.navLinks');
+navlinks.forEach(x => {
+    x.addEventListener('click',openBurgerMenu);
+})
     
     burgerBtn.classList.toggle('change');
     if (navContainer.classList.contains('hide')) {
@@ -95,23 +97,6 @@ function openBurgerMenu() {
         navContainer.classList.remove('show')
     }
 }
-/* 
-let imgArr = ['./img/Conscience0.jpg', './img/Conscience1.jpg','./img/Conscience2.jpg']
-setInterval(slideShow, 2000)
-
-function slideShow() {
-    let img = document.getElementById('welcomeImg');
-
-    let usedImg = img.src.slice(-10)
-    let newImg = imgArr[0].slice(-10)
-
-    if (usedImg == newImg) {
-        img.src = imgArr[1];
-    } else {
-        img.src = imgArr[0];
-    }
-}
-*/
 function createElement(type, parent, id, attributeArr,
     eventListenerArr, classArr, action, context, ) {
 

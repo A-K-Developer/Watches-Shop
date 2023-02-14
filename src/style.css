@@ -1,58 +1,20 @@
-:root{
-    --Primary : #d4d5d9;
+:root {
+    --Primary: #d4d5d9;
     --Secondary: #203334;
     --text: #f6d746;
     --Absent: #6f502a;
     --Extra: #3CAF7F;
-    --Font-Family:'Quicksand', sans-serif;
+    --Font-Family: 'Quicksand', sans-serif;
     --Logo-Font: 'Herr Von Muellerhoff', cursive;
-    /*#203334
-    #6f502a;
-    #ffbd59*/
-
 }
-*{
+
+* {
     padding: 0;
     margin: 0;
     font-family: var(--Font-Family);
 }
-form {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-    padding: 30px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input.form-control {
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  button.btn-primary {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-nav{
+
+nav {
     width: 90%;
     padding: 0 5%;
     height: 5em;
@@ -61,31 +23,21 @@ nav{
     align-items: center;
     justify-content: space-between;
     z-index: 10;
-    
     top: 0;
 }
-#companyName{
+
+#companyName {
     font-family: var(--Logo-Font);
     color: var(--Secondary);
     font-size: 50px;
 }
-#burgerBtn {
 
+#burgerBtn {
     position: relative;
     width: 30px;
     height: 20px;
     display: flex;
     justify-content: center;
-    
-}
-#navContainer{
-    position: absolute;
-    top: 9%;
-    right: 0%;
-    width: 50%;
-    height: 100vh;
-    background-color: var(--Primary);
-    z-index: 99;
 }
 
 .line {
@@ -93,8 +45,15 @@ nav{
     height: 2px;
     background-color: var(--Secondary);
     transition: 0.4s;
-   
 }
+
+.line {
+    width: 80%;
+    height: 2px;
+    background-color: var(--Secondary);
+    transition: 0.4s;
+}
+
 .line1 {
     position: absolute;
     top: 10%;
@@ -114,27 +73,67 @@ nav{
     -webkit-transform: rotate(45deg) translate(0px, 0px);
     transform: rotate(-45deg) translate(8px, -8px);
 }
-#logo img{
-    position: relative;
-    left: -20px;
+
+#navContainer {
+    position: absolute;
+    top: 9%;
+    right: 0%;
+    width: 50%;
+    background-color: var(--Primary);
+    z-index: 99;
 }
-#navIcons{
+
+.navLinks {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+    padding-bottom: 5%;
+
+}
+
+.navLinks a {
+    text-decoration: none;
     color: var(--Secondary);
+    margin: 5%;
+    padding: 3% 5%;
 }
-#navIcons img{ 
-    width: 22px;
+
+.navLinks a:hover {
+    color: var(--Primary);
+    background-color: var(--Secondary);
 }
-#slideshow{
+
+#slideshow {
     display: flex;
     align-items: center;
     position: relative;
-
 }
-.opacityVideo{
+
+.slogan {
     position: absolute;
-    top: 0%;
+    background-color: transparent;
+    color: var(--Primary);
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+    margin: 5% 25% 30%;
+    text-transform: capitalize;
+}
+
+.videoHeader {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    z-index: -22;
+}
+
+.opacityVideo {
+    position: absolute;
+    top: -2%;
     left: 0;
     background-color: black;
     opacity: 0.5;
@@ -143,55 +142,7 @@ nav{
     z-index: -4;
 }
 
-.videoHeader{
-    position: relative;
-    width: 100%;
-    max-height: 300px;
-    height: 100%;
-    z-index: -22;
-    
-}
-.slogan{
-    position: absolute;
-    background-color: transparent;
-    color: var(--Primary);
-    width: 45%;
-    text-align: center;
-    margin: 0 5%;
-    font-size: 12px;
-    top: 18%;
-    left: 1%;
-}
-.hideMe{
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    bottom: -20%;
-    z-index:10;
-
-}
-#welcomeImg{
-    width: 55%;
-    object-fit: cover;
-    max-height: 300px;
-
-    position: absolute;
-    top: -5%;
-    right: -10%;
-    z-index: 5;
-    
-}
-.arrowLeft{
-    z-index: 2;
-    position: absolute;
-    left: 5%;
-}
-.arrowRight{
-    position: absolute;
-    right: 5%;
-}
-#sponsors{
+#sponsors {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -202,16 +153,43 @@ nav{
     margin: auto;
     margin: 10% auto;
 }
-#sponsors img{
+
+#sponsors img {
     width: 50px;
-    object-fit:contain;
-    z-index:10
+    object-fit: contain;
+    z-index: 10
 }
-.priviusDonationIMg{
-    width: 55px;
-    margin: 5px;
+
+#productDescription {
+    position: relative;
+    width: 90%;
+    margin: 5% auto;
 }
-#sellingWatch{
+
+.watchImg {
+    width: 100%;
+}
+
+#welcomeImg {
+    width: 80%;
+    object-fit: cover;
+    margin: auto;
+    margin: 40px 10%;
+}
+
+.contentForCompany {
+    text-align: center;
+    color: var(--Secondary);
+    width: 80%;
+    margin: auto;
+}
+
+.contentForCompany h1 {
+    margin: 5%;
+    text-transform: uppercase;
+}
+
+#sellingWatch {
     width: 50%;
     margin: auto;
     position: relative;
@@ -219,29 +197,9 @@ nav{
     flex-direction: column;
     justify-content: center;
 }
-.watch{
-    width: auto;
-    margin: auto;
-}
-.watch img{
-    width: 110%;
-    height: 350px;
-    object-fit: cover;
-    position: relative;
-    left: 2px;
-}
-.watch p{
-    color: var(--Extra);
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
-    margin: 10% 0;
 
-}
-.donationName{
+.donationName {
     color: var(--Secondary);
-    background-color: white;
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
@@ -252,35 +210,66 @@ nav{
     width: 150%;
     text-align: center;
     margin: auto;
+    margin-top: 40px;
 }
-.solded{
+
+.solded {
     width: 50%;
     position: relative;
     top: 3%;
     left: 2%;
     padding: 5px 10px;
-    background-color: var(--Absent);
+    background-color: var(--Primary);
     border-radius: 2px;
     text-transform: uppercase;
     font-size: 12px;
     text-align: center;
-    color: var(--text);
+    color: var(--Secondary);
     margin: 10% auto;
 }
-.purposeForWatch{
-    color: var(--Absent); 
+
+.watch {
+    width: auto;
+    margin: auto;
+}
+
+.watch img {
+    width: 110%;
+    height: 350px;
+    object-fit: cover;
+    position: relative;
+    left: 2px;
+}
+
+.watch p {
+    color: var(--Extra);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    margin: 10% 0;
+
+}
+
+.purposeForWatch {
+    color: var(--Secondary);
     text-align: center;
     padding: 5% 2% 0% 2%;
     font-weight: 700;
 }
-.priceForWatch{
-    color: var(--Absent);
-    padding: 2% 2%;
-    text-align: center;
 
+.priceForWatch {
+    color: var(--Primary);
+    background-color: var(--Secondary);
+    width: 30%;
+    padding: 2% 2%;
+    margin: 3% auto;
+    text-align: center;
+    border-radius: 2px;
 }
-.btn{
-    color: var(--text);
+
+.btn {
+    color: var(--Secondary);
     background-color: var(--Primary);
     width: 50%;
     padding: 5% 7%;
@@ -291,64 +280,59 @@ nav{
     margin: auto;
 }
 
-#market h1{
+#market h1 {
     width: 100%;
     text-align: center;
 }
-#market{
+
+#market {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 10% 0% 10%;
+    margin: 100px 0% 10%;
     gap: 10px;
+
 }
-.articleContainer{
+
+.articleContainer {
     width: 40%;
     text-align: center;
     line-height: 1.8em;
     position: relative;
     background-color: var(--Secondary);
+    border: none;
     border-radius: 10px;
     height: 300px;
-    
+
 }
-.articleIMGContainer{
+
+.articleIMGContainer {
     width: 100%;
     height: 50%;
-   
+    background-color: white;
+
 }
-.articleImg{
+
+.articleImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.detailsContainer{
+
+.detailsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.articleName{
 
-}
-.textContent{
+.textContent {
     margin: auto;
     height: 50%;
 }
-.markAsSold{
-    background-color: gray;
-    border:none;
-    padding: 2px 5px;
-}
-.readMore{
-    color: #3A3aaa;
-    text-decoration: underline;
-    position: absolute;
-    right: 2%;
-    bottom: 2%;
-}
-.articlePage{
+
+.articlePage {
     width: 100vw;
     height: 100vh;
     background-color: white;
@@ -357,12 +341,14 @@ nav{
     top: 0;
     left: 0;
 }
-.namecontainer{
+
+.namecontainer {
     background-color: var(--Absent);
     height: 20px;
-    
+
 }
-.namecontainer p{
+
+.namecontainer p {
     font-family: var(--Logo-Font);
     font-size: 40px;
     position: relative;
@@ -370,24 +356,27 @@ nav{
     color: var(--text);
 }
 
-.articlePrice{
+.articlePrice {
     color: var(--text);
     text-align: center;
     font-weight: 700;
     font-size: 12px;
 }
-.unitContainer{
+
+.unitContainer {
     display: flex;
     justify-content: space-between;
 
 }
-.articleDonation{
+
+.articleDonation {
     color: var(--text);
     text-align: center;
     margin: auto;
     font-size: 12px;
 }
-#subscribeSection{
+
+#subscribeSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -397,18 +386,26 @@ nav{
     gap: 15px;
     color: var(--Primary);
 }
-#subscribeSection input::placeholder{
-    
+
+#subscribeSection input::placeholder {
+
     text-align: center;
 }
-.socialNetwork{
+
+.priviusDonationIMg {
+    width: 55px;
+    margin: 5px;
+}
+
+.socialNetwork {
     display: flex;
     justify-content: center;
     gap: 7%;
     margin: 10%;
 }
-footer{
-    padding:5%;
+
+footer {
+    padding: 5%;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -420,13 +417,55 @@ footer{
     color: var(--Secondary);
     background-color: var(--Primary);
 }
-footer div span p{
+
+footer div span p {
     margin-bottom: 15px;
 }
-footer div span{
+
+footer div span {
     text-transform: uppercase;
+    font-weight: bold;
 }
+
 .hide {
     display: none;
     z-index: -2;
 }
+@media only screen and (min-width: 768px) {
+    nav{
+        height: 1.5em;
+    }
+    #companyName {
+        color: var(--Secondary);
+        font-size: 20px;
+        margin: auto 2%;
+    }
+    #burgerBtn {
+        display: none;
+    }
+    #navContainer {
+        position: relative;
+        width: 50%;
+        background-color: var(--Primary);
+        z-index: 99;
+        padding: 0;
+    }
+    .navLinks {
+        display: flex;
+        flex-direction: row;
+        font-size:3px;
+        font-weight: bolder;
+        
+    }
+    
+    .navLinks a {
+        text-decoration: none;
+        color: var(--Secondary);
+        margin: 0;
+    }
+    
+    .navLinks a:hover {
+        color: var(--Primary);
+        background-color: var(--Secondary);
+    }
+  }
