@@ -75,6 +75,7 @@ function createMarketPlace() {
         let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
         createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
         let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
+        createElement('div',contentContainer,'','','',['overlayContentContainer'],'','')
         let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
         createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
         createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
@@ -84,6 +85,16 @@ function createMarketPlace() {
         createElement('p', unitContainer, '', '', '', ['articleDonation'], '', '- Doneret til -');
         createElement('img', contentContainer, '', ['src', watchess[key].project[0]], '', ['priviusDonationIMg'], '', '')
         createElement('img', contentContainer, '', ['src', watchess[key].project[1]], '', ['priviusDonationIMg'], '', '')
+        
+        let children = contentContainer.children;
+
+        for(let i =0 ; i < children.length ; i++){
+            let classLists = children[i].classList;
+            if(!classLists.contains('overlayContentContainer')){
+                children[i].style.position = 'relative';
+                children[i].style.zIndex = 22;
+            }
+        }
     })
 }
 
