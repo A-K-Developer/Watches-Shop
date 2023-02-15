@@ -1,3 +1,25 @@
+const secondHand = document.querySelector('.second-hand');
+const minuteHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
+
+function setDate() {
+const now = new Date();
+
+const seconds = now.getSeconds();
+const secondsDegrees = ((seconds / 60) * 360) + 90;
+secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+const minutes = now.getMinutes();
+const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+const hours = now.getHours();
+const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+}
+
+setInterval(setDate, 1000);
+
 let watchess = {
     1: {
         img: "./img/watch2.png",
@@ -32,14 +54,18 @@ let watchess = {
 playVideo()
 createMarketPlace()
 buyBtnAction();
-function buyBtnAction(){
-let buyBtn = document.querySelector('.buyNow');
-buyBtn.addEventListener('click', () => {
-    window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
-})
+const video = document.getElementById("videoHeader");
+const gradient = document.createElement("div");
+gradient.id = "gradient";
+video.parentNode.insertBefore(gradient, video);
+
+
+function buyBtnAction() {
+    let buyBtn = document.querySelector('.buyNow');
+    buyBtn.addEventListener('click', () => {
+        window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
+    })
 }
-
-
 
 function createMarketPlace() {
     let marketPlace = document.getElementById('market');
@@ -60,14 +86,27 @@ function createMarketPlace() {
         createElement('img', contentContainer, '', ['src', watchess[key].project[1]], '', ['priviusDonationIMg'], '', '')
     })
 }
+
 let child;
+let body = document.getElementsByTagName('body')[0];
+
 function openArticle() {
-    let body = document.getElementsByTagName('body')[0];
     if (!body.contains(child)) {
         child = createElement('div', body, '', '', '', ['articlePage'], '');
+        let closeBtn = createElement('div',child,'closeBtn','',['click',closeArticle],'','','');
+         createElement('div',closeBtn,'','','',['line','lineLeft'],'','')
+         createElement('div',closeBtn,'','','',['line','lineRight'],'','')
+
+        createElement('img',child,'','','','','','');
+        let sectionText = createElement('div',child,'','','','','','');
+
     }
 }
-
+function closeArticle(){
+    if(body.contains(child)){
+        child.remove()
+    }
+}
 function buyNow(e) {
     if (e.target.textContent !== 'Sold') {
         let navBarSales = document.getElementById('navIcons');
@@ -89,7 +128,6 @@ function openBurgerMenu() {
         x.addEventListener('click', openBurgerMenu);
     })
 
-    burgerBtn.classList.toggle('change');
     if (navContainer.classList.contains('hide')) {
         navContainer.classList.remove('hide');
         navContainer.classList.add('show');

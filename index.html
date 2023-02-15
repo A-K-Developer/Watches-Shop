@@ -4,20 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conscience</title>
     <link rel="stylesheet" href="./src/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Racing+Sans+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Quicksand&family=Racing+Sans+One&display=swap" rel="stylesheet">
 
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        // Replace with your own publishable API key
-        const stripe = Stripe('pk_live_51MZtwLHxd0pQtOvWrEo9GrXsH9fZlLJ4D5xXg0rE97ITzfzLYRsK9yXhxINVIcdMdkzYisIcvqqkMLjgglHghgIA00vJNlPqPP');
-      </script>
-      
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat:wght@100&family=Quicksand&family=Racing+Sans+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,47 +28,72 @@
         </div>
     </nav>
     <section id="slideshow">
-        <video id="videoHeader" src="./img/HungryKids.mp4" ></video>
-        <div class="slogan"><h1>Save The Kids <br> 1 Minute at  the time</h1></div>
+        <video id="videoHeader">
+            <source src="./img/HungryKids.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        
+        <div class="slogan">
+            <h1>Save The Kids <br> 1 Minute at the time</h1>
+        </div>
+        
         <div class="opacityVideo"></div>
+        <section id="clock">
+            <div class="clock">
+                <div class="clock-face">
+                  <div class="hand hour-hand"></div>
+                  <div class="hand min-hand"></div>
+                  <div class="hand second-hand"></div>
+                </div>
+              </div>
+        </section>
     </section>
+      
     <section id="sponsors">
         <img src="./img/sponsor2.png" alt="sponsors">
         <img src="./img/sponsor.png" alt="sponsors">
         <img src="./img/sponsor1.png" alt="sponsors">
         <img src="./img/sponsor3.png" alt="sponsors">
-        
+
     </section>
+    
+      
     <section id="productDescription">
-        
+
         <div class="watchImg">
-        <img id="welcomeImg" src="./img/Conscience2.jpg" alt="rolex missing">
+            <img id="welcomeImg" src="./img/Conscience2.jpg" alt="rolex missing">
 
         </div>
         <div class="contentForCompany">
             <h1>About our Goal</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, explicabo accusamus. Voluptate excepturi possimus ex distinctio alias nam iusto architecto. Eveniet dignissimos expedita, autem at ipsa illum alias exercitationem aliquam sint molestias maiores accusamus eius tenetur dolore impedit perspiciatis, assumenda ab pariatur aut, iusto iste laboriosam commodi? Quo, quam ipsa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, explicabo accusamus. Voluptate
+                excepturi possimus ex distinctio alias nam iusto architecto. Eveniet dignissimos expedita, autem at ipsa
+                illum alias exercitationem aliquam sint molestias maiores accusamus eius tenetur dolore impedit
+                perspiciatis, assumenda ab pariatur aut, iusto iste laboriosam commodi? Quo, quam ipsa.</p>
         </div>
     </section>
+
     <div id="desktopForWatches">
-    <section id="sellingWatch">
-        <h1 class="donationName">Support Red Cross</h1>
-        <p class="solded">Sold <span>1000</span> STK</p>
-        <div class="watch">
-            <img src="./img/MontlyWatch.png" alt="watchImg">
-            <p>See Details</p>
-        </div>
-        <p class="purposeForWatch">Purpose: Clotches for homeless</p>
-        <p class="priceForWatch">999 kr</p>
-        <div class="btn buyNow">Buy Now</div>
-    </section>
-    <section id="market">
-        <h1>Previous Watches</h1>
-    </section>
+        <section id="sellingWatch">
+            <h1 class="donationName">Support Red Cross</h1>
+            <p class="solded">Sold <span>1000</span> STK</p>
+            <div class="watch">
+                <img src="./img/MontlyWatch.png" alt="watchImg">
+                <p>See Details</p>
+            </div>
+            <p class="purposeForWatch">Purpose: Clotches for homeless</p>
+            <p class="priceForWatch">999 kr</p>
+            <div class="btn buyNow">Buy Now</div>
+        </section>
+        <section id="market">
+            <h1>Previous Watches</h1>
+        </section>
     </div>
     <footer>
         <div class="about">
-            <span><p>About us</p></span>
+            <span>
+                <p>About us</p>
+            </span>
             <p>About Us</p>
             <p>Visit Our Showroom</p>
             <p>FAQS</p>
@@ -83,13 +101,17 @@
             <p>Refer a Friend</p>
         </div>
         <div class="contact">
-            <span><p>Contact Us</p></span>
+            <span>
+                <p>Contact Us</p>
+            </span>
             <p>By Telephone</p>
             <p>By Email</p>
             <p>Report a bug</p>
         </div>
         <div class="policies">
-            <span><p>Our Policies</p></span>
+            <span>
+                <p>Our Policies</p>
+            </span>
             <p>Delivery Policy</p>
             <p>Terms & Conditions</p>
             <p>Return Policy</p>
@@ -99,7 +121,9 @@
             <p>Cookie Settings</p>
         </div>
         <div class="paymentService">
-            <span><p>Payment Services</p></span>
+            <span>
+                <p>Payment Services</p>
+            </span>
             <p>Mastercard</p>
             <p>Visa</p>
             <p>MobilePay</p>
@@ -109,5 +133,3 @@
 </body>
 
 </html>
-
-

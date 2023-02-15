@@ -4,8 +4,9 @@
     --text: #f6d746;
     --Absent: #6f502a;
     --Extra: #3CAF7F;
-    --Font-Family: 'Quicksand', sans-serif;
+    --Font-Family: 'Abril Fatface', cursive;
     --Logo-Font: 'Herr Von Muellerhoff', cursive;
+    --New-Font:'Montserrat', sans-serif;
 }
 
 * {
@@ -80,7 +81,7 @@ nav {
     right: 0%;
     width: 50%;
     background-color: var(--Primary);
-    z-index: 99;
+    z-index: 22;
 }
 
 .navLinks {
@@ -90,7 +91,7 @@ nav {
     font-size: 18px;
     font-weight: bolder;
     text-decoration: none;
-    padding-bottom: 5%;
+    
 
 }
 
@@ -105,6 +106,7 @@ nav {
     color: var(--Primary);
     border-radius: 2px;
     background-color: var(--Secondary);
+    font-weight: 700;
 }
 
 #slideshow {
@@ -113,6 +115,77 @@ nav {
     position: relative;
 }
 
+#clock {
+    width: 20%;
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+    margin-top: 5%;
+    background-color: transparent;
+
+
+}
+.clock {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: 50px auto;
+  }
+  
+  .clock-face {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+    background: transparent;
+    left: 5%;
+  }
+  
+  .hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  .min-hand {
+    width: 40%;
+    left: 10%;
+  }
+  .hour-hand {
+    width: 30%;
+    left: 20%;
+  }
+  
+ 
+  
+  .second-hand {
+    top: 80%;
+    left: 35%;
+    width: 15%;
+    height: 2px;
+    background: red;
+    z-index: 10;
+  }
+  
+  .number {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 .slogan {
     position: absolute;
     background-color: transparent;
@@ -120,8 +193,12 @@ nav {
     width: 50%;
     text-align: center;
     font-size: 12px;
-    margin: 5% 25% 25%;
+    margin: 10% 25% 25% ;
     text-transform: capitalize;
+}
+.slogan h1{
+    letter-spacing: 2px;
+    
 }
 
 #videoHeader {
@@ -140,7 +217,17 @@ nav {
     height: 100%;
     z-index: -4;
 }
-
+  
+  #gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  }
+  
 #sponsors {
     width: 80%;
     display: flex;
@@ -187,6 +274,10 @@ nav {
     margin: 5%;
     text-transform: uppercase;
 }
+.contentForCompany p {
+    font-family: var(--New-Font);
+    font-weight: 700;
+}
 
 #sellingWatch {
     width: 50%;
@@ -230,6 +321,7 @@ nav {
 .watch {
     width: auto;
     margin: auto;
+    margin: 1em auto;
 }
 
 .watch img {
@@ -277,6 +369,7 @@ nav {
     position: relative;
     bottom: 0%;
     margin: auto;
+    cursor: pointer;
 }
 
 #market h1 {
@@ -304,7 +397,7 @@ nav {
     border: none;
     border-radius: 10px;
     height: 300px;
-
+    
 }
 
 .articleIMGContainer {
@@ -335,7 +428,7 @@ nav {
     width: 100vw;
     height: 100vh;
     background-color: white;
-    z-index: 22;
+    z-index: 122;
     position: fixed;
     top: 0;
     left: 0;
@@ -416,21 +509,53 @@ footer {
     color: var(--Secondary);
     background-color: var(--Primary);
 }
-
-footer div span p {
-    margin-bottom: 15px;
-}
-
 footer div span {
     text-transform: uppercase;
     font-weight: bold;
 }
+footer div p{
+    font-family: var(--New-Font);
+    font-weight: 700;
+}
+
+footer div span p {
+    margin-bottom: 15px;
+    font-family: var(--Font-Family);
+}
+
+
 
 .hide {
     display: none;
     z-index: -2;
 }
-
+#closeBtn{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 5%;
+    top: 5%;
+}
+.line{
+    width: 80%;
+    height: 2px;
+    background-color:var(--Secondary);
+    margin: 0 auto;
+    
+    
+}
+.lineLeft{
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: rotate(45deg);
+}
+.lineRight{
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: rotate(-45deg);
+}
 @media only screen and (min-width: 768px) {
     nav {
         height: 5em;
@@ -451,21 +576,22 @@ footer div span {
     #navContainer {
         position: relative;
         width: 50%;
-        background-color: var(--Primary);
-        z-index: 99;
+        z-index: 22;
         padding: 0;
+        top: 0%;
     }
 
     .navLinks {
         display: flex;
         flex-direction: row;
         font-size: 1em;
-        gap: 5em;
+        gap: 1em;
     }
 
     .navLinks a {
-        margin: 0;
-        padding: 1% 2%;
+        margin: auto;
+        padding: 1em 2em;
+        font-weight: normal;
     }
 
     .slogan {
@@ -570,7 +696,7 @@ footer div span {
         font-size: 12px;
         font-weight: 700;
         text-align: center;
-        margin:  0;
+        margin: 0;
         position: relative;
         left: 5px;
 
@@ -614,11 +740,13 @@ footer div span {
         text-transform: uppercase;
         color: var(--Secondary);
     }
-    #desktopForWatches{
+
+    #desktopForWatches {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5em;
     }
+
     #market {
         display: flex;
         flex-direction: row;
@@ -724,14 +852,14 @@ footer div span {
         color: var(--Secondary);
         background-color: var(--Primary);
     }
-    
+
     footer div span p {
         margin-bottom: 15px;
     }
-    
+
     footer div span {
         text-transform: uppercase;
         font-weight: bold;
     }
-    
+
 }
