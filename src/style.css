@@ -118,7 +118,7 @@ nav {
 #clock {
     width: 20%;
     position: absolute;
-    right: 15%;
+    right: 55%;
     bottom: 25%;
     margin-top: 5%;
     background-color: transparent;
@@ -217,6 +217,28 @@ nav {
     height: 100%;
     z-index: -4;
 }
+.supportBtn{
+    position: absolute;
+    color:var(--Primary);
+    padding: 0.5em;
+    background-color: var(--Secondary);
+    text-decoration: none;
+    
+    border-radius: 2px;
+    align-items: center;
+    left: 55%;
+    
+    bottom: 1em;
+    font-size: 1em;
+    font-family: var(--New-Font);
+    font-weight: 600;
+    z-index: 10;
+}
+.supportBtn:hover{
+    color: var(--Secondary);
+    background-color: var(--Primary);
+
+}
   
   #gradient {
     position: absolute;
@@ -227,25 +249,151 @@ nav {
     opacity: 0.5;
     background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
   }
-  
-#sponsors {
-    width: 80%;
+#HowItWorks{
     display: flex;
-    flex-direction: row;
+    width: 40%;
+    margin: 6em auto;
+    gap: 5em;
+    flex-direction: column;
+    background-color: var(--Primary);
+    padding: 1.5em;
+    
+}
+.steps{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    margin: auto;
-    margin: 10% auto;
+}
+.steps h1,h5{
+    display: inline-block;  
+    
+}
+.steps span{
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    align-items: center;
+    gap: 0.5em;
+}
+.steps p{
+    font-family: var(--New-Font);
+    font-weight: 700;
+    text-align: center;
 }
 
-#sponsors img {
-    width: 50px;
-    object-fit: contain;
-    z-index: 10
-}
+  .sponsorImg {
+    width: 5em; /* set the width to 2em for each image */
+    height: 5em;
+    margin-right: 0.1em; /* add some space between images */
+    position: absolute;
+    border-radius: 50%;
+    z-index: -2;
+    animation: slide 2s ease infinite;
+  }
+  .sponsorImgs {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+  }
+  
+  .sponsorImgs:nth-of-type(1) {
+    left: 0;
+    animation: slides1 5s linear infinite;
 
+  }
+  
+  .sponsorImgs:nth-of-type(2) {
+    left: 25%;
+    animation: slides2 5s linear infinite;
+
+  }
+  
+  .sponsorImgs:nth-of-type(3) {
+    left: 50%;
+    animation: slides3 5s linear infinite;
+
+  }
+  
+  .sponsorImgs:nth-of-type(4) {
+    left: 75%;
+    animation: slides4 5s linear infinite;
+
+  }
+  
+  @keyframes slides1 {
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+    }
+  }
+  @keyframes slides2 {
+    0% {
+        left: 25%;
+    }
+    75% {
+        left: 100%;
+    }
+    76%{
+        left: 0%;
+    }
+    100%{
+        left: 25%;
+    }
+  }
+  @keyframes slides3 {
+    0% {
+        left: 50%;
+
+    }
+    50% {
+        left: 100%;
+    }
+    51%{
+        left: 0%;
+    }
+    100%{
+        left: 50%;
+    }
+  }
+  @keyframes slides4 {
+    0% {
+        left: 75%;
+    }
+    25% {
+        left: 100%;  
+    }
+    26%{
+        left: 0%;
+    }
+    100%{
+        left: 75%;
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-7em); /* move first image to end of the slider */
+    }
+    50%{
+        transform: translateY(0em)
+    }
+    75%{
+        transform: translateX(-7em);
+    }
+    85%{
+        transform: translateX(14em);
+    }
+    100%{
+        transform: translateX(0);
+    }
+  }
 #productDescription {
     position: relative;
     width: 90%;
@@ -287,6 +435,14 @@ nav {
     flex-direction: column;
     justify-content: center;
 }
+.monthName{
+    position: absolute;
+    top: -3em;
+    color: var(--Secondary);
+    font-size: 1em;
+    font-family: var(--New-Font);
+    
+}
 
 .donationName {
     color: var(--Secondary);
@@ -294,13 +450,13 @@ nav {
     font-weight: 700;
     position: relative;
     top: 2%;
-    padding: 5px 10px;
+    left: -25%;
+    padding: 5px 1px;
     border-radius: 2px;
-    left: -26%;
     width: 150%;
     text-align: center;
-    margin: auto;
-    margin-top: 40px;
+    margin: 40px auto;
+    
 }
 
 .solded {
@@ -316,6 +472,11 @@ nav {
     text-align: center;
     color: var(--Secondary);
     margin: 10% auto;
+    font-family: var(--New-Font);
+    font-weight: 800;
+}
+.solded span{
+    margin: 0 5px;
 }
 
 .watch {
@@ -346,7 +507,8 @@ nav {
     color: var(--Secondary);
     text-align: center;
     padding: 5% 2% 0% 2%;
-    font-weight: 700;
+    font-family: var(--New-Font);
+    font-weight: 900;
 }
 
 .priceForWatch {
@@ -455,7 +617,7 @@ nav {
     font-size: 40px;
     position: relative;
     bottom: 2px;
-    color: var(--text);
+    color: var(--Primary);
 }
 
 .articlePrice {
@@ -566,6 +728,17 @@ footer div span p {
     top: 50%;
     transform: rotate(-45deg);
 }
+#sponsors{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100px;
+}
+.sponsorImgs{
+    width: 5em;
+    margin: 2em auto;
+    top: 0%;
+}
 @media only screen and (min-width: 768px) {
     nav {
         height: 5em;
@@ -607,6 +780,27 @@ footer div span p {
     .slogan {
         font-size: 2em;
     }
+    .supportBtn{
+    position: absolute;
+    color:var(--Primary);
+    padding: 1em;
+    background-color: var(--Secondary);
+    text-decoration: none;
+    
+    border-radius: 2px;
+    align-items: center;
+    left: 1em;
+    bottom: 15em;
+    font-size: 1em;
+    font-family: var(--New-Font);
+    font-weight: 600;
+    z-index: 10;
+}
+.supportBtn:hover{
+    color: var(--Secondary);
+    background-color: var(--Primary);
+
+}
 
     #videoHeader {
         max-width: 100%;
@@ -624,7 +818,35 @@ footer div span p {
         height: 20%;
         max-height: 50%;
     }
-
+    #HowItWorks{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: auto;
+    gap: 2em;
+}
+.steps{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.steps h1,h5{
+    display: inline-block;  
+    
+}
+.steps span{
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    align-items: center;
+    gap: 0.5em;
+}
+.steps p{
+    font-family: var(--New-Font);
+    font-weight: 700;
+}
+  
     #sponsors {
         gap: 5em;
     }
@@ -632,6 +854,26 @@ footer div span p {
     #sponsors img {
         width: 10em;
     }
+    @keyframes slide {
+        0% {
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-10em); /* move first image to end of the slider */
+        }
+        50%{
+            transform: translateY(0em)
+        }
+        75%{
+            transform: translateX(-13em);
+        }
+        85%{
+            transform: translateX(23em);
+        }
+        100%{
+            transform: translateX(0);
+        }
+      }
 
     #productDescription {
         display: flex;
@@ -661,7 +903,7 @@ footer div span p {
         width: 30%;
         margin: 0;
         left: 5em;
-        top: 0;
+        top: 3.5em;
     }
 
     .donationName {
@@ -830,7 +1072,7 @@ footer div span p {
     }
 
     .articlePrice {
-        color: var(--text);
+        color: var(--Primary);
         text-align: center;
         font-weight: 700;
         font-size: 12px;
@@ -843,11 +1085,117 @@ footer div span p {
     }
 
     .articleDonation {
-        color: var(--text);
+        color: var(--Primary);
         text-align: center;
         margin: auto;
         font-size: 12px;
     }
+    #sponsors {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      .overlaySposnors{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+      }
+      .sponsorImg {
+        width: 8em; /* set the width to 2em for each image */
+        height: 8em;
+        margin-right: 0.1em; /* add some space between images */
+        position: absolute;
+        border-radius: 50%;
+        z-index: -2;
+        animation: slide 10s ease infinite;
+      }
+      .sponsorImgs {
+        position: absolute;
+        top: 25%;
+        transform: translate(-50%, -50%);
+        left: 0;
+      }
+      
+      .sponsorImgs:nth-of-type(1) {
+        left: 0;
+        animation: slides1 5s linear infinite;
+
+      }
+      
+      .sponsorImgs:nth-of-type(2) {
+        left: 25%;
+        animation: slides2 5s linear infinite;
+
+      }
+      
+      .sponsorImgs:nth-of-type(3) {
+        left: 50%;
+        animation: slides3 5s linear infinite;
+
+      }
+      
+      .sponsorImgs:nth-of-type(4) {
+        left: 75%;
+        animation: slides4 5s linear infinite;
+
+      }
+      
+      @keyframes slides1 {
+        0%{
+            left: 0%;
+        }
+        100%{
+            left: 100%;
+        }
+      }
+      @keyframes slides2 {
+        0% {
+            left: 25%;
+        }
+        75% {
+            left: 100%;
+        }
+        76%{
+            left: 0%;
+        }
+        100%{
+            left: 25%;
+        }
+      }
+      @keyframes slides3 {
+        0% {
+            left: 50%;
+
+        }
+        50% {
+            left: 100%;
+        }
+        51%{
+            left: 0%;
+        }
+        100%{
+            left: 50%;
+        }
+      }
+      @keyframes slides4 {
+        0% {
+            left: 75%;
+        }
+        25% {
+            left: 100%;  
+        }
+        26%{
+            left: 0%;
+        }
+        100%{
+            left: 75%;
+        }
+      }
+      
 
     footer {
         padding: 5%;

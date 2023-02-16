@@ -25,28 +25,32 @@ let watchess = {
         img: "./img/watch2.png",
         donated: 'Red Cross DK',
         sales: '1.000 kr.',
-        project: ['./img/copdk.png', "./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        month: 'January',
 
     },
     2: {
         img: "./img/watch33.png",
         donated: "EU for Turkey",
         sales: "250 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        month: 'February',
 
     },
     3: {
         img: "./img/watch2.png",
         donated: "EU for Turkey",
         sales: "350 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        month: 'March',
 
     },
     4: {
         img: "./img/MontlyWatch.png",
         donated: "EU for Turkey",
         sales: "5 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"]
+        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        month: 'April',
 
     },
 }
@@ -73,6 +77,7 @@ function createMarketPlace() {
 
         let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticle], ['articleContainer'], '', '')
         let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
+        createElement('h5',imgContainer,'','','',['monthName'],'',watchess[key].month)
         createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
         let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
         createElement('div',contentContainer,'','','',['overlayContentContainer'],'','')
@@ -193,3 +198,17 @@ function playVideo() {
         video.currentTime = 0
     }, 8000)
 }
+
+
+const container = document.querySelector('#sponsors');
+const images = document.querySelectorAll('.sponsorImgs');
+
+setInterval(() => {
+  images.forEach(image => {
+    const rect = image.getBoundingClientRect();
+    if (image.style.left >= '100%') {
+      console.log('hi');
+    }
+    console.log(rect.right);
+  });
+}, 1000);
