@@ -845,6 +845,7 @@ footer div span p {
 .steps p{
     font-family: var(--New-Font);
     font-weight: 700;
+    text-align: start;
 }
   
     #sponsors {
@@ -1122,25 +1123,25 @@ footer div span p {
       
       .sponsorImgs:nth-of-type(1) {
         left: 0;
-        animation: slides1 5s linear infinite;
+        animation: slides1 20s linear infinite;
 
       }
       
       .sponsorImgs:nth-of-type(2) {
         left: 25%;
-        animation: slides2 5s linear infinite;
+        animation: slides2 20s linear infinite;
 
       }
       
       .sponsorImgs:nth-of-type(3) {
         left: 50%;
-        animation: slides3 5s linear infinite;
+        animation: slides3 20s linear infinite;
 
       }
       
       .sponsorImgs:nth-of-type(4) {
         left: 75%;
-        animation: slides4 5s linear infinite;
+        animation: slides4 20s linear infinite;
 
       }
       
