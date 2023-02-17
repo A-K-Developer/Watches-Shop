@@ -108,14 +108,32 @@ let body = document.getElementsByTagName('body')[0];
 
 function openArticle() {
     if (!body.contains(child)) {
+        let thingsProvided = ['Food, fuel, clean water and cash assistance to meet children and families most urgent needs.','Blankets, hygiene items, baby kits, trauma kits and bunker kits with toys and games to encourage play and learning.','Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.','Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.','Mental health support to children and their families, including individual and group therapy and social emotional learning curriculum.','Child protection services to ensure children and families remain together and separated children are reunited safely with their caregivers.']
+        let imges = ['../img/water-drops.svg','../img/boy-girl.svg','../img/stethoscope.svg','../img/lightbulb.svg','../img/hand-shake.svg','../img/girl-parent.svg']
+
+
         child = createElement('div', body, '', '', '', ['articlePage'], '');
         let closeBtn = createElement('div',child,'closeBtn','',['click',closeArticle],'','','');
          createElement('div',closeBtn,'','','',['line','lineLeft'],'','')
          createElement('div',closeBtn,'','','',['line','lineRight'],'','')
 
-        createElement('img',child,'','','','','','');
-        let sectionText = createElement('div',child,'','','','','','');
+         
+        createElement('img',child,'',['src','../img/sponsor1.png'],'',['partner'],'','');
+        let sectionText = createElement('div',child,'','','',['aboutTheCause'],'','');
+            createElement('h1',sectionText,'','','','','',"What is Conscience's Response in Afghanistan?");
+            createElement('p',sectionText,'','','','','','In Afghanistan, weve provided support to over 345,000 people, including nearly 173,000 children. Our teams our trained teams are working alongside local partners and the Ukraine government to provide lifesaving assistance, including the following: ')
+        let howWeHelp = createElement('div',child,'','','',['howWeHelp'],'','');
+        for(let i = 0 ; i< imges.length; i++){
+         let div = createElement('div',howWeHelp,'','','',['imgAndText'],'','')
 
+        createElement('img',div,'',['src',imges[i]],'',['howWeHelpImg'],'','');
+         createElement('p',div,'','','','','',thingsProvided[i]);
+
+        }
+            createElement('h5',howWeHelp,'','','','','','we collect 40000kr');
+        
+
+            
     }
 }
 function closeArticle(){
@@ -138,7 +156,10 @@ function showInfo(e) {
 
 function openBurgerMenu() {
     let navContainer = document.getElementById('navContainer')
+    let burgerBtn = document.getElementById('burgerBtn');
     // Get Nav Linkss and close them after Click
+    burgerBtn.classList.toggle('change');
+
     let navlinks = document.querySelectorAll('.navLinks');
     navlinks.forEach(x => {
         x.addEventListener('click', openBurgerMenu);
@@ -194,8 +215,8 @@ function createElement(type, parent, id, attributeArr,
 function playVideo() {
     let video = document.getElementById('videoHeader');
     video.autoplay = true;
+    video.play();
     setInterval(() => {
         video.currentTime = 0
     }, 8000)
 }
-

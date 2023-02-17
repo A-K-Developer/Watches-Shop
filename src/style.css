@@ -48,12 +48,6 @@ nav {
     transition: 0.4s;
 }
 
-.line {
-    width: 80%;
-    height: 2px;
-    background-color: var(--Secondary);
-    transition: 0.4s;
-}
 
 .line1 {
     position: absolute;
@@ -278,7 +272,7 @@ nav {
 .steps h1,
 h5 {
     display: inline-block;
-
+    font-size: 1.5em;
 }
 
 .steps span {
@@ -585,6 +579,7 @@ h5 {
 #market h1 {
     width: 100%;
     text-align: center;
+    margin-bottom: 2em;
 }
 
 #market {
@@ -607,6 +602,7 @@ h5 {
     border: none;
     border-radius: 10px;
     height: 300px;
+    margin-top: 3em;
 
 }
 
@@ -648,13 +644,54 @@ h5 {
 .articlePage {
     width: 100vw;
     height: 100vh;
+    max-width:100vw;
+    max-height: 100vh;
+    
     background-color: white;
     z-index: 122;
     position: fixed;
     top: 0;
     left: 0;
 }
+.partner{
+    width: 20%;
+    margin: 1.2em;
+}
+.articlePage h1{ 
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--Secondary);
 
+}
+.articlePage p{
+    padding: 1em;
+    text-align: center;
+    font-family: var(--New-Font);
+    font-weight: 700;
+}
+.howWeHelp{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+.imgAndText{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.imgAndText p{
+    font-size: 12px;
+}
+.howWeHelpImg{
+    width: 2em;
+}
+.howWeHelp h5{
+    width: 40%;
+    margin: auto;
+    color: var(--Secondary);
+}
 .namecontainer {
     background-color: var(--Absent);
     height: 20px;
@@ -756,10 +793,11 @@ footer div span p {
 #closeBtn {
     width: 40px;
     height: 40px;
-    position: fixed;
+    position: absolute;
     right: 5%;
     top: 5%;
 }
+
 
 .line {
     width: 80%;
