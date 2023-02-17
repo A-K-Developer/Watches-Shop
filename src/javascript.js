@@ -199,16 +199,3 @@ function playVideo() {
     }, 8000)
 }
 
-
-const container = document.querySelector('#sponsors');
-const images = document.querySelectorAll('.sponsorImgs');
-
-setInterval(() => {
-  images.forEach(image => {
-    const rect = image.getBoundingClientRect();
-    if (image.style.left >= '100%') {
-      console.log('hi');
-    }
-    console.log(rect.right);
-  });
-}, 1000);
