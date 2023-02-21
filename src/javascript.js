@@ -1,24 +1,46 @@
-const secondHand = document.querySelector('.second-hand');
-const minuteHand = document.querySelector('.min-hand');
-const hourHand = document.querySelector('.hour-hand');
 
-function setDate() {
-const now = new Date();
+function fixedNavBar(){
+    window.onscroll = () => {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let element = document.getElementsByTagName('nav')[0];
 
-const seconds = now.getSeconds();
-const secondsDegrees = ((seconds / 60) * 360) + 90;
-secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+        if(window.innerWidth < 768){
 
-const minutes = now.getMinutes();
-const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
-minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
-
-const hours = now.getHours();
-const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
-hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+            if(scrollTop > 100){
+                element.style.backgroundColor = '#d4d5d9';
+            }else if(scrollTop < 100){
+                element.style.backgroundColor = 'transparent'
+            }
+        }else{
+            if(scrollTop > 700){
+                element.style.backgroundColor = '#d4d5d9';
+            }else if(scrollTop <= 700){
+                element.style.backgroundColor = 'transparent'
+            }
+        }
+    }
 }
+fixedNavBar()
 
-setInterval(setDate, 1000);
+
+
+function animateSponsors(){
+
+    let imgArr = ['./img/sponsor2.png','./img/sponsor.png','./img/sponsor3.png','./img/sponsor1.png',]
+    let classArr = ['firstIcon', 'secondIcon', 'thirdIcon','fourthIcon']
+    let sposnorsContainer = document.querySelector('.slideshow-container')
+
+    for(let i = 0 ; i< imgArr.length; i++){
+        let imgContainer = createElement('div',sposnorsContainer,'','','',['mySlides',classArr[i]],'','');
+    createElement('img',imgContainer,'',['src',imgArr[i]],'','','','');
+    }
+}
+animateSponsors()
+animateSponsors()
+animateSponsors()
+
+
+
 
 let watchess = {
     1: {

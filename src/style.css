@@ -20,10 +20,12 @@ nav {
     padding: 0 5%;
     height: 5em;
     background-color: var(--Primary);
+    background-color: transparent;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
+    z-index: 310;
     top: 0;
 }
 
@@ -74,7 +76,6 @@ nav {
     top: 9%;
     right: 0%;
     width: 50%;
-    background-color: var(--Primary);
     z-index: 22;
 }
 
@@ -109,71 +110,7 @@ nav {
     position: relative;
 }
 
-#clock {
-    width: 20%;
-    position: absolute;
-    right: 55%;
-    bottom: 25%;
-    margin-top: 5%;
-    background-color: transparent;
 
-
-}
-
-.clock {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: relative;
-    margin: 50px auto;
-}
-
-.clock-face {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    border-radius: 50%;
-    background: transparent;
-    left: 5%;
-}
-
-.hand {
-    width: 50%;
-    height: 6px;
-    background: black;
-    position: absolute;
-    top: 50%;
-    transform-origin: 100%;
-    transform: rotate(90deg);
-    transition: all 0.05s;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-}
-
-.min-hand {
-    width: 40%;
-    left: 10%;
-}
-
-.hour-hand {
-    width: 30%;
-    left: 20%;
-}
-
-
-
-.second-hand {
-    top: 80%;
-    left: 35%;
-    width: 15%;
-    height: 2px;
-    background: red;
-    z-index: 10;
-}
 
 .number {
     position: absolute;
@@ -191,7 +128,7 @@ nav {
     width: 50%;
     text-align: center;
     font-size: 12px;
-    margin: 10% 25% 25%;
+    margin: 5% 25% 25%;
     text-transform: capitalize;
 }
 
@@ -218,21 +155,23 @@ nav {
 }
 
 .supportBtn {
-    position: absolute;
+    
     color: var(--Primary);
     padding: 0.5em;
     background-color: var(--Secondary);
     text-decoration: none;
 
     border-radius: 2px;
-    align-items: center;
-    left: 55%;
-
-    bottom: 1em;
-    font-size: 1em;
+    font-size: 0.7em;
     font-family: var(--New-Font);
     font-weight: 600;
     z-index: 10;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-50%);
 }
 
 .supportBtn:hover {
@@ -253,26 +192,28 @@ nav {
 
 #HowItWorks {
     display: flex;
-    width: 40%;
+    width: 50%;
     margin: 6em auto;
     gap: 5em;
     flex-direction: column;
-    background-color: var(--Primary);
-    padding: 1.5em;
+    padding: 2em;
 
 }
 
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 1em;
     flex-wrap: wrap;
+    position: relative;
+    background-color: var(--Primary);
+    padding: 1em;
+
 }
 
-.steps h1,
-h5 {
+.steps h1{
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .steps span {
@@ -287,124 +228,33 @@ h5 {
     font-family: var(--New-Font);
     font-weight: 700;
     text-align: center;
+    font-size: 0.8em;
+}
+.extraImgHowItWorks{
+    width: 100%;
 }
 
 .sponsorImg {
     width: 5em;
     /* set the width to 2em for each image */
     height: 5em;
-    margin-right: 0.1em;
+
     /* add some space between images */
     position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,50%);
     border-radius: 50%;
     z-index: -2;
-    animation: slide 2s ease infinite;
+    animation: slide 10s ease infinite;
 }
-
-.sponsorImgs {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 0;
-}
-
-.sponsorImgs:nth-of-type(1) {
-    left: 0;
-    animation: slides1 5s linear infinite;
-
-}
-
-.sponsorImgs:nth-of-type(2) {
-    left: 25%;
-    animation: slides2 5s linear infinite;
-
-}
-
-.sponsorImgs:nth-of-type(3) {
-    left: 50%;
-    animation: slides3 5s linear infinite;
-
-}
-
-.sponsorImgs:nth-of-type(4) {
-    left: 75%;
-    animation: slides4 5s linear infinite;
-
-}
-
-@keyframes slides1 {
-    0% {
-        left: 0%;
-    }
-
-    100% {
-        left: 100%;
-    }
-}
-
-@keyframes slides2 {
-    0% {
-        left: 25%;
-    }
-
-    75% {
-        left: 100%;
-    }
-
-    76% {
-        left: 0%;
-    }
-
-    100% {
-        left: 25%;
-    }
-}
-
-@keyframes slides3 {
-    0% {
-        left: 50%;
-
-    }
-
-    50% {
-        left: 100%;
-    }
-
-    51% {
-        left: 0%;
-    }
-
-    100% {
-        left: 50%;
-    }
-}
-
-@keyframes slides4 {
-    0% {
-        left: 75%;
-    }
-
-    25% {
-        left: 100%;
-    }
-
-    26% {
-        left: 0%;
-    }
-
-    100% {
-        left: 75%;
-    }
-}
-
 @keyframes slide {
     0% {
         transform: translateY(0);
     }
 
     25% {
-        transform: translateY(-7em);
-        /* move first image to end of the slider */
+        transform: translateY(-15em);
     }
 
     50% {
@@ -412,15 +262,124 @@ h5 {
     }
 
     75% {
-        transform: translateX(-7em);
+        transform: translateX(-8em);
     }
 
     85% {
-        transform: translateX(14em);
+        transform: translateX(11em);
     }
 
     100% {
         transform: translateX(0);
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+  }
+  .mySlides img{
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .mySlides {
+    position: relative;
+    width: 25%; 
+    height: 100%;
+  }
+  .firstIcon{
+    left: 0%;
+    animation: slides1 10s linear infinite;
+    animation-timing-function: linear;
+    will-change: transform;
+    z-index: 4;
+}
+.secondIcon {
+    left: 0;
+    animation: slides2 10s linear infinite;
+    animation-timing-function: linear;
+    will-change: transform;
+    z-index: 3;
+
+}
+.thirdIcon {
+    left: 0%;
+    animation: slides3 10s linear infinite;
+    animation-timing-function: linear;
+    will-change: transform;
+    z-index: 2;
+}
+.fourthIcon {
+    left: 0%;
+    animation: slides4 10s linear infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+
+    will-change: transform;
+}
+@keyframes slides4 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }   
+
+    25% {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    26% {
+        transform: translate3d(-300%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes slides3 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(200%, 0, 0);
+    }
+
+    51% {
+        transform: translate3d(-200%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+
+@keyframes slides2 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(300%, 0, 0);
+    }
+    76%{
+        transform: translate3d(-100%, 0, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+
+    }
+
+}
+@keyframes slides1 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(400%, 0, 0);
     }
 }
 
@@ -465,11 +424,14 @@ h5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    top: -4em;
 }
 
 .monthName {
     position: absolute;
     top: -3em;
+    left: 30%;
+    transform: translateX(-50%,50%);
     color: var(--Secondary);
     font-size: 1em;
     font-family: var(--New-Font);
@@ -487,25 +449,27 @@ h5 {
     border-radius: 2px;
     width: 150%;
     text-align: center;
-    margin: 40px auto;
+    margin: auto;
+    margin-top: 10px;
 
 }
 
 .solded {
-    width: 50%;
+    width: 100%;
     position: relative;
     top: 3%;
     left: 2%;
     padding: 5px 10px;
-    background-color: var(--Primary);
     border-radius: 2px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 0.7em;
     text-align: center;
     color: var(--Secondary);
-    margin: 10% auto;
+    margin: 1% auto;
     font-family: var(--New-Font);
     font-weight: 800;
+    display: flex;
+    gap: 1em;
 }
 
 .solded span {
@@ -575,11 +539,28 @@ h5 {
     font-weight: 700;
 
 }
+.sellingDetails{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 3em;
+}
+.sellingDetails img{
+    width: 100%;
+}
+.sellingDetails p{
+    font-family: var(--New-Font);
+    font-weight: 700;
+    text-align: center;
+}
 
 #market h1 {
     width: 100%;
     text-align: center;
     margin-bottom: 2em;
+    color: var(--Secondary);
 }
 
 #market {
@@ -822,18 +803,7 @@ footer div span p {
     transform: rotate(-45deg);
 }
 
-#sponsors {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    height: 100px;
-}
 
-.sponsorImgs {
-    width: 5em;
-    margin: 2em auto;
-    top: 0%;
-}
 
 @media only screen and (min-width: 768px) {
     nav {
@@ -886,12 +856,12 @@ footer div span p {
 
         border-radius: 2px;
         align-items: center;
-        left: 1em;
-        bottom: 15em;
+        width: 150px;
         font-size: 1em;
         font-family: var(--New-Font);
         font-weight: 600;
         z-index: 10;
+        top: 80%;
     }
 
     .supportBtn:hover {
@@ -899,7 +869,7 @@ footer div span p {
         background-color: var(--Primary);
 
     }
-
+   
     #videoHeader {
         max-width: 100%;
         object-fit: cover;
@@ -930,6 +900,9 @@ footer div span p {
         flex-direction: column;
         gap: 5px;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        padding: 2em;
     }
 
     .steps h1,
@@ -966,7 +939,8 @@ footer div span p {
         }
 
         25% {
-            transform: translateY(-10em);
+            transform: translateY(-21em);
+            
             /* move first image to end of the slider */
         }
 
@@ -975,11 +949,11 @@ footer div span p {
         }
 
         75% {
-            transform: translateX(-13em);
+            transform: translateX(-18em);
         }
 
         85% {
-            transform: translateX(23em);
+            transform: translateX(15em);
         }
 
         100% {
@@ -1014,7 +988,7 @@ footer div span p {
     #sellingWatch {
         width: 30%;
         margin: 0;
-        left: 5em;
+        left: 15em;
         top: 3.5em;
     }
 
@@ -1028,22 +1002,22 @@ footer div span p {
         width: 100%;
         text-align: center;
         margin: 0;
-        margin-top: 80px;
+        margin-top: 30px;
     }
 
     .solded {
         width: 50%;
         position: relative;
-        top: 1%;
-        left: 2%;
-        padding: 5px 10px;
-        background-color: var(--Primary);
         border-radius: 2px;
         text-transform: uppercase;
         font-size: 12px;
         text-align: center;
         color: var(--Secondary);
-        margin: 0 auto;
+        margin: 1em auto;
+        display: flex;
+        gap: 1em;
+        left: 3em;
+        top: -1em;
     }
 
     .watch img {
@@ -1109,17 +1083,45 @@ footer div span p {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5em;
+        position: relative;
+        top: 5em;
+        gap: 5em;
+        justify-content: space-between;
     }
-
+    .sellingDetails{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        position: relative;
+        top: 5em;
+        padding: 1.5em 5em;
+        
+    }
+    .sellingDetails img{
+        width: 70%;
+        margin: auto;
+    }
+    .sellingDetails p{
+        font-family: var(--New-Font);
+        font-weight: 700;
+    }
+    .projects{
+        display: flex;
+        gap: 2em;
+    }
     #market {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin: 0;
-        gap: 1em;
-        width: 60%;
+        margin: auto;
+        gap: 5em;
+        width: 80%;
+        height: 100vh;
+        position: relative;
+        top: 9em;
 
     }
 
@@ -1128,6 +1130,7 @@ footer div span p {
         text-align: center;
         line-height: 1.8em;
         position: relative;
+        bottom: 10em;
         background-color: var(--Secondary);
         border: none;
         border-radius: 10px;
@@ -1145,7 +1148,7 @@ footer div span p {
     .articleImg {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .detailsContainer {
@@ -1202,14 +1205,6 @@ footer div span p {
         margin: auto;
         font-size: 12px;
     }
-
-    #sponsors {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-    }
-
     .overlaySposnors {
         width: 100%;
         height: 100%;
@@ -1218,115 +1213,27 @@ footer div span p {
         left: 0;
 
     }
-
     .sponsorImg {
         width: 8em;
         /* set the width to 2em for each image */
         height: 8em;
-        margin-right: 0.1em;
+        left: 30%;
         /* add some space between images */
+        
         position: absolute;
         border-radius: 50%;
         z-index: -2;
         animation: slide 10s ease infinite;
     }
+      .mySlides img{
+        width: 35%;
+      }
+    
+      .mySlides {
+        width: 100%; 
+      }
 
-    .sponsorImgs {
-        position: absolute;
-        top: 25%;
-        transform: translate(-50%, -50%);
-        left: 0;
-    }
-
-    .sponsorImgs:nth-of-type(1) {
-        left: 0;
-        animation: slides1 20s linear infinite;
-
-    }
-
-    .sponsorImgs:nth-of-type(2) {
-        left: 25%;
-        animation: slides2 20s linear infinite;
-
-    }
-
-    .sponsorImgs:nth-of-type(3) {
-        left: 50%;
-        animation: slides3 20s linear infinite;
-
-    }
-
-    .sponsorImgs:nth-of-type(4) {
-        left: 75%;
-        animation: slides4 20s linear infinite;
-
-    }
-
-    @keyframes slides1 {
-        0% {
-            left: 0%;
-        }
-
-        100% {
-            left: 100%;
-        }
-    }
-
-    @keyframes slides2 {
-        0% {
-            left: 25%;
-        }
-
-        75% {
-            left: 100%;
-        }
-
-        76% {
-            left: 0%;
-        }
-
-        100% {
-            left: 25%;
-        }
-    }
-
-    @keyframes slides3 {
-        0% {
-            left: 50%;
-
-        }
-
-        50% {
-            left: 100%;
-        }
-
-        51% {
-            left: 0%;
-        }
-
-        100% {
-            left: 50%;
-        }
-    }
-
-    @keyframes slides4 {
-        0% {
-            left: 75%;
-        }
-
-        25% {
-            left: 100%;
-        }
-
-        26% {
-            left: 0%;
-        }
-
-        100% {
-            left: 75%;
-        }
-    }
-
+    
 
     footer {
         padding: 5%;
