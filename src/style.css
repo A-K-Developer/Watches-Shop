@@ -14,7 +14,140 @@
     margin: 0;
     font-family: var(--Font-Family);
 }
+html {
+    scroll-behavior: smooth;
+  }
+  #clock{
+    position: absolute;
 
+    width: 100px;
+    height: 100px;;
+    top: 60%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+}
+.clock {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    opacity: 1;
+}
+
+.backgroundWatch{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+}
+.backgroundWatch img{
+    width: 80%;
+}
+.frame{
+    width: 100%;
+
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+}
+.frame img{
+    width: 100%;
+
+}
+.clock-face {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+    background: transparent;
+    left: -0.5em;
+    top: 0.5em;
+    z-index: 10;
+    transform-origin: center center;
+}
+
+.hand {
+    position: absolute;
+    top: 50%;
+    transform-origin: 0 50%;
+    transform: rotate(-90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.hour-hand {
+    position: absolute;
+    width: 3.5em;
+    height: 0.3em;
+    background-image: url(../img/pilStor.png);
+    background-position: left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    left: 50%;
+    top: 50%;
+    margin-top: -0.2em;
+    margin-left: 0.2em; /* Adjust for the half-width of the element */
+    transform: rotate(90deg);
+}
+.hour-hand.rotated {
+    transform: rotate(30deg);
+}
+.min-hand {
+    position: absolute;
+    width: 2.5em;
+    height: 0.5em;
+    background-image: url(../img/pilLille.png);
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: right center;
+    left: 45%;
+    top: 49%;
+    z-index: 22;
+
+    margin-top: -3px;
+    margin-left: -2em; /* Adjust for the full width of the element */
+    transform: rotate(0deg);
+}
+
+.min-hand.rotated {
+    transform: rotate(90deg); /* rotate the element 90 degrees */
+}
+.second-hand {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 40%;
+    height: 4px;
+    z-index: 3s;
+    background-image: url(../img/pilTilLilleUrskive.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: right center;
+    margin-left: -1.9em; /* Adjust for the half-width of the element */
+    transform: rotate(0deg);
+}
+.second-hand.rotated {
+    transform: rotate(6deg);
+}
+
+.clock-face h3{
+    color: var(--Secondary);
+    font-family: var(--Logo-Font);
+    font-size: 1.0em;
+    z-index: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 nav {
     width: 90%;
     padding: 0 5%;
@@ -293,14 +426,14 @@ nav {
   }
   .firstIcon{
     left: 0%;
-    animation: slides1 10s linear infinite;
+    animation: slides1 20s linear infinite;
     animation-timing-function: linear;
     will-change: transform;
     z-index: 4;
 }
 .secondIcon {
     left: 0;
-    animation: slides2 10s linear infinite;
+    animation: slides2 20s linear infinite;
     animation-timing-function: linear;
     will-change: transform;
     z-index: 3;
@@ -308,14 +441,14 @@ nav {
 }
 .thirdIcon {
     left: 0%;
-    animation: slides3 10s linear infinite;
+    animation: slides3 20s linear infinite;
     animation-timing-function: linear;
     will-change: transform;
     z-index: 2;
 }
 .fourthIcon {
     left: 0%;
-    animation: slides4 10s linear infinite;
+    animation: slides4 20s linear infinite;
     animation-timing-function: linear;
     z-index: 1;
 
@@ -802,14 +935,18 @@ footer div span p {
     top: 50%;
     transform: rotate(-45deg);
 }
-
-
+#clock{
+    width: 100px;
+    height: 100px;
+}
 
 @media only screen and (min-width: 768px) {
     nav {
         height: 5em;
     }
-
+    #clock{
+        display: block;
+    }
     #companyName {
         color: var(--Secondary);
         font-size: 5em;
@@ -1256,6 +1393,139 @@ footer div span p {
     footer div span {
         text-transform: uppercase;
         font-weight: bold;
+    }
+    #clock{
+        position: absolute;
+
+        width: 200px;
+        height: 200px;;
+        top: 65%;
+        left: 50%;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+    }
+    .clock {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: relative;
+        opacity: 1;
+    }
+    
+    .backgroundWatch{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 55%;
+        left: 55%;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+    }
+    .backgroundWatch img{
+        width: 80%;
+    }
+    .frame{
+        width: 100%;
+    
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    
+    }
+    .frame img{
+        width: 100%;
+    
+    }
+    .clock-face {
+        position: relative;
+        width: 85%;
+        height: 80%;
+        margin: auto;
+        border-radius: 50%;
+        background: transparent;
+        left: -0.5em;
+        top: 0.5em;
+        z-index: 10;
+        transform-origin: center center;
+    }
+    
+    .hand {
+        position: absolute;
+        top: 50%;
+        transform-origin: 0 50%;
+        transform: rotate(-90deg);
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+    .hour-hand {
+        position: absolute;
+        width: 3.5em;
+        height: 20px;
+        background-image: url(../img/pilStor.png);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: 10% center;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        margin-top: -0.5em;
+        margin-left: -0.5em; /* Adjust for the half-width of the element */
+        transform: rotate(90deg);
+    }
+    .hour-hand.rotated {
+        transform: rotate(30deg);
+    }
+    .min-hand {
+        position: absolute;
+        width: 4em;
+        height: 10px;
+        background-image: url(../img/pilLille.png);
+        background-position: right center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: 90% center;
+
+        left: 49%;
+        top: 50%;
+        z-index: 122;
+        margin-top: -0px;
+        margin-left: -3.8em; /* Adjust for the full width of the element */
+        transform: rotate(0deg);
+    }
+    
+    .min-hand.rotated {
+        transform: rotate(90deg); /* rotate the element 90 degrees */
+    }
+    .second-hand {
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        width: 40%;
+        height: 0.6em;
+        z-index: 3s;
+        background-image: url(../img/pilTilLilleUrskive.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: 90% center;
+        margin-top: 0.2em;  
+        margin-left: -4em; /* Adjust for the half-width of the element */
+        transform: rotate(0deg);
+    }
+    .second-hand.rotated {
+        transform: rotate(6deg);
+    }
+    
+    .clock-face h3{
+        color: var(--Secondary);
+        font-family: var(--Logo-Font);
+        font-size: 1.0em;
+        z-index: 0;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
 }

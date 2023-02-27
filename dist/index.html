@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conscience</title>
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="../src/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +22,14 @@
         </div>
         <div id="navContainer" class="hide navLinks">
             <a href="#slideshow">Home</a>
-            <a href="#productDescription">About</a>
+            <a href="#productDescription" >About</a>
             <a href="#sellingWatch">Monthly Watch</a>
             <a href="#market">Privious Watches</a>
         </div>
     </nav>
-    <section id="slideshow">
+    <section id="slideshow" class="nav-animation">
         <video id="videoHeader" autoplay>
-            <source src="./img/HungryKids.mp4" type="video/mp4">
+            <source src="../img/HungryKids.mp4" type="video/mp4">
             
           </video>
         
@@ -38,38 +38,56 @@
             
         </div>
         <div class="opacityVideo"></div>
+        <div id="clock">
+            
+        
+        <div class="clock">
+            <div class="backgroundWatch">
+                <img src="../img/stor-urskive.png" alt="watch frame">
+            </div>
+            <div class="frame">
+                <img src="../img/urFrame.png" alt="watch frame">
+            </div>
+            <div class="clock-face">
+                <h3>Conscience</h3>
+              <div class="hand hour-hand"></div>
+              <div class="hand min-hand"></div>
+              <div class="hand second-hand"></div>
+            </div>
+          </div>
+        </div>
         <a href="#desktopForWatches" class="supportBtn">Support the cause</a>
         
     </section>
     
     <section id="HowItWorks">
         <div class="steps">
-            <img src="./img/sponsor2.png" class="sponsorImg" alt="sponsors">
+            <img src="../img/sponsor2.png" class="sponsorImg" alt="sponsors">
             <span><h1>1</h1><h1>We choose a cause</h1></span>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus non dolores optio velit nemo quisquam quae officiis alias omnis. Sed?</p>
-            <img class="extraImgHowItWorks" src="./img/pexels-lisa-fotios-705868.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src="../img/pexels-lisa-fotios-705868.jpg" alt="pexel img">
         </div>
         <div class="steps">
-            <img src="./img/sponsor.png" class="sponsorImg" alt="sponsors">
+            <img src="../img/sponsor.png" class="sponsorImg" alt="sponsors">
             <span><h1>2</h1><h1>We design the Watch</h1></span>
             
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus non dolores optio velit nemo quisquam quae officiis alias omnis. Sed?</p>
-            <img class="extraImgHowItWorks" src="./img/pexels-allan-mas-5368943.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src="../img/pexels-allan-mas-5368943.jpg" alt="pexel img">
 
         </div>
         <div class="steps">
-          <img src="./img/sponsor3.png" class="sponsorImg" alt="sponsors">
+          <img src="../img/sponsor3.png" class="sponsorImg" alt="sponsors">
             <span><h1>3</h1><h1>Your Help makes dream come true</h1></span>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus non dolores optio velit nemo quisquam quae officiis alias omnis. Sed?</p>
-            <img class="extraImgHowItWorks" src="./img/weChooseCause.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src="../img/weChooseCause.jpg" alt="pexel img">
 
         </div>
     </section>
-    <div id="desktopForWatches">
+    <div id="desktopForWatches" class="nav-animation">
         <section id="sellingWatch">
             <h1 class="donationName">Support Red Cross</h1>
             <div class="watch">
-                <img src="./img/MontlyWatch.png" alt="watchImg">
+                <img src="../img/MontlyWatch.png" alt="watchImg">
             </div>
             <div class="solded">
                 <div class="sells">
@@ -93,7 +111,7 @@
             <div class="btn buyNow">Buy Now</div>
         </section>
         <section class="sellingDetails">
-            <img src="./img/redcross.png" alt="redcross missing">
+            <img src="../img/redcross.png" alt="redcross missing">
             <p>Welcome to our monthly watch program, where we are partnering with Red Cross to support important causes around the world. With every watch you purchase, you'll not only add a stylish timepiece to your collection, but you'll also be contributing to a worthy cause.</p>
             <p>We believe in making a difference, and that's why we've committed to supporting different causes every month. Based on the number of watches sold, we will donate a portion of our proceeds to a specific cause. When you purchase between 50-100 watches, we will support one cause, and when you purchase between 100-200 watches, we'll support a second cause. And for those who purchase over 200 watches, we'll have a special limited edition watch available, and all proceeds from those sales will go towards the third cause.</p>
             <div class="projects">
@@ -120,7 +138,7 @@
     <section id="productDescription">
 
         <div class="watchImg">
-            <img id="welcomeImg" src="./img/Conscience2.jpg" alt="rolex missing">
+            <img id="welcomeImg" src="../img/Conscience2.jpg" alt="rolex missing">
 
         </div>
         <div class="contentForCompany">
@@ -177,7 +195,7 @@
             <p>MobilePay</p>
         </div>
     </footer>
-    <script src="./src/javascript.js"></script>
+    <script src="../dist/bundle.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,27 @@
+const secondHand = document.querySelector('.second-hand');
+const minuteHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
+
+function setDate() {
+const now = new Date();
+
+const seconds = now.getSeconds();
+const secondsDegrees = ((seconds / 60) * 360) + 90;
+secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+const minutes = now.getMinutes();
+const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 5) + 90;
+minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+const hours = now.getHours();
+const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 268;
+hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+}
+
+setInterval(setDate, 1000);
+
+
+
 
 function fixedNavBar(){
     window.onscroll = () => {
@@ -26,7 +50,7 @@ fixedNavBar()
 
 function animateSponsors(){
 
-    let imgArr = ['./img/sponsor2.png','./img/sponsor.png','./img/sponsor3.png','./img/sponsor1.png',]
+    let imgArr = ['../img/sponsor2.png','../img/sponsor.png','../img/sponsor3.png','../img/sponsor1.png',]
     let classArr = ['firstIcon', 'secondIcon', 'thirdIcon','fourthIcon']
     let sposnorsContainer = document.querySelector('.slideshow-container')
 
@@ -36,42 +60,41 @@ function animateSponsors(){
     }
 }
 animateSponsors()
-animateSponsors()
-animateSponsors()
+
 
 
 
 
 let watchess = {
     1: {
-        img: "./img/watch2.png",
+        img: "../img/watch2.png",
         donated: 'Red Cross DK',
         sales: '1.000 kr.',
-        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        project: ['../img/copdk.png', "../img/kclogo1.png"],
         month: 'January',
 
     },
     2: {
-        img: "./img/watch33.png",
+        img: "../img/watch33.png",
         donated: "EU for Turkey",
         sales: "250 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        project: ['../img/copdk.png', "../img/kclogo1.png"],
         month: 'February',
 
     },
     3: {
-        img: "./img/watch2.png",
+        img: "../img/watch2.png",
         donated: "EU for Turkey",
         sales: "350 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        project: ['../img/copdk.png', "../img/kclogo1.png"],
         month: 'March',
 
     },
     4: {
-        img: "./img/MontlyWatch.png",
+        img: "../img/MontlyWatch.png",
         donated: "EU for Turkey",
         sales: "5 kr.",
-        project: ['./img/copdk.png', "./img/kclogo1.png"],
+        project: ['../img/copdk.png', "../img/kclogo1.png"],
         month: 'April',
 
     },
