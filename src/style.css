@@ -1478,8 +1478,8 @@ footer div span p {
     }
     .min-hand {
         position: absolute;
-        width: 4em;
-        height: 10px;
+        width: 5em;
+        height: 3em;
         background-image: url(../img/pilLille.png);
         background-position: right center;
         background-size: contain;
@@ -1489,8 +1489,8 @@ footer div span p {
         left: 49%;
         top: 50%;
         z-index: 122;
-        margin-top: -0px;
-        margin-left: -3.8em; /* Adjust for the full width of the element */
+        margin-top: -1.2em;
+        margin-left: -4.5em; /* Adjust for the full width of the element */
         transform: rotate(0deg);
     }
     

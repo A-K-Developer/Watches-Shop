@@ -1,44 +1,44 @@
-const secondHand = document.querySelector('.second-hand');
-const minuteHand = document.querySelector('.min-hand');
-const hourHand = document.querySelector('.hour-hand');
+export function setDate() {
+    const secondHand = document.querySelector('.second-hand');
+    const minuteHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
 
-function setDate() {
-const now = new Date();
+    const now = new Date();
 
-const seconds = now.getSeconds();
-const secondsDegrees = ((seconds / 60) * 360) + 90;
-secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    const seconds = now.getSeconds();
+    const secondsDegrees = ((seconds / 60) * 360) + 90;
+    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-const minutes = now.getMinutes();
-const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 5) + 90;
-minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+    const minutes = now.getMinutes();
+    const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 5) + 90;
+    minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
-const hours = now.getHours();
-const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 268;
-hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    const hours = now.getHours();
+    const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 268;
+    hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 }
 
-setInterval(setDate, 1000);
 
 
 
 
-function fixedNavBar(){
+
+function fixedNavBar() {
     window.onscroll = () => {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         let element = document.getElementsByTagName('nav')[0];
 
-        if(window.innerWidth < 768){
+        if (window.innerWidth < 768) {
 
-            if(scrollTop > 100){
+            if (scrollTop > 100) {
                 element.style.backgroundColor = '#d4d5d9';
-            }else if(scrollTop < 100){
+            } else if (scrollTop < 100) {
                 element.style.backgroundColor = 'transparent'
             }
-        }else{
-            if(scrollTop > 700){
+        } else {
+            if (scrollTop > 700) {
                 element.style.backgroundColor = '#d4d5d9';
-            }else if(scrollTop <= 700){
+            } else if (scrollTop <= 700) {
                 element.style.backgroundColor = 'transparent'
             }
         }
@@ -48,15 +48,15 @@ fixedNavBar()
 
 
 
-function animateSponsors(){
+function animateSponsors() {
 
-    let imgArr = ['../img/sponsor2.png','../img/sponsor.png','../img/sponsor3.png','../img/sponsor1.png',]
-    let classArr = ['firstIcon', 'secondIcon', 'thirdIcon','fourthIcon']
+    let imgArr = ['../img/sponsor2.png', '../img/sponsor.png', '../img/sponsor3.png', '../img/sponsor1.png', ]
+    let classArr = ['firstIcon', 'secondIcon', 'thirdIcon', 'fourthIcon']
     let sposnorsContainer = document.querySelector('.slideshow-container')
 
-    for(let i = 0 ; i< imgArr.length; i++){
-        let imgContainer = createElement('div',sposnorsContainer,'','','',['mySlides',classArr[i]],'','');
-    createElement('img',imgContainer,'',['src',imgArr[i]],'','','','');
+    for (let i = 0; i < imgArr.length; i++) {
+        let imgContainer = createElement('div', sposnorsContainer, '', '', '', ['mySlides', classArr[i]], '', '');
+        createElement('img', imgContainer, '', ['src', imgArr[i]], '', '', '', '');
     }
 }
 animateSponsors()
@@ -100,16 +100,16 @@ let watchess = {
     },
 }
 
-playVideo()
 createMarketPlace()
-buyBtnAction();
+
+/*
 const video = document.getElementById("videoHeader");
 const gradient = document.createElement("div");
 gradient.id = "gradient";
 video.parentNode.insertBefore(gradient, video);
 
-
-function buyBtnAction() {
+ */
+export function buyBtnAction() {
     let buyBtn = document.querySelector('.buyNow');
     buyBtn.addEventListener('click', () => {
         window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
@@ -122,10 +122,10 @@ function createMarketPlace() {
 
         let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticle], ['articleContainer'], '', '')
         let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
-        createElement('h5',imgContainer,'','','',['monthName'],'',watchess[key].month)
+        createElement('h5', imgContainer, '', '', '', ['monthName'], '', watchess[key].month)
         createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
         let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
-        createElement('div',contentContainer,'','','',['overlayContentContainer'],'','')
+        createElement('div', contentContainer, '', '', '', ['overlayContentContainer'], '', '')
         let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
         createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
         createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
@@ -135,12 +135,12 @@ function createMarketPlace() {
         createElement('p', unitContainer, '', '', '', ['articleDonation'], '', '- Doneret til -');
         createElement('img', contentContainer, '', ['src', watchess[key].project[0]], '', ['priviusDonationIMg'], '', '')
         createElement('img', contentContainer, '', ['src', watchess[key].project[1]], '', ['priviusDonationIMg'], '', '')
-        
+
         let children = contentContainer.children;
 
-        for(let i =0 ; i < children.length ; i++){
+        for (let i = 0; i < children.length; i++) {
             let classLists = children[i].classList;
-            if(!classLists.contains('overlayContentContainer')){
+            if (!classLists.contains('overlayContentContainer')) {
                 children[i].style.position = 'relative';
                 children[i].style.zIndex = 22;
             }
@@ -153,40 +153,42 @@ let body = document.getElementsByTagName('body')[0];
 
 function openArticle() {
     if (!body.contains(child)) {
-        let thingsProvided = ['Food, fuel, clean water and cash assistance to meet children and families most urgent needs.','Blankets, hygiene items, baby kits, trauma kits and bunker kits with toys and games to encourage play and learning.','Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.','Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.','Mental health support to children and their families, including individual and group therapy and social emotional learning curriculum.','Child protection services to ensure children and families remain together and separated children are reunited safely with their caregivers.']
-        let imges = ['../img/water-drops.svg','../img/boy-girl.svg','../img/stethoscope.svg','../img/lightbulb.svg','../img/hand-shake.svg','../img/girl-parent.svg']
+        let thingsProvided = ['Food, fuel, clean water and cash assistance to meet children and families most urgent needs.', 'Blankets, hygiene items, baby kits, trauma kits and bunker kits with toys and games to encourage play and learning.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Mental health support to children and their families, including individual and group therapy and social emotional learning curriculum.', 'Child protection services to ensure children and families remain together and separated children are reunited safely with their caregivers.']
+        let imges = ['../img/water-drops.svg', '../img/boy-girl.svg', '../img/stethoscope.svg', '../img/lightbulb.svg', '../img/hand-shake.svg', '../img/girl-parent.svg']
 
 
         child = createElement('div', body, '', '', '', ['articlePage'], '');
-        let closeBtn = createElement('div',child,'closeBtn','',['click',closeArticle],'','','');
-         createElement('div',closeBtn,'','','',['line','lineLeft'],'','')
-         createElement('div',closeBtn,'','','',['line','lineRight'],'','')
+        let closeBtn = createElement('div', child, 'closeBtn', '', ['click', closeArticle], '', '', '');
+        createElement('div', closeBtn, '', '', '', ['line', 'lineLeft'], '', '')
+        createElement('div', closeBtn, '', '', '', ['line', 'lineRight'], '', '')
 
-         
-        createElement('img',child,'',['src','../img/sponsor1.png'],'',['partner'],'','');
-        let sectionText = createElement('div',child,'','','',['aboutTheCause'],'','');
-            createElement('h1',sectionText,'','','','','',"What is Conscience's Response in Afghanistan?");
-            createElement('p',sectionText,'','','','','','In Afghanistan, weve provided support to over 345,000 people, including nearly 173,000 children. Our teams our trained teams are working alongside local partners and the Ukraine government to provide lifesaving assistance, including the following: ')
-        let howWeHelp = createElement('div',child,'','','',['howWeHelp'],'','');
-        for(let i = 0 ; i< imges.length; i++){
-         let div = createElement('div',howWeHelp,'','','',['imgAndText'],'','')
 
-        createElement('img',div,'',['src',imges[i]],'',['howWeHelpImg'],'','');
-         createElement('p',div,'','','','','',thingsProvided[i]);
+        createElement('img', child, '', ['src', '../img/sponsor1.png'], '', ['partner'], '', '');
+        let sectionText = createElement('div', child, '', '', '', ['aboutTheCause'], '', '');
+        createElement('h1', sectionText, '', '', '', '', '', "What is Conscience's Response in Afghanistan?");
+        createElement('p', sectionText, '', '', '', '', '', 'In Afghanistan, weve provided support to over 345,000 people, including nearly 173,000 children. Our teams our trained teams are working alongside local partners and the Ukraine government to provide lifesaving assistance, including the following: ')
+        let howWeHelp = createElement('div', child, '', '', '', ['howWeHelp'], '', '');
+        for (let i = 0; i < imges.length; i++) {
+            let div = createElement('div', howWeHelp, '', '', '', ['imgAndText'], '', '')
+
+            createElement('img', div, '', ['src', imges[i]], '', ['howWeHelpImg'], '', '');
+            createElement('p', div, '', '', '', '', '', thingsProvided[i]);
 
         }
-            createElement('h5',howWeHelp,'','','','','','we collect 40000kr');
-        
+        createElement('h5', howWeHelp, '', '', '', '', '', 'we collect 40000kr');
 
-            
+
+
     }
 }
-function closeArticle(){
-    if(body.contains(child)){
+
+function closeArticle() {
+    if (body.contains(child)) {
         child.remove()
     }
 }
-function buyNow(e) {
+
+export function buyNow(e) {
     if (e.target.textContent !== 'Sold') {
         let navBarSales = document.getElementById('navIcons');
         let lastChild = navBarSales.lastElementChild;
@@ -199,7 +201,7 @@ function showInfo(e) {
     content.classList.toggle('hide')
 }
 
-function openBurgerMenu() {
+export function openBurgerMenu() {
     let navContainer = document.getElementById('navContainer')
     let burgerBtn = document.getElementById('burgerBtn');
     // Get Nav Linkss and close them after Click
@@ -220,7 +222,7 @@ function openBurgerMenu() {
     }
 }
 
-function createElement(type, parent, id, attributeArr,
+export function createElement(type, parent, id, attributeArr,
     eventListenerArr, classArr, action, context, ) {
 
     let container = document.createElement(type);
@@ -257,7 +259,7 @@ function createElement(type, parent, id, attributeArr,
     return container
 }
 
-function playVideo() {
+export function playVideo() {
     let video = document.getElementById('videoHeader');
     video.autoplay = true;
     video.play();
@@ -265,4 +267,3 @@ function playVideo() {
         video.currentTime = 0
     }, 8000)
 }
-console.log('neeem');
