@@ -1,4 +1,10 @@
 import { initializeApp } from 'firebase/app';
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from 'firebase/firestore'
 
 
 const firebaseConfig = {
@@ -12,4 +18,22 @@ const firebaseConfig = {
 
 
   initializeApp(firebaseConfig)
-  
+
+
+const db = getFirestore();
+
+const colRef = collection(db, 'Front-endText')
+
+
+getDocs(colRef).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+
+
+        const data = doc.data()
+        console.log(data);
+    })
+}).catch(err => {
+    console.log(err.message);
+})
+
+

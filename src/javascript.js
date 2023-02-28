@@ -265,3 +265,4 @@ function playVideo() {
         video.currentTime = 0
     }, 8000)
 }
+console.log('neeem');
