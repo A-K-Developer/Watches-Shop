@@ -8,7 +8,6 @@
     --Logo-Font: 'Herr Von Muellerhoff', cursive;
     --New-Font: 'Montserrat', sans-serif;
 }
-
 * {
     padding: 0;
     margin: 0;
@@ -16,13 +15,12 @@
 }
 html {
     scroll-behavior: smooth;
-  }
-  #clock{
+}
+#clock{
     position: absolute;
-
     width: 100px;
     height: 100px;;
-    top: 60%;
+    top: 101%;
     left: 50%;
     z-index: 4;
     transform: translate(-50%, -50%);
@@ -49,15 +47,12 @@ html {
 }
 .frame{
     width: 100%;
-
     position: absolute;
     top: 0%;
     left: 0%;
-
 }
 .frame img{
     width: 100%;
-
 }
 .clock-face {
     position: relative;
@@ -71,7 +66,6 @@ html {
     z-index: 10;
     transform-origin: center center;
 }
-
 .hand {
     position: absolute;
     top: 50%;
@@ -82,8 +76,8 @@ html {
 }
 .hour-hand {
     position: absolute;
-    width: 3.5em;
-    height: 0.3em;
+    width:2em;
+    height: 2px;
     background-image: url(../img/pilStor.png);
     background-position: left center;
     background-size: cover;
@@ -91,17 +85,28 @@ html {
     transform-origin: left center;
     left: 50%;
     top: 50%;
-    margin-top: -0.2em;
+    margin-top: -0em;
     margin-left: 0.2em; /* Adjust for the half-width of the element */
     transform: rotate(90deg);
 }
 .hour-hand.rotated {
     transform: rotate(30deg);
 }
+
+#desktopForWatches {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5em;
+    position: relative;
+    top: 5em;
+    gap: 5em;
+    justify-content: space-between;
+}
 .min-hand {
     position: absolute;
-    width: 2.5em;
-    height: 0.5em;
+    width: 2.2em;
+    height: 0.3em;
     background-image: url(../img/pilLille.png);
     background-position: right center;
     background-size: cover;
@@ -111,11 +116,10 @@ html {
     top: 49%;
     z-index: 22;
 
-    margin-top: -3px;
-    margin-left: -2em; /* Adjust for the full width of the element */
+    margin-top: -5px;
+    margin-left: -1.4em; /* Adjust for the full width of the element */
     transform: rotate(0deg);
 }
-
 .min-hand.rotated {
     transform: rotate(90deg); /* rotate the element 90 degrees */
 }
@@ -123,7 +127,7 @@ html {
     position: absolute;
     top: 47%;
     left: 50%;
-    width: 40%;
+    width: 39%;
     height: 4px;
     z-index: 3s;
     background-image: url(../img/pilTilLilleUrskive.png);
@@ -131,22 +135,22 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     transform-origin: right center;
-    margin-left: -1.9em; /* Adjust for the half-width of the element */
+    margin-left: -1.8em; /* Adjust for the half-width of the element */
     transform: rotate(0deg);
 }
 .second-hand.rotated {
     transform: rotate(6deg);
 }
-
 .clock-face h3{
     color: var(--Secondary);
     font-family: var(--Logo-Font);
-    font-size: 1.0em;
+    font-size: 0.7em;
     z-index: 0;
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
+    letter-spacing: 0.2em;
 }
 nav {
     width: 90%;
@@ -161,39 +165,33 @@ nav {
     z-index: 310;
     top: 0;
 }
-
 #companyName {
     font-family: var(--Logo-Font);
     color: var(--Primary);
     font-size: 50px;
 }
-
 #burgerBtn {
     position: relative;
     width: 30px;
     height: 20px;
     display: flex;
     justify-content: center;
+    z-index: 100;
 }
-
 .line {
     width: 80%;
     height: 2px;
-    background-color: var(--Secondary);
+    background-color: var(--Primary);
     transition: 0.4s;
 }
-
-
 .line1 {
     position: absolute;
     top: 10%;
 }
-
 .line2 {
     position: absolute;
     bottom: 10%;
 }
-
 .change .line1 {
     -webkit-transform: rotate(45deg) translate(0px, 0px);
     transform: rotate(45deg) translate(2px, 2px);
@@ -206,10 +204,11 @@ nav {
 
 #navContainer {
     position: absolute;
-    top: 9%;
-    right: 0%;
+    top: 4.5em;
+    right: 0.1em;
+    border-radius: 1em;
     width: 50%;
-    z-index: 22;
+    z-index: 1;
 }
 
 .navLinks {
@@ -241,10 +240,8 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    margin-bottom: 10em;
 }
-
-
-
 .number {
     position: absolute;
     font-size: 20px;
@@ -256,26 +253,57 @@ nav {
 
 .slogan {
     position: absolute;
-    background-color: transparent;
     color: var(--Primary);
-    width: 50%;
+    width: 100%;
     text-align: center;
     font-size: 12px;
-    margin: 5% 25% 25%;
+    margin: 0;
     text-transform: capitalize;
 }
 
 .slogan h1 {
     letter-spacing: 2px;
-
+    text-align: center;
+}
+.sloganAni{
+    animation: sloganAni 2s ease none;
+    position: relative;
+    top: -3em;
+    opacity: 1;
 }
 
+@keyframes sloganAni {
+    0%{right: 100%;
+        opacity: 0;}
+    50%{
+        opacity: 0;
+    }
+    100%{right: 0%;
+    opacity: 1;}
+}
+.sloganAni2{
+    animation: sloganAni2 2s ease none;
+    position: relative;
+    top: -1.5em;
+    opacity: 1;
+}
+
+@keyframes sloganAni2 {
+    0%{left: 100%;
+        opacity: 0;}
+    50%{
+        opacity: 0;
+    }
+    100%{left: 0%;
+    opacity: 1;}
+}
 #videoHeader {
     position: relative;
     width: 100%;
-    max-height: 300px;
-    height: 100%;
+    height: 30em;
     z-index: -22;
+    background-position: center;
+    object-fit: cover;
 }
 
 .opacityVideo {
@@ -288,12 +316,10 @@ nav {
 }
 
 .supportBtn {
-    
     color: var(--Primary);
     padding: 0.5em;
     background-color: var(--Secondary);
     text-decoration: none;
-
     border-radius: 2px;
     font-size: 0.7em;
     font-family: var(--New-Font);
@@ -303,7 +329,7 @@ nav {
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 90%;
+    top: 80%;
     transform: translate(-50%,-50%);
 }
 
@@ -339,8 +365,11 @@ nav {
     gap: 1em;
     flex-wrap: wrap;
     position: relative;
+    justify-content: space-between;
+    min-height: 15em;
     background-color: var(--Primary);
     padding: 1em;
+    border-radius: 0.3em;
 
 }
 
@@ -375,7 +404,7 @@ nav {
     /* add some space between images */
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 30%;
     transform: translate(-50%,50%);
     border-radius: 50%;
     z-index: -2;
@@ -399,7 +428,7 @@ nav {
     }
 
     85% {
-        transform: translateX(11em);
+        transform: translateX(10em);
     }
 
     100% {
@@ -557,7 +586,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: -4em;
+    top: 0em;
 }
 
 .monthName {
@@ -760,9 +789,8 @@ nav {
     height: 100vh;
     max-width:100vw;
     max-height: 100vh;
-    
     background-color: white;
-    z-index: 122;
+    z-index: 999;
     position: fixed;
     top: 0;
     left: 0;
@@ -770,6 +798,9 @@ nav {
 .partner{
     width: 20%;
     margin: 1.2em;
+}
+.aboutTheCause{
+    padding: 2em;
 }
 .articlePage h1{ 
     font-size: 1.5em;
@@ -913,7 +944,7 @@ footer div span p {
 }
 
 
-.line {
+.closeLine {
     width: 80%;
     height: 2px;
     background-color: var(--Secondary);
@@ -1218,6 +1249,7 @@ footer div span p {
 
     #desktopForWatches {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         margin-bottom: 5em;
         position: relative;
@@ -1400,7 +1432,7 @@ footer div span p {
         width: 200px;
         height: 200px;;
         top: 87.5%;
-        left: 50%;
+        left: 51%;
         z-index: 4;
         transform: translate(-50%, -50%);
     }

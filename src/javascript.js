@@ -31,20 +31,44 @@ function fixedNavBar() {
         let element = document.getElementsByTagName('nav')[0];
         let navLinks = document.getElementById('navContainer');
         let logo = document.getElementById('companyName')
+        let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
+        var alinks = navLinks.querySelectorAll('a')
+alinks.forEach(x => x.addEventListener('click',()=>{element.style.display ='none'}))
+
 
 
         if (window.innerWidth < 768) {
 
-            if (scrollTop > 100) {
+            if (scrollTop > 500) {
+                element.style.display = 'flex'
                 element.style.backgroundColor = '#d4d5d9';
-            } else if (scrollTop < 100) {
+                navBars.forEach(x => x.style.backgroundColor = "#203334")
+                logo.style.color ='#203334'
+                
+                
+                navLinks.style.backgroundColor ='#d4d5d9'
+                alinks.forEach(x => {
+                    x.style.color = '#203334'
+                })
+
+
+            } else if (scrollTop <= 500) {
+                element.style.display = 'flex'
+
+                alinks.forEach(x => {
+                    x.style.color = '#d4d5d9'
+                })
+                navLinks.style.backgroundColor ='#203334'
+                logo.style.color ='#d4d5d9'
                 element.style.backgroundColor = 'transparent'
+                navBars.forEach(x => x.style.backgroundColor = "#d4d5d9")
                 
             }
         } else {
             if (scrollTop > 900) {
+                
                 element.style.backgroundColor = '#d4d5d9';
-                let alinks = navLinks.querySelectorAll('a')
+               
                 let logo = document.getElementById('companyName')
                 logo.style.color = '#203334'
                 alinks.forEach(x => {
@@ -61,6 +85,7 @@ function fixedNavBar() {
                 })
             }
         }
+
     }
 }
 fixedNavBar()
@@ -178,8 +203,8 @@ function openArticle() {
 
         child = createElement('div', body, '', '', '', ['articlePage'], '');
         let closeBtn = createElement('div', child, 'closeBtn', '', ['click', closeArticle], '', '', '');
-        createElement('div', closeBtn, '', '', '', ['line', 'lineLeft'], '', '')
-        createElement('div', closeBtn, '', '', '', ['line', 'lineRight'], '', '')
+        createElement('div', closeBtn, '', '', '', ['closeLine', 'lineLeft'], '', '')
+        createElement('div', closeBtn, '', '', '', ['closeLine', 'lineRight'], '', '')
 
 
         createElement('img', child, '', ['src', '../img/sponsor1.png'], '', ['partner'], '', '');

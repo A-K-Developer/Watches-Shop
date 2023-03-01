@@ -1,5 +1,5 @@
 import {html, render} from 'lit-html';
-import { buyBtnAction, createMarketPlace, openBurgerMenu, playVideo, setDate } from './javascript';
+import { buyBtnAction, openBurgerMenu, playVideo, setDate } from './javascript';
 
 function templateForNav(arg1,arg2,arg3,arg4){
     const navigationTemplate = html`
@@ -11,7 +11,7 @@ function templateForNav(arg1,arg2,arg3,arg4){
         <div id="navContainer" class="hide navLinks">
             <a href="#slideshow">${arg1}</a>
             <a href="#productDescription" >${arg2}</a>
-            <a href="#sellingWatch">${arg3}</a>
+            <a href="#desktopForWatches">${arg3}</a>
             <a href="#market">${arg4}</a>
         </div>
 `
@@ -68,22 +68,27 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
     let slideshowTemplate = html`
         <div class="steps">
             <img src="../img/sponsor2.png" class="sponsorImg" alt="sponsors">
+            <div>
             <span><h1>1</h1><h1>${arg1}</h1></span>
             <p>${arg2}</p>
+            </div>
             <img class="extraImgHowItWorks" src="../img/pexels-lisa-fotios-705868.jpg" alt="pexel img">
         </div>
         <div class="steps">
             <img src="../img/sponsor.png" class="sponsorImg" alt="sponsors">
+            <div>
             <span><h1>2</h1><h1>${arg3}</h1></span>
-            
             <p>${arg4}</p>
+            </div>
             <img class="extraImgHowItWorks" src="../img/pexels-allan-mas-5368943.jpg" alt="pexel img">
 
         </div>
         <div class="steps">
           <img src="../img/sponsor3.png" class="sponsorImg" alt="sponsors">
+          <div>
             <span><h1>3</h1><h1>${arg5}</h1></span>
             <p>${arg6}</p>
+            </div>
             <img class="extraImgHowItWorks" src="../img/weChooseCause.jpg" alt="pexel img">
 
         </div>
@@ -95,7 +100,7 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
 }
 
 
-function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,arg16,arg17,arg18,arg19,arg20){
+function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14){
     let watchTemplate = html`
         <section id="sellingWatch">
             <h1 class="donationName">${arg1}</h1>
@@ -103,30 +108,30 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
                 <img src="../img/MontlyWatch.png" alt="watchImg">
             </div>
             
-            <p class="purposeForWatch"><span>${arg8}:</span>${arg9}</p>
-            <p class="priceForWatch">${arg10} kr</p>
-            <div class="btn buyNow">${arg11}</div>
+            <p class="purposeForWatch"><span>${arg2}:</span>${arg3}</p>
+            <p class="priceForWatch">${arg4} kr</p>
+            <div class="btn buyNow">${arg5}</div>
         </section>
         <section class="sellingDetails">
             <img src="../img/redcross.png" alt="redcross missing">
-            <p>${arg12}</p>
-            <p>${arg13}</p>
+            <p>${arg6}</p>
+            <p>${arg7}</p>
             <div class="projects">
                 <div class="project">
-                    <h5>${arg14}:</h5>
-                    <p>${arg15}</p>
+                    <h5>${arg8}:</h5>
+                    <p>${arg9}</p>
                 </div>
                 <div class="project">
-                    <h5>${arg16}:</h5>
-                    <p>${arg17}</p>
+                    <h5>${arg10}:</h5>
+                    <p>${arg11}</p>
                 </div>
                 <div class="project">
-                    <h5>${arg18}:</h5>
-                    <p>${arg19}</p>
+                    <h5>${arg12}:</h5>
+                    <p>${arg13}</p>
                 </div>
                 <div class="proggresBar"></div>
             </div>
-            <p>${arg20}</p>
+            <p>${arg14}</p>
         </section>
         
     `
