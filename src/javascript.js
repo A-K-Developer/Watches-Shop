@@ -1,3 +1,5 @@
+import { doc } from "firebase/firestore";
+
 export function setDate() {
     const secondHand = document.querySelector('.second-hand');
     const minuteHand = document.querySelector('.min-hand');
@@ -27,6 +29,9 @@ function fixedNavBar() {
     window.onscroll = () => {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         let element = document.getElementsByTagName('nav')[0];
+        let navLinks = document.getElementById('navContainer');
+        let logo = document.getElementById('companyName')
+
 
         if (window.innerWidth < 768) {
 
@@ -34,12 +39,26 @@ function fixedNavBar() {
                 element.style.backgroundColor = '#d4d5d9';
             } else if (scrollTop < 100) {
                 element.style.backgroundColor = 'transparent'
+                
             }
         } else {
-            if (scrollTop > 700) {
+            if (scrollTop > 900) {
                 element.style.backgroundColor = '#d4d5d9';
-            } else if (scrollTop <= 700) {
+                let alinks = navLinks.querySelectorAll('a')
+                let logo = document.getElementById('companyName')
+                logo.style.color = '#203334'
+                alinks.forEach(x => {
+                    x.style.color = '#203334'
+                })
+                
+            } else if (scrollTop <= 900) {
                 element.style.backgroundColor = 'transparent'
+                let alinks = navLinks.querySelectorAll('a')
+                logo.style.color = '#d4d5d9'
+
+                alinks.forEach(x => {
+                    x.style.color = '#d4d5d9'
+                })
             }
         }
     }

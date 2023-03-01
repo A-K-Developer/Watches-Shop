@@ -28,8 +28,8 @@ function templateForSlideshow(arg1,arg2,arg3){
           </video>
         
         <div class="slogan">
-            <h1>${arg1}</h1>
-            <h1>${arg3}</h1>
+            <h1 class="sloganAni">${arg1}</h1>
+            <h1 class="sloganAni2">${arg3}</h1>
             
         </div>
         <div class="opacityVideo"></div>
@@ -102,23 +102,7 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
             <div class="watch">
                 <img src="../img/MontlyWatch.png" alt="watchImg">
             </div>
-            <div class="solded">
-                <div class="sells">
-                    <p><span>${arg2}</span> / 50 stk</p>
-                    <p><span>${arg3}</span> / 200 stk</p>
-                    <p><span>${arg4}</span> / &infin; stk</p>
-                </div>
-                <div class="arrowFunc">
-                    <p>-></p>
-                    <p>-></p>
-                    <p>-></p>
-                </div>
-                <div class="projectsCount">
-                    <p>${arg5}</p>
-                    <p>${arg6}</p>
-                    <p>${arg7}</p>
-                </div>
-            </div>
+            
             <p class="purposeForWatch"><span>${arg8}:</span>${arg9}</p>
             <p class="priceForWatch">${arg10} kr</p>
             <div class="btn buyNow">${arg11}</div>
@@ -140,6 +124,7 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
                     <h5>${arg18}:</h5>
                     <p>${arg19}</p>
                 </div>
+                <div class="proggresBar"></div>
             </div>
             <p>${arg20}</p>
         </section>

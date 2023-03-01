@@ -164,7 +164,7 @@ nav {
 
 #companyName {
     font-family: var(--Logo-Font);
-    color: var(--Secondary);
+    color: var(--Primary);
     font-size: 50px;
 }
 
@@ -225,7 +225,7 @@ nav {
 
 .navLinks a {
     text-decoration: none;
-    color: var(--Secondary);
+    color: var(--Primary);
     margin: 5%;
     padding: 3% 5%;
 }
@@ -948,7 +948,7 @@ footer div span p {
         display: block;
     }
     #companyName {
-        color: var(--Secondary);
+        color: var(--Primary);
         font-size: 5em;
         position: relative;
         top: -9px;
@@ -998,7 +998,7 @@ footer div span p {
         font-family: var(--New-Font);
         font-weight: 600;
         z-index: 10;
-        top: 80%;
+        top: 60%;
     }
 
     .supportBtn:hover {
@@ -1210,7 +1210,7 @@ footer div span p {
     #market h1 {
         width: 100%;
         text-align: center;
-        margin-top: 80px;
+        padding: 3em;
         font-size: 24px;
         text-transform: uppercase;
         color: var(--Secondary);
@@ -1399,7 +1399,7 @@ footer div span p {
 
         width: 200px;
         height: 200px;;
-        top: 65%;
+        top: 87.5%;
         left: 50%;
         z-index: 4;
         transform: translate(-50%, -50%);
