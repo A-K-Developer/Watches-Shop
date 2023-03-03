@@ -77,8 +77,8 @@ onSnapshot(colRef, (snapshot) => {
 
     onSnapshot(monthlyWatch, (doc) => {
         let data = doc.data();
-        templateForMonthlyWatch(data.causeName,data.purpose,data.purposeValue,data.buyNow,data.buyBtnValue,data.bigText,data.bigText1,data.projectHeading1,data.projectText1,data.projectHeading2,data.projectText2,data.projectHeading3,data.projectText3,data.bigText3)
-
+        templateForMonthlyWatch(data.causeName,data.purpose,data.valueOnPurpose,data.buyNow,data.buyBtnValue,data.bigText,data.bigText1,data.projectHeading1,data.projectText1,data.projectHeading2,data.projectText2,data.projectHeading3,data.projectText3,data.bigText3)
+        console.log(data.purposeValue);
     })
 
     let footerData = doc(db,'Front-endText', 'footer');

@@ -20,26 +20,22 @@ export function setDate() {
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 }
 
-
-
-
-
-
 function fixedNavBar() {
+
     window.onscroll = () => {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         let element = document.getElementsByTagName('nav')[0];
         let navLinks = document.getElementById('navContainer');
         let logo = document.getElementById('companyName')
-        let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
         var alinks = navLinks.querySelectorAll('a')
-alinks.forEach(x => x.addEventListener('click',()=>{element.style.display ='none'}))
-
-
-
+    
+        
+    
         if (window.innerWidth < 768) {
 
             if (scrollTop > 500) {
+                let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
+
                 element.style.display = 'flex'
                 element.style.backgroundColor = '#d4d5d9';
                 navBars.forEach(x => x.style.backgroundColor = "#203334")
@@ -53,6 +49,8 @@ alinks.forEach(x => x.addEventListener('click',()=>{element.style.display ='none
 
 
             } else if (scrollTop <= 500) {
+                let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
+
                 element.style.display = 'flex'
 
                 alinks.forEach(x => {
@@ -196,6 +194,7 @@ let child;
 let body = document.getElementsByTagName('body')[0];
 
 function openArticle() {
+    body.querySelector('nav').style.display = 'none'
     if (!body.contains(child)) {
         let thingsProvided = ['Food, fuel, clean water and cash assistance to meet children and families most urgent needs.', 'Blankets, hygiene items, baby kits, trauma kits and bunker kits with toys and games to encourage play and learning.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Mental health support to children and their families, including individual and group therapy and social emotional learning curriculum.', 'Child protection services to ensure children and families remain together and separated children are reunited safely with their caregivers.']
         let imges = ['../img/water-drops.svg', '../img/boy-girl.svg', '../img/stethoscope.svg', '../img/lightbulb.svg', '../img/hand-shake.svg', '../img/girl-parent.svg']
@@ -228,6 +227,8 @@ function openArticle() {
 
 function closeArticle() {
     if (body.contains(child)) {
+        body.querySelector('nav').style.display = 'flex'
+
         child.remove()
     }
 }

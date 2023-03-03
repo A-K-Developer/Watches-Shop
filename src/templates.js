@@ -20,7 +20,7 @@ let targetElement = document.getElementsByTagName('nav')[0];
 render(navigationTemplate, targetElement)
 document.getElementById('burgerBtn').addEventListener('click', openBurgerMenu);
 }
-let mediaArr = [/*video*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",/*Clock*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6',]
+let mediaArr = [/*video*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",/*Clock*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6',/* HowItWorksSec */'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/pexels-allan-mas-5368943.jpg?alt=media&token=786ee12a-15a3-4760-83e9-c5f6ec72a6a2','https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/pexels-lisa-fotios-705868.jpg?alt=media&token=e29e1312-c837-4ec1-b87d-f3d457844ce8','https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/weChooseCause.jpg?alt=media&token=7ee253e8-aa5f-48c7-8ab2-bb14f77379c5']
 function templateForSlideshow(arg1,arg2,arg3){
     let slideshowTemplate = html`
         <video id="videoHeader" >
@@ -49,6 +49,7 @@ function templateForSlideshow(arg1,arg2,arg3){
               <div class="hand hour-hand"></div>
               <div class="hand min-hand"></div>
               <div class="hand second-hand"></div>
+              <div class="center-dot"></div>
             </div>
           </div>
         </div>
@@ -63,33 +64,39 @@ function templateForSlideshow(arg1,arg2,arg3){
 
 
 }
+let sponsorsImgesRef = {
+    firstSponsor: 'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/sponsor.png?alt=media&token=8c702b3d-dcb0-46f9-88c0-f205ee1d34d5',
+    secondSponsor: 'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/sponsor2.png?alt=media&token=ef0a29fe-c39d-4bb9-b55c-2d9c42d8b974',
+    thirthSponsor: 'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/sponsor3.png?alt=media&token=d0f913f0-8a0a-48fe-875e-d47356f9e4eb',
+    fourthSponsor: 'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/sponsor1.png?alt=media&token=3e8a661b-4eb4-408f-80cb-a964ca5c662e',
+}
 
 function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
     let slideshowTemplate = html`
         <div class="steps">
-            <img src="../img/sponsor2.png" class="sponsorImg" alt="sponsors">
+            <img src=${sponsorsImgesRef.firstSponsor} class="sponsorImg" alt="sponsors">
             <div>
             <span><h1>1</h1><h1>${arg1}</h1></span>
             <p>${arg2}</p>
             </div>
-            <img class="extraImgHowItWorks" src="../img/pexels-lisa-fotios-705868.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src=${mediaArr[3]} alt="pexel img">
         </div>
         <div class="steps">
-            <img src="../img/sponsor.png" class="sponsorImg" alt="sponsors">
+            <img src=${sponsorsImgesRef.secondSponsor} class="sponsorImg" alt="sponsors">
             <div>
             <span><h1>2</h1><h1>${arg3}</h1></span>
             <p>${arg4}</p>
             </div>
-            <img class="extraImgHowItWorks" src="../img/pexels-allan-mas-5368943.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src=${mediaArr[4]}  alt="pexel img">
 
         </div>
         <div class="steps">
-          <img src="../img/sponsor3.png" class="sponsorImg" alt="sponsors">
+          <img src=${sponsorsImgesRef.thirthSponsor} class="sponsorImg" alt="sponsors">
           <div>
             <span><h1>3</h1><h1>${arg5}</h1></span>
             <p>${arg6}</p>
             </div>
-            <img class="extraImgHowItWorks" src="../img/weChooseCause.jpg" alt="pexel img">
+            <img class="extraImgHowItWorks" src=${mediaArr[5]}  alt="pexel img">
 
         </div>
     `
@@ -129,13 +136,17 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
                     <h5>${arg12}:</h5>
                     <p>${arg13}</p>
                 </div>
-                <div class="proggresBar"></div>
+                <section class="proggresBar">
+                    <div class="progressBarEle"></div>
+                    <div class="progressBarEle"></div>
+                    <div class="progressBarEle"></div>
+                </section>
             </div>
             <p>${arg14}</p>
         </section>
         
     `
-
+    console.log(arg3);
     let targetElement = document.getElementById('desktopForWatches');
 
     render(watchTemplate, targetElement)

@@ -66,6 +66,17 @@ html {
     z-index: 10;
     transform-origin: center center;
 }
+.center-dot{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 42%;
+    left: 49%;
+    background-image: url(../img/pilStorCopy.png);
+    background-position: center center;
+    background-size: cover;
+    z-index: 322;
+}
 .hand {
     position: absolute;
     top: 50%;
@@ -391,6 +402,8 @@ nav {
     font-weight: 700;
     text-align: center;
     font-size: 0.8em;
+    padding: 1em;
+
 }
 .extraImgHowItWorks{
     width: 100%;
@@ -553,6 +566,7 @@ nav {
 
 .watchImg {
     width: 100%;
+
 }
 
 #welcomeImg {
@@ -716,6 +730,38 @@ nav {
     font-family: var(--New-Font);
     font-weight: 700;
     text-align: center;
+}
+.projects{
+    position: relative;
+}
+.proggresBar{
+    width:0.55em;
+    min-height: 100%;
+    background-color:var(--Primary);
+    border-radius: 20em;
+    position: absolute;
+    top: 0;
+    left: -1em;
+    
+}
+.progressBarEle{
+    width: 0.55em;
+    height: 7em;
+    z-index: 1;
+    background-color: var(--Secondary);
+    border-radius: 20em;
+    opacity: 1;
+}
+.progressBarEle:nth-child(1){
+    opacity: 1;
+}
+.progressBarEle:nth-child(2){
+    opacity: 0;
+
+}
+.progressBarEle:nth-child(3){
+    opacity: 0;
+
 }
 
 #market h1 {
@@ -971,6 +1017,7 @@ footer div span p {
     height: 100px;
 }
 
+
 @media only screen and (min-width: 768px) {
     nav {
         height: 5em;
@@ -1065,13 +1112,14 @@ footer div span p {
 
     .steps {
         display: flex;
-        flex-direction: column;
+ 
         gap: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
+      
+      
         align-items: start;
         padding: 2em;
     }
+
 
     .steps h1,
     h5 {
@@ -1153,12 +1201,7 @@ footer div span p {
         text-transform: uppercase;
     }
 
-    #sellingWatch {
-        width: 30%;
-        margin: 0;
-        left: 15em;
-        top: 3.5em;
-    }
+   
 
     .donationName {
         font-weight: 700;
@@ -1250,12 +1293,10 @@ footer div span p {
     #desktopForWatches {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-bottom: 5em;
-        position: relative;
-        top: 5em;
-        gap: 5em;
-        justify-content: space-between;
+        padding-top: 7em;
+        
     }
     .sellingDetails{
         width: 50%;
@@ -1263,9 +1304,12 @@ footer div span p {
         flex-direction: column;
         gap: 1em;
         position: relative;
-        top: 5em;
-        padding: 1.5em 5em;
+       margin: 0;
         
+    }
+    #sellingWatch {
+        width: 30%;
+        margin: 0;
     }
     .sellingDetails img{
         width: 70%;
@@ -1278,6 +1322,29 @@ footer div span p {
     .projects{
         display: flex;
         gap: 2em;
+        margin: 1em;
+    }
+    .proggresBar{
+        width: 100%;
+        height: 1em;
+        min-height: 1em;
+        top: 95%;
+        margin: 1em;
+    }
+    .progressBarEle{
+        width: 33%;
+        height: 1em;
+    }
+    .progressBarEle:nth-child(1){
+        opacity: 1;
+    }
+    .progressBarEle:nth-child(2){
+        opacity: 0;
+    
+    }
+    .progressBarEle:nth-child(3){
+        opacity: 0;
+    
     }
     #market {
         display: flex;
@@ -1286,7 +1353,7 @@ footer div span p {
         justify-content: center;
         align-items: center;
         margin: auto;
-        gap: 5em;
+        gap: 1em;
         width: 80%;
         height: 100vh;
         position: relative;
@@ -1480,7 +1547,12 @@ footer div span p {
         z-index: 10;
         transform-origin: center center;
     }
-    
+    .center-dot{
+        width: 18px;
+        height: 18px;
+        top: 46%;
+        left: 45%;
+    }
     .hand {
         position: absolute;
         top: 50%;
