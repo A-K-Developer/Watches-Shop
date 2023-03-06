@@ -45,7 +45,7 @@ onSnapshot(colRef, (snapshot) => {
     snapshot.docs.forEach((doc)=> {
         watchSection.push({...doc.data(), id: doc.id})
     })
-    //console.log(watchSection[0]);
+    console.log(watchSection[0]);
 
 
 })

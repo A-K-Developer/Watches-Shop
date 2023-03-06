@@ -1,5 +1,5 @@
 import {html, render} from 'lit-html';
-import { buyBtnAction, openBurgerMenu, playVideo, setDate } from './javascript';
+import { buyBtnAction, createElement, openBurgerMenu, playVideo, setDate } from './javascript';
 
 function templateForNav(arg1,arg2,arg3,arg4){
     const navigationTemplate = html`
@@ -80,7 +80,7 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
     let slideshowTemplate = html`
         <div class="steps">
             <img src=${sponsorsImgesRef.firstSponsor} class="sponsorImg" alt="sponsors">
-            <div>
+            <div class="text-how-works">
             <span><h1>1</h1><h1>${arg1}</h1></span>
             <p>${arg2}</p>
             </div>
@@ -88,7 +88,7 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
         </div>
         <div class="steps">
             <img src=${sponsorsImgesRef.secondSponsor} class="sponsorImg" alt="sponsors">
-            <div>
+            <div class="text-how-works">
             <span><h1>2</h1><h1>${arg3}</h1></span>
             <p>${arg4}</p>
             </div>
@@ -97,7 +97,7 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
         </div>
         <div class="steps">
           <img src=${sponsorsImgesRef.thirthSponsor} class="sponsorImg" alt="sponsors">
-          <div>
+          <div class="text-how-works">
             <span><h1>3</h1><h1>${arg5}</h1></span>
             <p>${arg6}</p>
             </div>
@@ -158,6 +158,12 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
     render(watchTemplate, targetElement)
     
     buyBtnAction()
+
+    let readMore = document.getElementsByClassName('readMore')[0]
+    createElement('p',readMore,'','','','','',arg7)
+    readMore.addEventListener('click',() => {
+        readMore.replaceWith(replace)
+    })
 }
 
 function productDescription(arg,arg1){

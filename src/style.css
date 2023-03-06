@@ -13,17 +13,20 @@
     margin: 0;
     font-family: var(--Font-Family);
 }
+p{
+    padding: 0;
+}
 html {
     scroll-behavior: smooth;
 }
 #clock{
     position: absolute;
     width: 100px;
-    height: 100px;;
-    top: 101%;
+    height: 90px;;
+    bottom: -45px;
     left: 50%;
     z-index: 4;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
 }
 .clock {
     width: 100%;
@@ -211,7 +214,7 @@ nav {
     right: 0.1em;
     border-radius: 1em;
     width: 50%;
-    z-index: 22;
+    z-index: 1422;
 }
 
 .navLinks {
@@ -235,6 +238,7 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    
 }
 .number {
     position: absolute;
@@ -350,7 +354,6 @@ nav {
     gap: 5em;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2em;
 
 }
 
@@ -993,10 +996,7 @@ footer div span p {
     top: 50%;
     transform: rotate(-45deg);
 }
-#clock{
-    width: 100px;
-    height: 100px;
-}
+
 
 
 @media only screen and (min-width: 768px) {
@@ -1030,12 +1030,12 @@ footer div span p {
     #clock{
         width: 200px;
         height: 200px;;
-        top: 85%;
+        bottom: -110px;
         left: 51%;
     }
     .center-dot{
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
         top: 46%;
         left: 45%;
     }
@@ -1067,8 +1067,8 @@ footer div span p {
         height: 0.6em;
         background-size: contain;
         transform-origin: 90% center;
-        margin-top: 0.2em;  
-        margin-left: -4em; /* Adjust for the half-width of the element */
+        margin-top: 0em;  
+        margin-left: -3.9em; /* Adjust for the half-width of the element */
     }
     .clock-face h3{
         font-size: 1.0em;
@@ -1140,36 +1140,35 @@ footer div span p {
    
     #videoHeader {
         max-width: 100%;
-        max-height: 100%;
-        top: -9rem;
-        height: 100%;
-    }
-    .opacityVideo {
-        top: -9em;
+        max-height: 100vh;
+        height: 100vh;
     }
     #HowItWorks {
         flex-direction: row;
-        width: 60%;
-        margin: auto;
-        gap: 2em;
+        width: 100%;
+        margin: 10em auto;
+        justify-content: space-evenly;
     }
     .steps {
         gap: 5px;
         align-items: start;
-        padding: 2em;
+        padding: 1em;
         width: 10em;
+        height: 25em;
     }
-    .steps h1,
-    h5 {
-        display: inline-block;
+    .text-how-works{
+        width: 100%;
     }
     .steps p {
         text-align: start;
-        padding-left: 0;
+        padding: 1em 0;
+    
     }
 
     #sponsors {
-        gap: 5em;
+        width: 10em;
+        position: relative;
+        
     }
 
     #sponsors img {
@@ -1188,9 +1187,9 @@ footer div span p {
         }
     }
     .extraImgHowItWorks{
-        width: 10em;
-        height: 15em;
-        max-height: 20em;
+        width: 85%;
+        background-size: cover;
+        height: 13em;
         margin: 0 auto;
     }
     #productDescription {
@@ -1331,6 +1330,7 @@ footer div span p {
         /* set the width to 2em for each image */
         height: 8em;
        /* add some space between images */
+        left: 20%;
     }
     .mySlides img{
         width: 35%;
