@@ -67,8 +67,8 @@ html {
     transform-origin: center center;
 }
 .center-dot{
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     position: absolute;
     top: 42%;
     left: 49%;
@@ -104,16 +104,7 @@ html {
     transform: rotate(30deg);
 }
 
-#desktopForWatches {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 5em;
-    position: relative;
-    top: 5em;
-    gap: 5em;
-    justify-content: space-between;
-}
+
 .min-hand {
     position: absolute;
     width: 2.2em;
@@ -127,8 +118,8 @@ html {
     top: 49%;
     z-index: 22;
 
-    margin-top: -5px;
-    margin-left: -1.4em; /* Adjust for the full width of the element */
+    margin-top: 0px;
+    margin-left: -1.7em; /* Adjust for the full width of the element */
     transform: rotate(0deg);
 }
 .min-hand.rotated {
@@ -163,6 +154,7 @@ html {
     transform: translate(-50%, -50%);
     letter-spacing: 0.2em;
 }
+
 nav {
     width: 90%;
     padding: 0 5%;
@@ -219,7 +211,7 @@ nav {
     right: 0.1em;
     border-radius: 1em;
     width: 50%;
-    z-index: 1;
+    z-index: 22;
 }
 
 .navLinks {
@@ -239,19 +231,10 @@ nav {
     margin: 5%;
     padding: 3% 5%;
 }
-
-.navLinks a:hover {
-    color: var(--Primary);
-    border-radius: 2px;
-    background-color: var(--Secondary);
-    font-weight: 700;
-}
-
 #slideshow {
     display: flex;
     align-items: center;
     position: relative;
-    margin-bottom: 10em;
 }
 .number {
     position: absolute;
@@ -279,7 +262,7 @@ nav {
 .sloganAni{
     animation: sloganAni 2s ease none;
     position: relative;
-    top: -3em;
+    top: -2em;
     opacity: 1;
 }
 
@@ -366,6 +349,7 @@ nav {
     margin: 6em auto;
     gap: 5em;
     flex-direction: column;
+    justify-content: space-between;
     padding: 2em;
 
 }
@@ -380,7 +364,7 @@ nav {
     min-height: 15em;
     background-color: var(--Primary);
     padding: 1em;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
 
 }
 
@@ -406,9 +390,21 @@ nav {
 
 }
 .extraImgHowItWorks{
-    width: 100%;
+   width: 100%;
+   height: 15em;
+    max-height: 20em;
+    border-radius: 1em;
 }
-
+#desktopForWatches {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5em;
+    position: relative;
+    top: 5em;
+    gap: 5em;
+    justify-content: space-between;
+}
 .sponsorImg {
     width: 5em;
     /* set the width to 2em for each image */
@@ -421,32 +417,17 @@ nav {
     transform: translate(-50%,50%);
     border-radius: 50%;
     z-index: -2;
-    animation: slide 10s ease infinite;
+    animation: slide 3s ease infinite;
 }
 @keyframes slide {
     0% {
         transform: translateY(0);
     }
 
-    25% {
-        transform: translateY(-15em);
-    }
-
-    50% {
-        transform: translateY(0em)
-    }
-
-    75% {
-        transform: translateX(-8em);
-    }
-
-    85% {
-        transform: translateX(10em);
-    }
-
     100% {
-        transform: translateX(0);
+        transform: translateY(15em);
     }
+
 }
 
 .slideshow-container {
@@ -779,7 +760,7 @@ nav {
     align-items: center;
     margin: 100px 0% 10%;
     gap: 10px;
-
+    
 }
 
 .articleContainer {
@@ -1019,34 +1000,96 @@ footer div span p {
 
 
 @media only screen and (min-width: 768px) {
-    nav {
-        height: 5em;
+    .aboutTheCause{
+        width: 50%;
+        position: absolute;
+        right: 7em;
+        top: 7em;
+    }
+    .howWeHelp{
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 1em;
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+
+    }
+    .imgAndText{
+        width: 48%;
+        justify-content: flex-start;
+    }
+    .howWeHelp h5{
+        text-align: center;
+        font-size: 2em;
+    }
+    .partner{
+        width: 20em;
     }
     #clock{
-        display: block;
+        width: 200px;
+        height: 200px;;
+        top: 85%;
+        left: 51%;
+    }
+    .center-dot{
+        width: 18px;
+        height: 18px;
+        top: 46%;
+        left: 45%;
+    }
+    .hour-hand {
+        width: 3.5em;
+        height: 20px;
+        background-position: center center;
+        background-size: contain;
+        transform-origin: 10% center;
+        z-index: 2;
+        margin-top: -0.5em;
+        margin-left: -0.5em; /* Adjust for the half-width of the element */
+    }
+    .min-hand {
+        position: absolute;
+        width: 5em;
+        height: 3em;
+        background-size: contain;
+        transform-origin: 90% center;
+        left: 49%;
+        top: 50%;
+        z-index: 122;
+        margin-top: -1.2em;
+        margin-left: -4.5em; /* Adjust for the full width of the element */
+    }
+    .second-hand {
+        top: 49%;
+        width: 40%;
+        height: 0.6em;
+        background-size: contain;
+        transform-origin: 90% center;
+        margin-top: 0.2em;  
+        margin-left: -4em; /* Adjust for the half-width of the element */
+    }
+    .clock-face h3{
+        font-size: 1.0em;
+        left: 50%;
     }
     #companyName {
-        color: var(--Primary);
         font-size: 5em;
         position: relative;
         top: -9px;
         margin: auto 2%;
     }
-
     #burgerBtn {
         display: none;
     }
-
     #navContainer {
         position: relative;
-        width: 50%;
-        z-index: 22;
-        padding: 0;
         top: 0%;
+        display: block;
     }
 
     .navLinks {
-        display: flex;
         flex-direction: row;
         font-size: 1em;
         gap: 1em;
@@ -1057,11 +1100,22 @@ footer div span p {
         padding: 1em 2em;
         font-weight: normal;
     }
+    .navLinks a:hover {
+        color: var(--Primary);
+        border-radius: 2px;
+        background-color: var(--Secondary);
+        font-weight: 700;
+    }
 
     .slogan {
         font-size: 2em;
     }
-
+    .sloganAni{
+        
+        top: -1.5em;
+        
+    }
+    
     .supportBtn {
         position: absolute;
         color: var(--Primary);
@@ -1082,63 +1136,36 @@ footer div span p {
     .supportBtn:hover {
         color: var(--Secondary);
         background-color: var(--Primary);
-
     }
    
     #videoHeader {
         max-width: 100%;
-        object-fit: cover;
         max-height: 100%;
-        position: relative;
         top: -9rem;
+        height: 100%;
     }
-
     .opacityVideo {
         top: -9em;
     }
-
-    #slideshow video {
-        height: 20%;
-        max-height: 50%;
-    }
-
     #HowItWorks {
-        display: flex;
         flex-direction: row;
         width: 60%;
         margin: auto;
         gap: 2em;
     }
-
     .steps {
-        display: flex;
- 
         gap: 5px;
-      
-      
         align-items: start;
         padding: 2em;
+        width: 10em;
     }
-
-
     .steps h1,
     h5 {
         display: inline-block;
-
     }
-
-    .steps span {
-        display: flex;
-        justify-content: start;
-        text-align: start;
-        align-items: center;
-        gap: 0.5em;
-    }
-
     .steps p {
-        font-family: var(--New-Font);
-        font-weight: 700;
         text-align: start;
+        padding-left: 0;
     }
 
     #sponsors {
@@ -1154,152 +1181,34 @@ footer div span p {
             transform: translateY(0);
         }
 
-        25% {
-            transform: translateY(-21em);
+        100% {
+            transform: translateY(15em);
             
             /* move first image to end of the slider */
         }
-
-        50% {
-            transform: translateY(0em)
-        }
-
-        75% {
-            transform: translateX(-18em);
-        }
-
-        85% {
-            transform: translateX(15em);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
     }
-
+    .extraImgHowItWorks{
+        width: 10em;
+        height: 15em;
+        max-height: 20em;
+        margin: 0 auto;
+    }
     #productDescription {
         display: flex;
         width: 80%;
     }
-
     #welcomeImg {
-        width: 80%;
-        object-fit: cover;
-        margin: auto;
         margin: 5em auto;
     }
-
     .contentForCompany {
         text-align: start;
-        color: var(--Secondary);
-        width: 80%;
-        margin: auto;
     }
-
     .contentForCompany h1 {
         margin: 5% 0%;
         text-transform: uppercase;
     }
-
-   
-
-    .donationName {
-        font-weight: 700;
-        position: relative;
-        top: 0%;
-        padding: 0px;
-        border-radius: 2px;
-        left: 0%;
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        margin-top: 30px;
-    }
-
-    .solded {
-        width: 50%;
-        position: relative;
-        border-radius: 2px;
-        text-transform: uppercase;
-        font-size: 12px;
-        text-align: center;
-        color: var(--Secondary);
-        margin: 1em auto;
-        display: flex;
-        gap: 1em;
-        left: 3em;
-        top: -1em;
-    }
-
-    .watch img {
-        width: 110%;
-        height: 350px;
-        object-fit: cover;
-        position: relative;
-        left: 2px;
-    }
-
-    .watch p {
-        color: var(--Extra);
-        text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 700;
-        text-align: center;
-        margin: 0;
-        position: relative;
-        left: 5px;
-
-    }
-
-    .purposeForWatch {
-        color: var(--Secondary);
-        text-align: center;
-        padding: 0em;
-        font-weight: 700;
-    }
-
-    .priceForWatch {
-        color: var(--Primary);
-        background-color: var(--Secondary);
-        width: 30%;
-        padding: 0;
-        font-size: 1.5em;
-        margin: 0.5em auto;
-        text-align: center;
-        border-radius: 2px;
-    }
-
-    .btn {
-        color: var(--Secondary);
-        background-color: var(--Primary);
-        width: 50%;
-        padding: 2% 5%;
-        text-align: center;
-        border-radius: 2px;
-        position: relative;
-        bottom: 0%;
-        margin: auto;
-    }
-
-    #market h1 {
-        width: 100%;
-        text-align: center;
-        padding: 3em;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: var(--Secondary);
-    }
-
-    #desktopForWatches {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 5em;
-        padding-top: 7em;
-        
-    }
     .sellingDetails{
-        width: 50%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -1319,6 +1228,54 @@ footer div span p {
         font-family: var(--New-Font);
         font-weight: 700;
     }
+   
+
+    .donationName {
+        top: 0%;
+        padding: 0px;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .solded {
+        width: 50%;
+        font-size: 12px;
+        margin: 1em auto;
+        left: 3em;
+        top: -1em;
+    }
+    .watch p {
+        margin: 0;
+        position: relative;
+        left: 5px;
+    }
+
+    .purposeForWatch {
+        padding: 0em;
+        font-weight: 700;
+    }
+    .priceForWatch {
+        padding: 0;
+        font-size: 1.5em;
+        margin: 0.5em auto;
+    }
+    .btn {
+        padding: 2% 5%;
+    }
+
+    #market h1 {
+        padding: 3em;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    #desktopForWatches {
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 7em;
+    }
     .projects{
         display: flex;
         gap: 2em;
@@ -1335,23 +1292,7 @@ footer div span p {
         width: 33%;
         height: 1em;
     }
-    .progressBarEle:nth-child(1){
-        opacity: 1;
-    }
-    .progressBarEle:nth-child(2){
-        opacity: 0;
-    
-    }
-    .progressBarEle:nth-child(3){
-        opacity: 0;
-    
-    }
     #market {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         margin: auto;
         gap: 1em;
         width: 80%;
@@ -1360,86 +1301,22 @@ footer div span p {
         top: 9em;
 
     }
-
     .articleContainer {
         width: 20%;
-        text-align: center;
-        line-height: 1.8em;
-        position: relative;
         bottom: 10em;
-        background-color: var(--Secondary);
-        border: none;
-        border-radius: 10px;
-        height: 300px;
-
     }
-
-    .articleIMGContainer {
-        width: 100%;
-        height: 50%;
-        background-color: white;
-
-    }
-
     .articleImg {
-        width: 100%;
-        height: 100%;
         object-fit: contain;
     }
-
-    .detailsContainer {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .textContent {
-        margin: auto;
-        height: 50%;
-    }
-
-    .articlePage {
-        width: 100vw;
-        height: 100vh;
-        background-color: white;
-        z-index: 22;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
-    .namecontainer {
-        background-color: var(--Absent);
-        height: 20px;
-
-    }
-
     .namecontainer p {
-        font-family: var(--Logo-Font);
-        font-size: 40px;
-        position: relative;
-        bottom: 2px;
         color: var(--text);
     }
 
     .articlePrice {
         color: var(--Primary);
-        text-align: center;
-        font-weight: 700;
-        font-size: 12px;
     }
-
-    .unitContainer {
-        display: flex;
-        justify-content: space-between;
-
-    }
-
     .articleDonation {
         color: var(--Primary);
-        text-align: center;
-        margin: auto;
-        font-size: 12px;
     }
     .overlaySposnors {
         width: 100%;
@@ -1453,183 +1330,16 @@ footer div span p {
         width: 8em;
         /* set the width to 2em for each image */
         height: 8em;
-        left: 30%;
-        /* add some space between images */
-        
-        position: absolute;
-        border-radius: 50%;
-        z-index: -2;
-        animation: slide 10s ease infinite;
+       /* add some space between images */
     }
-      .mySlides img{
+    .mySlides img{
         width: 35%;
-      }
-    
-      .mySlides {
+    }
+    .mySlides {
         width: 100%; 
-      }
-
-    
-
+    }
     footer {
-        padding: 5%;
-        display: flex;
         flex-direction: row;
-        width: 90%;
-        margin: auto;
         justify-content: space-between;
-        text-align: center;
-        gap: 50px;
-        line-height: 23px;
-        color: var(--Secondary);
-        background-color: var(--Primary);
     }
-
-    footer div span p {
-        margin-bottom: 15px;
-    }
-
-    footer div span {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-    #clock{
-        position: absolute;
-
-        width: 200px;
-        height: 200px;;
-        top: 87.5%;
-        left: 51%;
-        z-index: 4;
-        transform: translate(-50%, -50%);
-    }
-    .clock {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: relative;
-        opacity: 1;
-    }
-    
-    .backgroundWatch{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 55%;
-        left: 55%;
-        z-index: 4;
-        transform: translate(-50%, -50%);
-    }
-    .backgroundWatch img{
-        width: 80%;
-    }
-    .frame{
-        width: 100%;
-    
-        position: absolute;
-        top: 0%;
-        left: 0%;
-    
-    }
-    .frame img{
-        width: 100%;
-    
-    }
-    .clock-face {
-        position: relative;
-        width: 85%;
-        height: 80%;
-        margin: auto;
-        border-radius: 50%;
-        background: transparent;
-        left: -0.5em;
-        top: 0.5em;
-        z-index: 10;
-        transform-origin: center center;
-    }
-    .center-dot{
-        width: 18px;
-        height: 18px;
-        top: 46%;
-        left: 45%;
-    }
-    .hand {
-        position: absolute;
-        top: 50%;
-        transform-origin: 0 50%;
-        transform: rotate(-90deg);
-        transition: all 0.05s;
-        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-    }
-    .hour-hand {
-        position: absolute;
-        width: 3.5em;
-        height: 20px;
-        background-image: url(../img/pilStor.png);
-        background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform-origin: 10% center;
-        left: 50%;
-        top: 50%;
-        z-index: 2;
-        margin-top: -0.5em;
-        margin-left: -0.5em; /* Adjust for the half-width of the element */
-        transform: rotate(90deg);
-    }
-    .hour-hand.rotated {
-        transform: rotate(30deg);
-    }
-    .min-hand {
-        position: absolute;
-        width: 5em;
-        height: 3em;
-        background-image: url(../img/pilLille.png);
-        background-position: right center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform-origin: 90% center;
-
-        left: 49%;
-        top: 50%;
-        z-index: 122;
-        margin-top: -1.2em;
-        margin-left: -4.5em; /* Adjust for the full width of the element */
-        transform: rotate(0deg);
-    }
-    
-    .min-hand.rotated {
-        transform: rotate(90deg); /* rotate the element 90 degrees */
-    }
-    .second-hand {
-        position: absolute;
-        top: 49%;
-        left: 50%;
-        width: 40%;
-        height: 0.6em;
-        z-index: 3s;
-        background-image: url(../img/pilTilLilleUrskive.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform-origin: 90% center;
-        margin-top: 0.2em;  
-        margin-left: -4em; /* Adjust for the half-width of the element */
-        transform: rotate(0deg);
-    }
-    .second-hand.rotated {
-        transform: rotate(6deg);
-    }
-    
-    .clock-face h3{
-        color: var(--Secondary);
-        font-family: var(--Logo-Font);
-        font-size: 1.0em;
-        z-index: 0;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
 }

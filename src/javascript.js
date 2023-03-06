@@ -1,4 +1,4 @@
-import { doc } from "firebase/firestore";
+
 
 export function setDate() {
     const secondHand = document.querySelector('.second-hand');
@@ -27,9 +27,11 @@ function fixedNavBar() {
         let element = document.getElementsByTagName('nav')[0];
         let navLinks = document.getElementById('navContainer');
         let logo = document.getElementById('companyName')
-        var alinks = navLinks.querySelectorAll('a')
-    
-        
+
+        if(navLinks){
+
+            var alinks = navLinks.querySelectorAll('a')
+        }
     
         if (window.innerWidth < 768) {
 
@@ -63,21 +65,19 @@ function fixedNavBar() {
                 
             }
         } else {
-            if (scrollTop > 900) {
-                
-                element.style.backgroundColor = '#d4d5d9';
-               
-                let logo = document.getElementById('companyName')
+            if (scrollTop > 700) {
+                element.style.backgroundColor = '#d4d5d9'; 
                 logo.style.color = '#203334'
                 alinks.forEach(x => {
                     x.style.color = '#203334'
                 })
                 
-            } else if (scrollTop <= 900) {
+            } else if (scrollTop <= 700) {
                 element.style.backgroundColor = 'transparent'
-                let alinks = navLinks.querySelectorAll('a')
+                if(navLinks || logo){
+                 alinks = navLinks.querySelectorAll('a')
+                }
                 logo.style.color = '#d4d5d9'
-
                 alinks.forEach(x => {
                     x.style.color = '#d4d5d9'
                 })
@@ -86,8 +86,8 @@ function fixedNavBar() {
 
     }
 }
-fixedNavBar()
 
+fixedNavBar()
 
 
 function animateSponsors() {
@@ -306,7 +306,7 @@ export function createElement(type, parent, id, attributeArr,
 
 export function playVideo() {
     let video = document.getElementById('videoHeader');
-    video.autoplay = true;
+
     video.play();
     setInterval(() => {
         video.currentTime = 0

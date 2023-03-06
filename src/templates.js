@@ -10,9 +10,9 @@ function templateForNav(arg1,arg2,arg3,arg4){
         </div>
         <div id="navContainer" class="hide navLinks">
             <a href="#slideshow">${arg1}</a>
-            <a href="#productDescription" >${arg2}</a>
             <a href="#desktopForWatches">${arg3}</a>
             <a href="#market">${arg4}</a>
+            <a href="#productDescription" >${arg2}</a>
         </div>
 `
 let targetElement = document.getElementsByTagName('nav')[0];
@@ -20,7 +20,12 @@ let targetElement = document.getElementsByTagName('nav')[0];
 render(navigationTemplate, targetElement)
 document.getElementById('burgerBtn').addEventListener('click', openBurgerMenu);
 }
-let mediaArr = [/*video*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",/*Clock*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6',/* HowItWorksSec */'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/pexels-allan-mas-5368943.jpg?alt=media&token=786ee12a-15a3-4760-83e9-c5f6ec72a6a2','https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/pexels-lisa-fotios-705868.jpg?alt=media&token=e29e1312-c837-4ec1-b87d-f3d457844ce8','https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/weChooseCause.jpg?alt=media&token=7ee253e8-aa5f-48c7-8ab2-bb14f77379c5']
+let mediaArr = [/*video*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",
+/*Clock*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",
+'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6',/* HowItWorksSec */
+'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKid.jpg?alt=media&token=2b85f05b-36ce-434a-a88a-c9df295c2459',
+'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/designWatch.jpg?alt=media&token=4c13f69a-2634-486e-ba2d-610ac8c664f9',
+'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hands.jpg?alt=media&token=85bb971b-91b2-482b-b997-a0c81180ddf6']
 function templateForSlideshow(arg1,arg2,arg3){
     let slideshowTemplate = html`
         <video id="videoHeader" >
@@ -108,6 +113,7 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
 
 
 function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14){
+    
     let watchTemplate = html`
         <section id="sellingWatch">
             <h1 class="donationName">${arg1}</h1>
@@ -122,7 +128,7 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
         <section class="sellingDetails">
             <img src="../img/redcross.png" alt="redcross missing">
             <p>${arg6}</p>
-            <p>${arg7}</p>
+            <p class="readMore">read more...</p>
             <div class="projects">
                 <div class="project">
                     <h5>${arg8}:</h5>
@@ -146,8 +152,8 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
         </section>
         
     `
-    console.log(arg3);
     let targetElement = document.getElementById('desktopForWatches');
+    
 
     render(watchTemplate, targetElement)
     

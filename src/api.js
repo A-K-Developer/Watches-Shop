@@ -22,7 +22,6 @@ const firebaseConfig = {
     appId: "1:886121237214:web:42dc7cc4d44b25b36e504f"
   };
 
-
   initializeApp(firebaseConfig)
 
 
@@ -58,7 +57,7 @@ onSnapshot(colRef, (snapshot) => {
 
     onSnapshot(docRef, (doc) => {
         let data = doc.data();
-        console.log(data.navbarLink1);
+        
         templateForNav(data.navbarLink1, data.navbarLink2,data.navbarLink3,data.navbarLink4 )
     
     })
@@ -78,7 +77,7 @@ onSnapshot(colRef, (snapshot) => {
     onSnapshot(monthlyWatch, (doc) => {
         let data = doc.data();
         templateForMonthlyWatch(data.causeName,data.purpose,data.valueOnPurpose,data.buyNow,data.buyBtnValue,data.bigText,data.bigText1,data.projectHeading1,data.projectText1,data.projectHeading2,data.projectText2,data.projectHeading3,data.projectText3,data.bigText3)
-        console.log(data.purposeValue);
+       
     })
 
     let footerData = doc(db,'Front-endText', 'footer');
