@@ -1,8 +1,18 @@
-import {html, render} from 'lit-html';
-import { buyBtnAction, createElement, openBurgerMenu, playVideo, setDate } from './javascript';
+import {
+    html,
+    render
+} from 'lit-html';
+import {
+    buyBtnAction,
+    closeArticle,
+    createElement,
+    openBurgerMenu,
+    playVideo,
+    setDate
+} from './javascript';
 
-function templateForNav(arg1,arg2,arg3,arg4){
-    const navigationTemplate = html`
+function templateForNav(arg1, arg2, arg3, arg4) {
+    const navigationTemplate = html `
         <div id="companyName">Conscience</div>
         <div id="burgerBtn">
             <div class="line line1"></div>
@@ -15,19 +25,22 @@ function templateForNav(arg1,arg2,arg3,arg4){
             <a href="#productDescription" >${arg2}</a>
         </div>
 `
-let targetElement = document.getElementsByTagName('nav')[0];
+    let targetElement = document.getElementsByTagName('nav')[0];
 
-render(navigationTemplate, targetElement)
-document.getElementById('burgerBtn').addEventListener('click', openBurgerMenu);
+    render(navigationTemplate, targetElement)
+    document.getElementById('burgerBtn').addEventListener('click', openBurgerMenu);
 }
-let mediaArr = [/*video*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",
-/*Clock*/"https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",
-'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6',/* HowItWorksSec */
-'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKid.jpg?alt=media&token=2b85f05b-36ce-434a-a88a-c9df295c2459',
-'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/designWatch.jpg?alt=media&token=4c13f69a-2634-486e-ba2d-610ac8c664f9',
-'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hands.jpg?alt=media&token=85bb971b-91b2-482b-b997-a0c81180ddf6']
-function templateForSlideshow(arg1,arg2,arg3){
-    let slideshowTemplate = html`
+let mediaArr = [ /*video*/ "https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hungryKids.mp4?alt=media&token=cb660ae2-ecf9-43bf-bbbf-bf70b8acc533",
+    /*Clock*/
+    "https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/stor-urskive.png?alt=media&token=4ec470b8-436f-4095-bf92-4adbb673c7a6",
+    'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/urFrame.png?alt=media&token=04771148-7082-49ec-9b35-4f053b4986f6', /* HowItWorksSec */
+    'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/designWatch.jpg?alt=media&token=4c13f69a-2634-486e-ba2d-610ac8c664f9',
+    'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/demo.jpg?alt=media&token=22cac101-aba6-4c59-8496-13cedd59c528',
+    'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/hands.jpg?alt=media&token=85bb971b-91b2-482b-b997-a0c81180ddf6'
+]
+
+function templateForSlideshow(arg1, arg2, arg3) {
+    let slideshowTemplate = html `
         <video id="videoHeader" >
             <source src=${mediaArr[0]} type="video/mp4">
           </video>
@@ -76,29 +89,33 @@ let sponsorsImgesRef = {
     fourthSponsor: 'https://firebasestorage.googleapis.com/v0/b/watch-shop-b2682.appspot.com/o/sponsor1.png?alt=media&token=3e8a661b-4eb4-408f-80cb-a964ca5c662e',
 }
 
-function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
-    let slideshowTemplate = html`
+function templateForHowItWorks(arg1, arg2, arg3, arg4, arg5, arg6) {
+    let slideshowTemplate = html `
         <div class="steps">
             <img src=${sponsorsImgesRef.firstSponsor} class="sponsorImg" alt="sponsors">
             <div class="text-how-works">
-            <span><h1>1</h1><h1>${arg1}</h1></span>
-            <p>${arg2}</p>
+                <span>
+                    <h1>1.</h1><h1>${arg1}</h1>
+                </span>
+                <p>${arg2}</p>
             </div>
             <img class="extraImgHowItWorks" src=${mediaArr[3]} alt="pexel img">
+            <div class="lineBetween"></div>
         </div>
         <div class="steps">
             <img src=${sponsorsImgesRef.secondSponsor} class="sponsorImg" alt="sponsors">
             <div class="text-how-works">
-            <span><h1>2</h1><h1>${arg3}</h1></span>
+            <span><h1>2.</h1><h1>${arg3}</h1></span>
             <p>${arg4}</p>
             </div>
             <img class="extraImgHowItWorks" src=${mediaArr[4]}  alt="pexel img">
+            <div class="lineBetween"></div>
 
         </div>
         <div class="steps">
           <img src=${sponsorsImgesRef.thirthSponsor} class="sponsorImg" alt="sponsors">
           <div class="text-how-works">
-            <span><h1>3</h1><h1>${arg5}</h1></span>
+            <span><h1>3.</h1><h1>${arg5}</h1></span>
             <p>${arg6}</p>
             </div>
             <img class="extraImgHowItWorks" src=${mediaArr[5]}  alt="pexel img">
@@ -112,9 +129,9 @@ function templateForHowItWorks(arg1,arg2,arg3,arg4,arg5,arg6){
 }
 
 
-function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14){
-    
-    let watchTemplate = html`
+function templateForMonthlyWatch(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) {
+
+    let watchTemplate = html `
         <section id="sellingWatch">
             <h1 class="donationName">${arg1}</h1>
             <div class="watch">
@@ -142,48 +159,116 @@ function templateForMonthlyWatch(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,ar
                     <h5>${arg12}:</h5>
                     <p>${arg13}</p>
                 </div>
+                
                 <section class="proggresBar">
                     <div class="progressBarEle"></div>
+                    <div class="point"></div>
                     <div class="progressBarEle"></div>
+                    <div class="point"></div>
                     <div class="progressBarEle"></div>
+                    <section class="iconsForBar">
+                    <img class="iconForBar" src="../img/folded-hand-fil1.png" alt="folded-hand-fil1 missing">
+                    <img  src="../img/hand-fil.png" alt="hand-fil missing">
+                    <img src="../img/heart-stroke3.png" alt="rolex missing">
+
+                    <img src="../img/box-stroke4.png" alt="rolex missing">
+
+                </section>
                 </section>
             </div>
-            <p>${arg14}</p>
+            <p class="lastText">${arg14}</p>
         </section>
         
     `
     let targetElement = document.getElementById('desktopForWatches');
-    
+
 
     render(watchTemplate, targetElement)
-    
-    buyBtnAction()
 
-    let readMore = document.getElementsByClassName('readMore')[0]
-    createElement('p',readMore,'','','','','',arg7)
-    readMore.addEventListener('click',() => {
-        readMore.replaceWith(replace)
-    })
+    buyBtnAction()
 }
 
-function productDescription(arg,arg1){
-    let productTemplate = html`
-     <div class="watchImg">
-            <img id="welcomeImg" src="../img/Conscience2.jpg" alt="rolex missing">
-
-        </div>
+function productDescription(arg, arg1) {
+    let productTemplate = html `
+     
         <div class="contentForCompany">
             <h1>${arg}</h1>
+            <img id="welcomeImg" src="../img/Conscience2.jpg" alt="rolex missing">
             <p>${arg1}</p>
         </div>
     `
-     let targetElement = document.getElementById('productDescription');
+    let targetElement = document.getElementById('productDescription');
 
-     render(productTemplate, targetElement)
+    render(productTemplate, targetElement)
+}
+export function openArticles() {
+    //let closeBtn = createElement('div', child, 'closeBtn', '', ['click', closeArticle], '', '', '');
+
+
+    let articleTemplate = html `
+    <div>
+        <div id="header">
+            <img src="../img/weChooseCause.jpg" alt="headerImg Missing">
+            <h1>Red Cross Donation</h1>
+        </div>
+        <div id="closeBtn">
+            
+        </div>
+        <div id="articlePages">
+            <div class="firstText">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minima consectetur, saepe enim totam non laboriosam voluptates illo suscipit voluptatum laborum aut natus magni tempora!</p>
+                <div class="lineBetweens"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, enim ab ea esse expedita praesentium, voluptate quasi animi similique laborum voluptas vero quia, pariatur consequuntur.</p>
+            </div>
+            <div class="galleryImg">
+                <img src="../img/Conscience0.jpg" alt="imgMissing">
+                <img src="../img/Conscience0.jpg" alt="imgMissing">
+                <img src="../img/Conscience0.jpg" alt="imgMissing">
+                <img src="../img/Conscience0.jpg" alt="imgMissing">
+                <img src="../img/Conscience0.jpg" alt="imgMissing">
+            </div>
+            <div class="lastText">
+                <div class="textSection">
+                    <div>
+                        <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae</p>
+                        <img src="../img/Conscience1.jpg" alt="imgMissing">
+                        <p class="last"> sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                    </div>
+                </div>
+                <div class="lineBetweens"></div>
+                <div class="textSection textSection1">
+                    <img src="../img/Conscience1.jpg" alt="imgMissing">
+                
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus earum ipsum, 
+                        esse sint corporis qui veritatis culpa suscipit
+                    </p>
+                    <p>
+                        sed !!!aliquid numquam dolor 
+                        porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed </p>
+                    <p>numquam at, repudiandae sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    `
+    let targetElement = document.getElementById('articleContainer');
+    let body = document.getElementsByTagName('body')[0]
+    if (targetElement == null) {
+        targetElement = createElement('section', body, 'articleContainer', '', '', '');
+        render(articleTemplate, targetElement)
+    }
+    render(articleTemplate, targetElement)
+    let closeBtn = document.getElementById('closeBtn');
+    closeBtn.addEventListener('click', () => {
+        targetElement.remove()
+    })
+    createElement('div', closeBtn, '', '', '', ['closeLine', 'lineLeft'], '', '')
+    createElement('div', closeBtn, '', '', '', ['closeLine', 'lineRight'], '', '')
 }
 
-function footerTemplate(about,about1,about2,about3,about4,about5,contact,contact1,contact2,contact3,policies,policies1,policies2,policies3,policies4,policies5,policies6,policies7,service,service1,service2,service3){
-    let footerTemplates = html`
+function footerTemplate(about, about1, about2, about3, about4, about5, contact, contact1, contact2, contact3, policies, policies1, policies2, policies3, policies4, policies5, policies6, policies7, service, service1, service2, service3) {
+    let footerTemplates = html `
+    
     <div class="about">
             <span>
                 <p>${about}</p>

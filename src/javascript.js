@@ -1,5 +1,40 @@
+import { openArticles } from "./templates";
 
 
+export function animateElementOnScroll(id) {
+    const element = id
+    const startPos = { x: 0, y: 0 }; // set the initial position of the element
+    const endPos = { x: 0, y: 300 }; // set the end position of the element
+    let hasMoved = false;
+  
+    function handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 3200 && !hasMoved) {
+        hasMoved = true;
+        element.style.transition = 'transform 0.5s ease-out';
+        element.style.transform = `translate(${endPos.x}px, ${endPos.y}px)`;
+      } else if (scrollTop <= 3200 && hasMoved) {
+        hasMoved = false;
+        element.style.transition = 'transform 0.5s ease-out';
+        element.style.transform = `translate(${startPos.x}px, ${startPos.y}px)`;
+      }
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  }
+
+
+export function readMoreOPT(arg,arg1){
+    if(arg.textContent == 'read more...'){
+        arg.textContent = arg1
+        arg.style.color = '#203334'
+    }else{
+        arg.textContent = 'read more...'
+    }
+   
+
+}
 export function setDate() {
     const secondHand = document.querySelector('.second-hand');
     const minuteHand = document.querySelector('.min-hand');
@@ -19,77 +54,52 @@ export function setDate() {
     const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 268;
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 }
-
-function fixedNavBar() {
-
+export function fixedNavBar(nav,logo,navLinks,alinks) {
     window.onscroll = () => {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        let element = document.getElementsByTagName('nav')[0];
-        let navLinks = document.getElementById('navContainer');
-        let logo = document.getElementById('companyName')
-
-        if(navLinks){
-
-            var alinks = navLinks.querySelectorAll('a')
-        }
-    
+        let navBars = nav.querySelector('#burgerBtn').querySelectorAll('.line')
         if (window.innerWidth < 768) {
-
             if (scrollTop > 500) {
-                let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
-
-                element.style.display = 'flex'
-                element.style.backgroundColor = '#d4d5d9';
+                nav.style.display = 'flex'
+                nav.style.backgroundColor = '#d4d5d9';
                 navBars.forEach(x => x.style.backgroundColor = "#203334")
                 logo.style.color ='#203334'
-                
-                
                 navLinks.style.backgroundColor ='#d4d5d9'
                 alinks.forEach(x => {
                     x.style.color = '#203334'
                 })
-
-
             } else if (scrollTop <= 500) {
-                let navBars = element.querySelector('#burgerBtn').querySelectorAll('.line')
-
-                element.style.display = 'flex'
-
+                nav.style.display = 'flex'
                 alinks.forEach(x => {
                     x.style.color = '#d4d5d9'
                 })
                 navLinks.style.backgroundColor ='#203334'
                 logo.style.color ='#d4d5d9'
-                element.style.backgroundColor = 'transparent'
+                nav.style.backgroundColor = 'transparent'
                 navBars.forEach(x => x.style.backgroundColor = "#d4d5d9")
                 
             }
         } else {
-            if (scrollTop > 700) {
-                element.style.backgroundColor = '#d4d5d9'; 
+            if (scrollTop > 800) {
+                nav.style.backgroundColor = '#d4d5d9'; 
                 logo.style.color = '#203334'
                 alinks.forEach(x => {
                     x.style.color = '#203334'
                 })
-                
             } else if (scrollTop <= 700) {
-                element.style.backgroundColor = 'transparent'
-                if(navLinks || logo){
-                 alinks = navLinks.querySelectorAll('a')
-                }
+            
+                nav.style.backgroundColor = 'transparent'
+               
                 logo.style.color = '#d4d5d9'
                 alinks.forEach(x => {
-                    x.style.color = '#d4d5d9'
+                    x.style.color = '#fff'
                 })
             }
         }
 
     }
 }
-
-fixedNavBar()
-
-
+/*  Sponsors scrolling bottom page!
 function animateSponsors() {
 
     let imgArr = ['../img/sponsor2.png', '../img/sponsor.png', '../img/sponsor3.png', '../img/sponsor1.png', ]
@@ -102,11 +112,7 @@ function animateSponsors() {
     }
 }
 animateSponsors()
-
-
-
-
-
+*/
 let watchess = {
     1: {
         img: "../img/watch2.png",
@@ -141,16 +147,7 @@ let watchess = {
 
     },
 }
-
 createMarketPlace()
-
-/*
-const video = document.getElementById("videoHeader");
-const gradient = document.createElement("div");
-gradient.id = "gradient";
-video.parentNode.insertBefore(gradient, video);
-
- */
 export function buyBtnAction() {
     let buyBtn = document.querySelector('.buyNow');
     buyBtn.addEventListener('click', () => {
@@ -162,12 +159,12 @@ function createMarketPlace() {
     let marketPlace = document.getElementById('market');
     Object.keys(watchess).forEach(function (key) {
 
-        let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticle], ['articleContainer'], '', '')
+        let watchContainer = createElement('div', marketPlace, '', '', ['click', openArticles], ['articleContainer'], '', '')
+        createElement('h5', watchContainer, '', '', '', ['monthName'], '', watchess[key].month)
         let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
-        createElement('h5', imgContainer, '', '', '', ['monthName'], '', watchess[key].month)
         createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
         let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
-        createElement('div', contentContainer, '', '', '', ['overlayContentContainer'], '', '')
+        //createElement('div', contentContainer, '', '', '', ['overlayContentContainer'], '', '')
         let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
         createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
         createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
@@ -189,50 +186,6 @@ function createMarketPlace() {
         }
     })
 }
-
-let child;
-let body = document.getElementsByTagName('body')[0];
-
-function openArticle() {
-    body.querySelector('nav').style.display = 'none'
-    if (!body.contains(child)) {
-        let thingsProvided = ['Food, fuel, clean water and cash assistance to meet children and families most urgent needs.', 'Blankets, hygiene items, baby kits, trauma kits and bunker kits with toys and games to encourage play and learning.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Medical supplies and support to health teams and hospitals, including pre-positioned trauma kits.', 'Mental health support to children and their families, including individual and group therapy and social emotional learning curriculum.', 'Child protection services to ensure children and families remain together and separated children are reunited safely with their caregivers.']
-        let imges = ['../img/water-drops.svg', '../img/boy-girl.svg', '../img/stethoscope.svg', '../img/lightbulb.svg', '../img/hand-shake.svg', '../img/girl-parent.svg']
-
-
-        child = createElement('div', body, '', '', '', ['articlePage'], '');
-        let closeBtn = createElement('div', child, 'closeBtn', '', ['click', closeArticle], '', '', '');
-        createElement('div', closeBtn, '', '', '', ['closeLine', 'lineLeft'], '', '')
-        createElement('div', closeBtn, '', '', '', ['closeLine', 'lineRight'], '', '')
-
-
-        createElement('img', child, '', ['src', '../img/sponsor1.png'], '', ['partner'], '', '');
-        let sectionText = createElement('div', child, '', '', '', ['aboutTheCause'], '', '');
-        createElement('h1', sectionText, '', '', '', '', '', "What is Conscience's Response in Afghanistan?");
-        createElement('p', sectionText, '', '', '', '', '', 'In Afghanistan, weve provided support to over 345,000 people, including nearly 173,000 children. Our teams our trained teams are working alongside local partners and the Ukraine government to provide lifesaving assistance, including the following: ')
-        let howWeHelp = createElement('div', child, '', '', '', ['howWeHelp'], '', '');
-        for (let i = 0; i < imges.length; i++) {
-            let div = createElement('div', howWeHelp, '', '', '', ['imgAndText'], '', '')
-
-            createElement('img', div, '', ['src', imges[i]], '', ['howWeHelpImg'], '', '');
-            createElement('p', div, '', '', '', '', '', thingsProvided[i]);
-
-        }
-        createElement('h5', howWeHelp, '', '', '', '', '', 'we collect 40000kr');
-
-
-
-    }
-}
-
-function closeArticle() {
-    if (body.contains(child)) {
-        body.querySelector('nav').style.display = 'flex'
-
-        child.remove()
-    }
-}
-
 export function buyNow(e) {
     if (e.target.textContent !== 'Sold') {
         let navBarSales = document.getElementById('navIcons');
@@ -240,12 +193,6 @@ export function buyNow(e) {
         lastChild.textContent++
     }
 }
-
-function showInfo(e) {
-    let content = e.target.nextElementSibling
-    content.classList.toggle('hide')
-}
-
 export function openBurgerMenu() {
     let navContainer = document.getElementById('navContainer')
     let burgerBtn = document.getElementById('burgerBtn');
@@ -307,7 +254,7 @@ export function createElement(type, parent, id, attributeArr,
 export function playVideo() {
     let video = document.getElementById('videoHeader');
 
-    video.play();
+    video.autoplay = true
     setInterval(() => {
         video.currentTime = 0
     }, 8000)
