@@ -391,15 +391,35 @@ nav {
     opacity: 0.5;
     background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
+#sponsors{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+    margin: 3em auto;
 
+}
+#sponsors img{
+    width: 20%;
+    margin: 0 10%;
+
+}
+#sponsors img:nth-child(3){
+    width: 200px;
+}
 #HowItWorks {
     display: flex;
-    width: 50%;
-    margin: 6em auto;
-    gap: 5em;
+    width: 70%;
+    margin: auto;
+    gap: 0em;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--Primary);
+    border-radius: 1em;
 
+    
 }
 
 .steps {
@@ -410,7 +430,6 @@ nav {
     position: relative;
     justify-content: space-between;
     min-height: 15em;
-    background-color: var(--Primary);
     padding: 1em;
 
 }
@@ -448,11 +467,12 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 5em;
     position: relative;
-    top: 5em;
-    gap: 5em;
+    top:0em;
+    gap: 1em;
     justify-content: space-between;
+    margin: 2em;
+    padding-top: 5em;
 }
 
 .sponsorImg {
@@ -467,7 +487,39 @@ nav {
     border-radius: 50%;
     z-index: -2;
 }
+#reviews{
+    width: 80%;
+    margin: 5em auto;
+}
+#reviews h1{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1em;
+}
+#container{
+    background-color: var(--Secondary);
+    padding: 1em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: 1em;
+}
+.review{
+    background-color: var(--Primary);
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+}
+.review p{
+    font-family: var(--New-Font);
+    font-weight: 800;
+}
 /* 
 animation: slide 3s ease infinite;
 
@@ -490,121 +542,14 @@ animation: slide 3s ease infinite;
     display: flex;
 }
 
-.mySlides img {
-    width: 100%;
-    border-radius: 50%;
-}
 
-.mySlides {
-    position: relative;
-    width: 25%;
-    height: 100%;
-}
-
-.firstIcon {
-    left: 0%;
-    animation: slides1 20s linear infinite;
-    animation-timing-function: linear;
-    will-change: transform;
-    z-index: 4;
-}
-
-.secondIcon {
-    left: 0;
-    animation: slides2 20s linear infinite;
-    animation-timing-function: linear;
-    will-change: transform;
-    z-index: 3;
-
-}
-
-.thirdIcon {
-    left: 0%;
-    animation: slides3 20s linear infinite;
-    animation-timing-function: linear;
-    will-change: transform;
-    z-index: 2;
-}
-
-.fourthIcon {
-    left: 0%;
-    animation: slides4 20s linear infinite;
-    animation-timing-function: linear;
-    z-index: 1;
-
-    will-change: transform;
-}
-
-@keyframes slides4 {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    25% {
-        transform: translate3d(100%, 0, 0);
-    }
-
-    26% {
-        transform: translate3d(-300%, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes slides3 {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    50% {
-        transform: translate3d(200%, 0, 0);
-    }
-
-    51% {
-        transform: translate3d(-200%, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(0%, 0, 0);
-    }
-}
-
-@keyframes slides2 {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    75% {
-        transform: translate3d(300%, 0, 0);
-    }
-
-    76% {
-        transform: translate3d(-100%, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
-
-    }
-
-}
-
-@keyframes slides1 {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(400%, 0, 0);
-    }
-}
 
 #productDescription {
     position: relative;
     width: 90%;
-    margin: 5% auto;
+    margin:  auto;
+    padding-top: 6em;
+    
 }
 
 .watchImg {
@@ -624,6 +569,7 @@ animation: slide 3s ease infinite;
     color: var(--Secondary);
     width: 80%;
     margin: auto;
+    
 }
 
 .contentForCompany h1 {
@@ -634,6 +580,7 @@ animation: slide 3s ease infinite;
 .contentForCompany p {
     font-family: var(--New-Font);
     font-weight: 700;
+    text-align: center;
 }
 
 #sellingWatch {
@@ -648,9 +595,10 @@ animation: slide 3s ease infinite;
 
 .monthName {
     position: absolute;
+    width: 30%;
     top: -3em;
-    left: 30%;
-    transform: translateX(-50%, 50%);
+    left: 50%;
+    transform: translate(-50%, 50%);
     color: var(--Secondary);
     font-size: 1em;
     font-family: var(--New-Font);
@@ -730,7 +678,7 @@ animation: slide 3s ease infinite;
 .priceForWatch {
     color: var(--Primary);
     background-color: var(--Secondary);
-    width: 30%;
+    width: 40%;
     padding: 2% 2%;
     margin: 3% auto;
     text-align: center;
@@ -740,13 +688,13 @@ animation: slide 3s ease infinite;
 .btn {
     color: var(--Secondary);
     background-color: var(--Primary);
-    width: 50%;
+    width:60%;
     padding: 5% 7%;
     text-align: center;
     border-radius: 6px;
     position: relative;
     bottom: 0%;
-    margin: auto;
+    margin: 0 auto;
     cursor: pointer;
 }
 
@@ -764,14 +712,22 @@ animation: slide 3s ease infinite;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 0.5em;
     margin-top: 3em;
-    position: relative;
-    right: 5%;
 }
 
 .sellingDetails img {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
+}
+.andSign{
+    padding: 0;
+}
+.sellingDetails h1{
+    font-family: var(--Logo-Font);
+    font-size: 4em;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .sellingDetails p {
@@ -782,14 +738,44 @@ animation: slide 3s ease infinite;
 
 .projects {
     position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3em;
+    
 
 }
+.project{
+    width: 80%;
+    margin-left: 20%;
+    text-align: end;
+    height: 20vh;
+    position: relative;
+    right: -10%;
+    
 
-.proggresBar {
+}
+.project p{
+    text-align: end;
+    margin-top: 0.5em;
+}
+.lastText{
+    margin-top: 2em;
+}
+#containerforProgressBar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 0.55em;
-    min-height: 100%;
-    background-color: var(--Primary);
+    height: 37em;
+    background-color:var(--Primary);
+    z-index: 2;
     border-radius: 20em;
+
+}
+.proggresBar {
     position: absolute;
     top: 0;
     left: -1em;
@@ -798,25 +784,40 @@ animation: slide 3s ease infinite;
 
 .progressBarEle {
     width: 0.55em;
-    height: 7em;
     z-index: 1;
-    background-color: var(--Secondary);
+    background-color:var(--Primary);
     border-radius: 20em;
-    opacity: 1;
-}
-
-.progressBarEle:nth-child(1) {
-    opacity: 1;
-}
-
-.progressBarEle:nth-child(2) {
-    opacity: 0;
 
 }
-
-.progressBarEle:nth-child(3) {
-    opacity: 0;
-
+.element1{
+    background-color: red;
+    width: 0.55em;
+    height:33.3%;
+    z-index: 10;
+    opacity: 0.2;
+}
+.element2{
+    width: 0.55em;
+    height: 33.3%;
+  
+}
+.element3{
+    
+    height: 33.3%;
+}
+.iconsForBar{
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: 1em;
+    height: 70vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+    
+}
+.iconsForBar img{
+    width: 2em;
 }
 
 #market h1 {
@@ -824,6 +825,7 @@ animation: slide 3s ease infinite;
     text-align: center;
     margin-bottom: 2em;
     color: var(--Secondary);
+    padding-top: 5em;
 }
 
 #market {
@@ -832,32 +834,54 @@ animation: slide 3s ease infinite;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 100px 0% 10%;
-    gap: 10px;
+    margin: 0 0% 10%;
+    gap: 3em
 
 }
 
 .articleContainer {
-    width: 40%;
+    width: 50%;
     text-align: center;
     line-height: 1.8em;
     position: relative;
     border: none;
     border-radius: 10px;
-    height: 300px;
+    height: 400px;
+    margin-bottom: 5em;
+    background-color: var(--Primary);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .articleIMGContainer {
-    width: 100%;
+    width:80%;
     height: 50%;
-    background-color: white;
+    max-height: 50%;
+    margin: 0 auto;
+    background-color: transparent
 
 }
 
 .articleImg {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
+    
+}
+.btnOpenArticle{
+    width: 50%;
+    height: 40px;
+    background-color: var(--Secondary);
+    color: var(--Primary);
+    border-radius: 25em;
+    padding: 0.2em;
+    margin: auto;
+    position: relative;
+    top: 2.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .detailsContainer {
@@ -939,11 +963,11 @@ animation: slide 3s ease infinite;
     font-size: 40px;
     position: relative;
     bottom: 2px;
-    color: var(--Primary);
+    color: var(--Secondary)
 }
 
 .articlePrice {
-    color: var(--text);
+    color:var(--Secondary);
     text-align: center;
     font-weight: 700;
     font-size: 12px;
@@ -956,7 +980,7 @@ animation: slide 3s ease infinite;
 }
 
 .articleDonation {
-    color: var(--text);
+    color: var(--Secondary);
     text-align: center;
     margin: auto;
     font-size: 12px;
@@ -1030,9 +1054,12 @@ footer div span p {
     width: 40px;
     height: 40px;
     position: fixed;
-    right: 5%;
-    top: 5%;
+    right: 10%;
+    top: 10%;
     z-index: 10001;
+    background-color: var(--Primary);
+    border-radius: 25em;
+
 }
 
 
@@ -1041,20 +1068,20 @@ footer div span p {
     height: 2px;
     background-color: var(--Secondary);
     margin: 0 auto;
-
+    
 
 }
 
 .lineLeft {
     position: absolute;
-    left: 2%;
+    left: 10%;
     top: 50%;
     transform: rotate(45deg);
 }
 
 .lineRight {
     position: absolute;
-    left: 2%;
+    left: 10%;
     top: 50%;
     transform: rotate(-45deg);
 }
@@ -1180,13 +1207,6 @@ footer div span p {
         font-weight: normal;
     }
 
-    .navLinks a:hover {
-        color: var(--Primary);
-        border-radius: 2px;
-        background-color: var(--Secondary);
-        font-weight: 700;
-    }
-
     .slogan {
         font-size: 2em;
         bottom: 50%;
@@ -1229,12 +1249,13 @@ footer div span p {
     #HowItWorks {
         flex-direction: row;
         width: 80%;
-        height: 80%;
-        margin: 10em auto;
+        height: 57vh;
         gap: 0;
         justify-content: center;
         box-shadow: 5px 5px 30px var(--Secondary);
         border-radius: 20px;
+        position: relative;
+        top: 7em;
 
     }
 
@@ -1251,7 +1272,7 @@ footer div span p {
         align-items: start;
         padding: 1em;
         width: 30%;
-        height: 80%;
+        height: 50vh;
         padding: 2em;
     }
 
@@ -1303,10 +1324,6 @@ footer div span p {
 
     }
 
-    #sponsors img {
-        width: 10em;
-    }
-
     @keyframes slide {
         0% {
             transform: translateY(0);
@@ -1324,12 +1341,12 @@ footer div span p {
         width: 90%;
         height: 40vh;
         max-height: 40vh;
-        margin-top: 5em;
-        
+        margin-top: 2em;
+       
     }
 
     #welcomeImg {
-        width: 40%;
+        width: 45%;
         margin: 0;
     }
 
@@ -1339,51 +1356,65 @@ footer div span p {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1em;
+        align-items: center;
+        gap: 0.5em;
+        margin: 0 auto;
+        height:45vh;
+        position: relative;
+        top: 3em;
     }
 
     .contentForCompany h1 {
-        margin: 10% 0%;
+        margin: 1em auto;
         text-align: center;
         text-transform: uppercase;
         width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     .contentForCompany p {
-        width: 50%;
-
+        width: 45%;
+        
 
     }
 
     .sellingDetails {
         width: 60%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         gap: 1em;
         position: relative;
-        margin: 0;
+        margin: 1em;
+     
 
     }
-
-    #sellingWatch {
-        width: 30%;
-        margin: 0;
-    }
-
     .sellingDetails img {
-        width: 70%;
-        margin: auto;
+        width: 30%;
+        margin: 0 auto;
     }
+    #sellingWatch {
+        width: 300px;
+        margin: 0;
+        height: 70%;
+    }
+    .readMore {
+        color: blue;
+        cursor: pointer;
+        width: 100%;
+        height:7vh;
+    }
+   
 
     .sellingDetails p {
         font-family: var(--New-Font);
         font-weight: 700;
     }
 
-    .readMore {
-        color: blue;
-        cursor: pointer;
-    }
+    
 
     .donationName {
         top: 0%;
@@ -1429,22 +1460,31 @@ footer div span p {
     #desktopForWatches {
         flex-direction: row;
         justify-content: space-evenly;
-        padding-top: 7em;
+        margin:0em auto;
+        padding-top: 5em;
     }
 
     .projects {
+        width: 100%;
         display: flex;
+        flex-direction: row;
         gap: 2em;
+        height: 30%;
         margin: 1em;
         margin-bottom: 3em;
+        flex-wrap: nowrap;
     }
-
+    .project{
+        right: 0;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
     .project h5 {
         text-align: center;
     }
-
-    .lastText {
-        margin-top: 2em;
+    .project p{
+        text-align: center;
     }
 
     .proggresBar {
@@ -1460,8 +1500,19 @@ footer div span p {
     .progressBarEle {
         width: 33%;
         height: 1em;
+        
+        z-index: 1;
+        background-color: red;
+        border-radius: 20em;
+        opacity: 1;
     }
+    .element2{
 
+
+    }
+    .element3{
+        width: 33.6%;
+    }
     .projects {
         position: relative;
 
@@ -1475,47 +1526,40 @@ footer div span p {
 
 
     }
-
-    .progressBarEle {
-
-        z-index: 1;
-        background-color: red;
-        border-radius: 20em;
-        opacity: 1;
+    .lastText{
+        margin-top: 2em;
     }
-
-    .progressBarEle:nth-child(1) {
-        opacity: 0.23;
-    }
-
-    .progressBarEle:nth-child(2) {
-        opacity: 0;
-
-    }
-
-    .progressBarEle:nth-child(5) {
-        opacity: 0;
-
-    }
-
     .point {
-        position: relative;
+        position: absolute;
         width: 5px;
         height: 100%;
         background-color: black;
-        left: -5px;
+        left: 32.8%;
         z-index: 2;
     }
-
     .point:nth-child(4) {
-        left: 5px;
+        left: 65.8%;
+    }
+    .point:nth-child(6) {
+        left: 99.4%;
+    }
+    #containerforProgressBar{
+      
+        width: 100%;
+        height: 1em;
+       
+        flex-direction: row;
     }
 
     .iconsForBar {
         position: absolute;
+
         display: flex;
         width: 100%;
-        bottom: 1em;
+        height: 3em;
+        flex-direction: row;
+        top: -3em;
+        left: -0.2em;
     }
 
     .iconsForBar img {
@@ -1528,12 +1572,12 @@ footer div span p {
     }
 
     .iconsForBar img:nth-child(2) {
-        left: -5%;
+        left: -4%;
         position: relative;
     }
 
     .iconsForBar img:nth-child(3) {
-        left: 5%;
+        left: 4%;
         position: relative;
     }
 
@@ -1544,47 +1588,53 @@ footer div span p {
 
     #market {
         margin: auto;
-        gap: 3em;
+        gap: 2em;
         width: 80%;
-        height: 110vh;
+        height: 85vh;
         position: relative;
-        top: 5em;
+        
+        padding-top: 5em;
 
     }
 
     #market h1 {
-        padding: 1em;
+        padding: 0.5em;
         font-size: 3em;
-        word-spacing: 2em;
-        letter-spacing: 0.3em;
+        word-spacing: 1.5em;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        margin-bottom: 0;
+        margin-bottom: 1em;
     }
 
     .articleContainer {
         width: 40%;
-        height: 30vh;
+        height: 25vh;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         border: groove 2px var(--Secondary);
         padding: 1em;
+        margin-bottom: 0;
         
     }
   
     .monthName {
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: -1.5em;
         left: 0;
 
         width: 100%;
-        left: 0%;
+        left: 50%;
         padding: 0.5em;
     }
 
     .articleIMGContainer {
-        width: 40%;
-        height: 80%;
+        width: 50%;
+        height: 100%;
+        max-height: 100%;
+    }
+    .articleIMGContainer img{
+        object-fit: contain;
     }
 
     .textContent {
@@ -1593,36 +1643,57 @@ footer div span p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: end;
-        gap: 0.2em;
-        margin: 0;
+        justify-content: space-between;
+        margin: auto;
+        position: relative;
+       
+        
     }
-
+    .btnOpenArticle{
+        width: 6em;
+        height: 1.5em;
+        background-color: var(--Primary);
+        border: 2px groove var(--Secondary);
+        color: var(--Secondary);
+        border-radius: 20em;
+        position: absolute;
+        bottom: -1.75em;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        top: 100%;
+    }
     .articleImg {
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
     .namecontainer {
         width: 100%;
         left: 0;
-        color: var(--Primary);
+        color:var(--Secondary)
 
     }
 
     .articlePrice {
-        color: var(--Primary);
+        color: var(--Secondary)
     }
 
     .articleDonation {
-        color: var(--Primary);
+        color: var(--Secondary)
     }
 
     #reviews {
         width: 90%;
-        margin: 5em auto;
-        height: 40vh;
+        margin: 10em auto;
+        height: auto;
         position: relative;
-        top: 3em;
+        top:7em;
     }
 
     #reviews h1 {
@@ -1632,8 +1703,8 @@ footer div span p {
 
     #container {
         width: 90%;
-        padding: 2em;
         display: flex;
+        flex-direction: row;
         gap: 2em;
         margin: auto;
 
@@ -1643,6 +1714,7 @@ footer div span p {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding: 2em;
     }
 
     .review p {
@@ -1667,21 +1739,23 @@ footer div span p {
         /* add some space between images */
         left: 35%;
     }
-
-    .mySlides img {
-        width: 35%;
+    #sponsors{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75%;
+        margin-top: 2em;
+        margin: 2em auto;
     }
-
-    .mySlides {
-        width: 100%;
+    #sponsors img{
+        width: 5%;
+        margin: 0;
     }
-
+    #sponsors img:nth-child(3){
+    width: 5em;
+}
     
       #articleContainer{
-        width: 100vw;
-        height: 100vh;
-        background-color: red;
-        position: relative;
         width: 100vw;
         height: 100vh;
         max-width: 100vw;
@@ -1691,14 +1765,14 @@ footer div span p {
         position: fixed;
         top: 0;
         left: 0;
+       
     }
     #header {
         z-index: 1400;
-        width: 94%;
-        height: 15em;
+        width: 90%;
+        height: 25vh;
     
-        margin: 2% 2%;
-        background-color: red;
+        margin: 1% auto;
         position: relative;
 
     }
@@ -1716,6 +1790,7 @@ footer div span p {
     }
     #articlePages {
        width: 85%;
+       height: 70vh;
        margin: 0 auto;
        display: flex;
        flex-direction: column;
@@ -1724,7 +1799,7 @@ footer div span p {
     .firstText{
         display: flex;
         gap: 1em;
-        height: 100px;
+        height: 8vh;
     }
 
     .firstText p{
@@ -1744,56 +1819,27 @@ footer div span p {
         flex-direction: row;
         position: relative;
         justify-content: center;
-        margin: auto;
+        margin: 1em auto;
     }
     .galleryImg img {
         width: 20%;
     }
-    .lastText{
-        display: flex;
-        flex-direction: row;
-        height: 21em;
-        gap: 1em;
-    }
+  .lastSection{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
 
-    .textSection {
-        width: 100%;
-        height: 100%;
-        padding: 0 ;
-        position: relative;
+    .float-left{
+        float: left;
+        width: 7em;
+        height: 7em;
     }
-    .textSection div{
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
+    .textSection p {
+        font-family: var(--New-Font);
+        font-weight: 800;
     }
-    .last{
-        color: red;
-        margin-right: 10em;
-    }
-    .textSection img{
-        position: absolute;
-        display: inline-block;
-        right: 0;
-        bottom: 0;
-        width: 10em;
-        height: 10em;
-    }
-    .textSection1 img{
-        top: 20%;
-        left: 0%;
-    }
-    .textSection1 p:nth-child(3){
-        margin-left: 10.2em;
-    }
-    .textSection1 p:nth-child(4){
-        position: absolute;
-        bottom: 0%;
-        margin-bottom: 3em;
-    }
+   
     footer {
         flex-direction: row;
         justify-content: space-between;

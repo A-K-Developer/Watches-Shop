@@ -143,6 +143,8 @@ function templateForMonthlyWatch(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
             <div class="btn buyNow">${arg5}</div>
         </section>
         <section class="sellingDetails">
+            <h1>Conscience</h1>
+            <p class="andSign">&</p>
             <img src="../img/redcross.png" alt="redcross missing">
             <p>${arg6}</p>
             <p class="readMore">read more...</p>
@@ -161,19 +163,22 @@ function templateForMonthlyWatch(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
                 </div>
                 
                 <section class="proggresBar">
-                    <div class="progressBarEle"></div>
-                    <div class="point"></div>
-                    <div class="progressBarEle"></div>
-                    <div class="point"></div>
-                    <div class="progressBarEle"></div>
+                    <div id="containerforProgressBar">
+                        <div class="progressBarEle element1"></div>
+                        <div class="point"></div>
+                        <div class="progressBarEle element2"></div>
+                        <div class="point"></div>
+                        <div class="progressBarEle element3"></div>
+                        <div class="point"></div>
+                    </div>
                     <section class="iconsForBar">
-                    <img class="iconForBar" src="../img/folded-hand-fil1.png" alt="folded-hand-fil1 missing">
-                    <img  src="../img/hand-fil.png" alt="hand-fil missing">
-                    <img src="../img/heart-stroke3.png" alt="rolex missing">
+                        <img class="iconForBar" src="../img/folded-hand-fil1.png" alt="folded-hand-fil1 missing">
+                        <img  src="../img/hand-fil.png" alt="hand-fil missing">
+                        <img src="../img/heart-stroke3.png" alt="rolex missing">
 
-                    <img src="../img/box-stroke4.png" alt="rolex missing">
+                        <img src="../img/box-stroke4.png" alt="rolex missing">
 
-                </section>
+                    </section>
                 </section>
             </div>
             <p class="lastText">${arg14}</p>
@@ -227,25 +232,22 @@ export function openArticles() {
                 <img src="../img/Conscience0.jpg" alt="imgMissing">
                 <img src="../img/Conscience0.jpg" alt="imgMissing">
             </div>
-            <div class="lastText">
+            <div class="lastSection" >
                 <div class="textSection">
-                    <div>
-                        <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae</p>
-                        <img src="../img/Conscience1.jpg" alt="imgMissing">
-                        <p class="last"> sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                    <div class="text">
+                        <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae
+                        sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                        <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
+                        
                     </div>
                 </div>
                 <div class="lineBetweens"></div>
-                <div class="textSection textSection1">
-                    <img src="../img/Conscience1.jpg" alt="imgMissing">
-                
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus earum ipsum, 
-                        esse sint corporis qui veritatis culpa suscipit
-                    </p>
-                    <p>
-                        sed !!!aliquid numquam dolor 
-                        porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed </p>
-                    <p>numquam at, repudiandae sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                <div class="textSection">
+                    <div class="text">
+                    <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae
+                        sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                        <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
+                    </div>
                 </div>
             </div>
         </div>
