@@ -4,8 +4,10 @@ import {
 } from 'lit-html';
 import {
     buyBtnAction,
+    catchEvent,
     closeArticle,
     createElement,
+    eventOnBtn,
     openBurgerMenu,
     playVideo,
     setDate
@@ -206,24 +208,76 @@ function productDescription(arg, arg1) {
 
     render(productTemplate, targetElement)
 }
-export function openArticles() {
-    //let closeBtn = createElement('div', child, 'closeBtn', '', ['click', closeArticle], '', '', '');
+export function openArticles(event, data) {
+    if(event.target){
+        console.log(event.target.parentNode);
+        console.log(data.heading);
+
+    }else{
+        console.log(data);
+    }
+}
 
 
+export function priviousTemplate(month,watchImg,companyName,price,sponsorsImg1,sponsorsImg2){
+    let marketTemplate = html`
+            <h5 class="monthName">${month}</h5>
+            <div class="articleIMGContainer">
+                <img class="articleImg" src=${watchImg}>
+            </div>
+            <div class="textContent">
+                
+                <div class="namecontainer">
+                    <p>${companyName}</p>
+                </div>
+                <div class="articlePrice">${price}</div>
+                <div class="unitContainer">
+                    <p class="articleDonation">- Doneret till -</p>
+                    <div class="imgContainer">
+                        <img src=${sponsorsImg1} class="priviusDonationIMg">
+                        <img src=${sponsorsImg2} class="priviusDonationIMg">
+                    </div>
+                </div>
+            </div>
+            <div class="btnOpenArticle">Read More</div>
+    `
+    const targetElement = document.getElementById("market");
+    const articleContainer = document.createElement("div");
+    articleContainer.classList.add("articleContainer");
+    render(marketTemplate, articleContainer);
+    targetElement.appendChild(articleContainer);
+
+   
+}
+    /*
+     let btn= Array.from(document.getElementsByClassName('btnOpenArticle'));
+    btn.forEach(x => {
+        x.addEventListener('click',(e) => {
+            let parentName = e.target.parentNode;
+            console.log(parentName);
+            if(parentName == 'January'){
+                console.log('yeaaa');
+            }
+        })
+    })
+    */
+
+
+export function articleTemplate(data){
     let articleTemplate = html `
     <div>
         <div id="header">
-            <img src="../img/weChooseCause.jpg" alt="headerImg Missing">
-            <h1>Red Cross Donation</h1>
+            <img src=${data.articleHeadImg} alt="headerImg Missing">
+            <h1>${data.topic}</h1>
         </div>
         <div id="closeBtn">
             
         </div>
         <div id="articlePages">
             <div class="firstText">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minima consectetur, saepe enim totam non laboriosam voluptates illo suscipit voluptatum laborum aut natus magni tempora!</p>
+                <p>${data.articleFirstText}</p>
                 <div class="lineBetweens"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, enim ab ea esse expedita praesentium, voluptate quasi animi similique laborum voluptas vero quia, pariatur consequuntur.</p>
+                <p>${data.articleSecondText}</p>
             </div>
             <div class="galleryImg">
                 <img src="../img/Conscience0.jpg" alt="imgMissing">
@@ -235,8 +289,7 @@ export function openArticles() {
             <div class="lastSection" >
                 <div class="textSection">
                     <div class="text">
-                        <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae
-                        sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                        <p>${data.articleText1}</p>
                         <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
                         
                     </div>
@@ -244,8 +297,7 @@ export function openArticles() {
                 <div class="lineBetweens"></div>
                 <div class="textSection">
                     <div class="text">
-                    <p>LtextSectionucimus earum ipsum, esse textSectionucimus earum ipsum, esse sint corporis qui veritextSectionucimus earum ipsum, esse sint corporis qui verisint corporis qui veritatis culpa suscipit sed aliquid numquam dolor porro inventore voluptate, exercitationem quidem quae ipsam ea aliquam. Illo consectetur sed numquam at, repudiandae
-                        sunt obcaecati atque dolores vero deserunt fugiat aperiam est nobis vel aut!</p>
+                        <p>${data.articleText2}</p>
                         <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
                     </div>
                 </div>
@@ -253,19 +305,20 @@ export function openArticles() {
         </div>
         </div>
     `
-    let targetElement = document.getElementById('articleContainer');
-    let body = document.getElementsByTagName('body')[0]
-    if (targetElement == null) {
-        targetElement = createElement('section', body, 'articleContainer', '', '', '');
-        render(articleTemplate, targetElement)
-    }
-    render(articleTemplate, targetElement)
-    let closeBtn = document.getElementById('closeBtn');
-    closeBtn.addEventListener('click', () => {
-        targetElement.remove()
-    })
-    createElement('div', closeBtn, '', '', '', ['closeLine', 'lineLeft'], '', '')
-    createElement('div', closeBtn, '', '', '', ['closeLine', 'lineRight'], '', '')
+
+     let targetElement = document.getElementById('articleContainer');
+     let body = document.getElementsByTagName('body')[0]
+     if (targetElement == null) {
+         targetElement = createElement('section', body, 'articleContainer', '', '', '');
+         render(articleTemplate, targetElement)
+     }
+     render(articleTemplate, targetElement)
+     let closeBtn = document.getElementById('closeBtn');
+     closeBtn.addEventListener('click', () => {
+         targetElement.remove()
+     })
+     createElement('div', closeBtn, '', '', '', ['closeLine', 'lineLeft'], '', '')
+     createElement('div', closeBtn, '', '', '', ['closeLine', 'lineRight'], '', '')
 }
 
 function footerTemplate(about, about1, about2, about3, about4, about5, contact, contact1, contact2, contact3, policies, policies1, policies2, policies3, policies4, policies5, policies6, policies7, service, service1, service2, service3) {

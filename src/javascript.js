@@ -1,30 +1,24 @@
-import { openArticles } from "./templates";
-
-
+import { articleTemplate, priviousTemplate } from "./templates";
 export function animateElementOnScroll(id) {
     const element = id
     const startPos = { x: 0, y: 0 }; // set the initial position of the element
     const endPos = { x: 0, y: 300 }; // set the end position of the element
     let hasMoved = false;
-  
+
     function handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > 3400 && !hasMoved) {
+      if (scrollTop > 2900 && !hasMoved) {
         hasMoved = true;
         element.style.transition = 'transform 0.5s ease-out';
         element.style.transform = `translate(${endPos.x}px, ${endPos.y}px)`;
-      } else if (scrollTop <= 3400 && hasMoved) {
+      } else if (scrollTop <= 2900 && hasMoved) {
         hasMoved = false;
         element.style.transition = 'transform 0.5s ease-out';
         element.style.transform = `translate(${startPos.x}px, ${startPos.y}px)`;
       }
     }
-  
     window.addEventListener('scroll', handleScroll);
   }
-
-
 export function readMoreOPT(arg,arg1){
     if(arg.textContent == 'read more...'){
         arg.textContent = arg1
@@ -32,8 +26,6 @@ export function readMoreOPT(arg,arg1){
     }else{
         arg.textContent = 'read more...'
     }
-   
-
 }
 export function setDate() {
     const secondHand = document.querySelector('.second-hand');
@@ -120,10 +112,6 @@ function onhover(ele,position){
             ele.style.color = "#203334";
         });
     }
-    
-
-    
-
 }
 function animateSponsors() {
 
@@ -137,82 +125,36 @@ function animateSponsors() {
 }
 animateSponsors()
 
-let watchess = {
-    1: {
-        img: "../img/watch2.png",
-        donated: 'Red Cross DK',
-        sales: '1.000 kr.',
-        project: ['../img/copdk.png', "../img/kclogo1.png"],
-        month: 'January',
-
-    },
-    2: {
-        img: "../img/watch33.png",
-        donated: "EU for Turkey",
-        sales: "250 kr.",
-        project: ['../img/copdk.png', "../img/kclogo1.png"],
-        month: 'February',
-
-    },
-    3: {
-        img: "../img/watch2.png",
-        donated: "EU for Turkey",
-        sales: "350 kr.",
-        project: ['../img/copdk.png', "../img/kclogo1.png"],
-        month: 'March',
-
-    },
-    4: {
-        img: "../img/MontlyWatch.png",
-        donated: "EU for Turkey",
-        sales: "5 kr.",
-        project: ['../img/copdk.png', "../img/kclogo1.png"],
-        month: 'April',
-
-    },
+export function checkWatches(data){
+    priviousTemplate(data.monthName,data.WatchImg,data.companyName,data.price,data.sponsorsImg,data.sponsorsImg2)
 }
-createMarketPlace()
+export function eventAndPrint(data){
+    let bigParent = Array.from(document.getElementsByClassName('articleContainer'))
+    bigParent.forEach(x => {
+        let name = x.querySelector('.monthName').textContent;
+        if(name == data.monthName){
+            let btn = x.querySelector('.btnOpenArticle');
+            btn.addEventListener('click',() =>{
+                
+                articleTemplate(data);
+            })
+        }
+    })
+    let btnsss = Array.from(document.getElementsByClassName('btnToOpenArticle'))
+    btnsss.forEach(x => {
+        let name = x.textContent;
+        if(name == data.monthName){
+            x.addEventListener('click',() =>{
+                articleTemplate(data);
+            })
+        }
+    })
+
+}
 export function buyBtnAction() {
     let buyBtn = document.querySelector('.buyNow');
     buyBtn.addEventListener('click', () => {
         window.open('https://buy.stripe.com/7sI6rI5ss1mEboQdQR')
-    })
-}
-
-function createMarketPlace() {
-    let marketPlace = document.getElementById('market');
-    Object.keys(watchess).forEach(function (key) {
-
-        let watchContainer = createElement('div', marketPlace, '', '', '', ['articleContainer'], '', '')
-        createElement('h5', watchContainer, '', '', '', ['monthName'], '', watchess[key].month)
-        let imgContainer = createElement('div', watchContainer, '', '', '', ['articleIMGContainer'], '', '')
-        createElement('img', imgContainer, '', ['src', watchess[key].img], '', ['articleImg'], '', '')
-        let contentContainer = createElement('div', watchContainer, '', '', '', ['textContent'], '', '')
-        //createElement('div', contentContainer, '', '', '', ['overlayContentContainer'], '', '')
-        let donateContainer = createElement('div', contentContainer, '', '', '', ['namecontainer'], '', '');
-        createElement('p', donateContainer, '', '', '', '', '', 'Conscience')
-        createElement('div', contentContainer, '', '', '', ['articlePrice'], '', watchess[key].sales);
-
-
-        let unitContainer = createElement('div', contentContainer, '', '', '', ['unitContainer'], '', '');
-        createElement('p', unitContainer, '', '', '', ['articleDonation'], '', '- Doneret til -');
-        let imgcont = createElement('div', contentContainer, '', '', '', ['imgContainer'], '', '');
-
-        createElement('img', imgcont, '', ['src', watchess[key].project[0]], '', ['priviusDonationIMg'], '', '')
-        createElement('img', imgcont, '', ['src', watchess[key].project[1]], '', ['priviusDonationIMg'], '', '')
-        createElement('div', watchContainer, '', '', ['click', openArticles], ['btnOpenArticle'], '', 'Read More')
-        
-
-
-        let children = contentContainer.children;
-
-        for (let i = 0; i < children.length; i++) {
-            let classLists = children[i].classList;
-            if (!classLists.contains('overlayContentContainer')) {
-                children[i].style.position = 'relative';
-                children[i].style.zIndex = 22;
-            }
-        }
     })
 }
 export function buyNow(e) {
