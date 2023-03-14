@@ -198,6 +198,7 @@ nav {
     font-family: var(--Logo-Font);
     color: var(--Primary);
     font-size: 50px;
+    cursor: pointer;
 }
 
 #burgerBtn {
@@ -1757,7 +1758,7 @@ footer div span p {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        top: 100%;
+        top: 103%;
     }
     .articleImg {
         object-fit: cover;
@@ -1800,14 +1801,19 @@ footer div span p {
         flex-direction: row;
         gap: 2em;
         margin: auto;
-
+        height: 20em;
     }
 
     .review {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 2em;
+        padding: 1em;
+        max-width: 33%;
+        width: 33%;
+       gap: 1em;
+       height: 90%;
+       position: relative;
     }
 
     .review p {
@@ -1815,7 +1821,24 @@ footer div span p {
         color: var(--Secondary);
         font-weight: 900;
     }
+    .customerName{
+        margin: 0;
+        color: var(--Secondary);
+        text-align: center; 
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
 
+    }
+    .btnToOpenArticle{
+        width:max-content;
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        color: var(--Extra);
+        cursor: pointer;
+     
+    }
     .overlaySposnors {
         width: 100%;
         height: 100%;

@@ -81,7 +81,11 @@ function templateForSlideshow(arg1, arg2, arg3) {
     render(slideshowTemplate, targetElement)
     setInterval(setDate, 1000);
     playVideo()
-
+    let logo = document.getElementById('companyName')
+    logo.addEventListener('click',() => {
+       scrollTo(0,0)
+       
+    })
 
 }
 let sponsorsImgesRef = {

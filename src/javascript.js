@@ -230,3 +230,9 @@ export function playVideo() {
         video.currentTime = 0
     }, 8000)
 }
+
+
+window.addEventListener('beforeunload', function (e) {
+    // Your code to handle the reload event goes here
+    window.scrollTo(0,0)
+  });
