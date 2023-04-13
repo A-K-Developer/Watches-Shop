@@ -175,15 +175,12 @@ function templateForMonthlyWatch(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
                         <div class="progressBarEle element2"></div>
                         <div class="point"></div>
                         <div class="progressBarEle element3"></div>
-                        <div class="point"></div>
                     </div>
                     <section class="iconsForBar">
                         <img class="iconForBar" src="../img/folded-hand-fil1.png" alt="folded-hand-fil1 missing">
                         <img  src="../img/hand-fil.png" alt="hand-fil missing">
                         <img src="../img/heart-stroke3.png" alt="rolex missing">
-
                         <img src="../img/box-stroke4.png" alt="rolex missing">
-
                     </section>
                 </section>
             </div>
@@ -293,17 +290,16 @@ export function articleTemplate(data){
             <div class="lastSection" >
                 <div class="textSection">
                     <div class="text">
-                        <p>${data.articleText1}</p>
                         <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
-                        
                     </div>
+                    <p>${data.articleText1}</p>
                 </div>
-                <div class="lineBetweens"></div>
+                <div class="lineBetweens2"></div>
                 <div class="textSection">
-                    <div class="text">
-                        <p>${data.articleText2}</p>
+                    <div class="text text2">
                         <img class="float-left" src="../img/Conscience1.jpg" alt="imgMissing">
                     </div>
+                    <p>${data.articleText2}</p>
                 </div>
             </div>
         </div>

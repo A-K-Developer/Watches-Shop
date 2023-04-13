@@ -1,25 +1,37 @@
-const express = require('express'); // Import
-const app = express();              // Create
-const PORT = 3000;                  // Configure
 
-// Do your task here, in this space.
+const stripe = require('stripe')('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')
 
-app.listen(PORT, (error) => {       // Listen
-    if(!error){
-        console.log("Server is Successfully Running, and App is listening on port "+ PORT)
-    } else{
-        console.log("Error occurred, server can't start", error);
+
+app.post('/webhook', async (req, res) => {
+  const eventType = req.headers['stripe-event'];
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(req.body, req.headers['stripe-signature'], 'your_stripe_webhook_secret');
+  } catch (err) {
+    console.log('Webhook error:', err.message);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'charge.succeeded') {
+    const charge = event.data.object;
+
+    // Send message to Firebase Cloud Messaging
+    const message = {
+      data: {
+        title: 'Charge Successful',
+        body: `Charge of ${charge.amount / 100} ${charge.currency.toUpperCase()} succeeded for ${charge.description}.`
+      },
+      topic: 'charges'
+    };
+
+    try {
+      const response = await admin.messaging().send(message);
+      console.log('Successfully sent message:', response);
+    } catch (err) {
+      console.log('Error sending message:', err);
     }
+  }
+
+  res.status(200).send('OK');
 });
-
-app.get('*', function (req,res) {
-    const protocol = req.protocol;
-    const host = req.hostname;
-    const url = req.originalUrl;
-    const port = process.env.PORT || PORT ;
-
-    const fullUrl = `${protocol}://${host}:${port}${url}`
-
-    const responseString = `Full URL is ${fullUrl}`
-    res.send(responseString)
-})

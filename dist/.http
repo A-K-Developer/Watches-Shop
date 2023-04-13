@@ -1,0 +1,9 @@
+POST https://api.openai.com/v1/engine/davinci-codex/completions
+Authorization: Bearer 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
+Content-Type: application/json
+
+{
+    "prompt": "Hello, world!",
+    "temperature": 0.5,
+    "max_tokens": 5
+}
